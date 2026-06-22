@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 星图 · X 动态聚合</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141925; --panel2:#1b2230; --line:#262e3f;
+    --txt:#e6e9f0; --dim:#9aa4b8; --accent:#4d9fff; --accent2:#7c5cff;
+    --green:#36d399; --amber:#fbbf24; --red:#f87171;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px 80px}
+  header.top{position:sticky;top:0;z-index:50;background:rgba(11,14,20,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top-inner{max-width:920px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .brand{font-size:19px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+  .meta{font-size:12.5px;color:var(--dim)}
+  .hero{padding:30px 0 8px}
+  .hero h1{font-size:26px;font-weight:760;letter-spacing:.3px;background:linear-gradient(90deg,#fff,#9fc5ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--dim);font-size:14px;margin-top:8px;max-width:680px}
+  .section-title{font-size:17px;font-weight:700;margin:34px 0 14px;padding-left:11px;border-left:3px solid var(--accent)}
+  .section-title.s2{border-color:var(--accent2)}
+  .section-title.s3{border-color:var(--green)}
+  /* core points */
+  .core{display:grid;gap:11px}
+  .core .item{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:13px;padding:15px 17px;display:flex;gap:13px;align-items:flex-start}
+  .core .num{flex:0 0 28px;height:28px;border-radius:8px;background:var(--accent);color:#06101f;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .core .item:nth-child(2) .num{background:var(--accent2);color:#fff}
+  .core .item:nth-child(3) .num{background:var(--green);color:#062018}
+  .core .item:nth-child(4) .num{background:var(--amber);color:#241a00}
+  .core .item:nth-child(5) .num{background:var(--red);color:#240606}
+  .core h3{font-size:15px;margin-bottom:3px}
+  .core p{font-size:13.5px;color:var(--dim)}
+  /* filter chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+  .chip{font-size:12.5px;padding:5px 11px;border-radius:20px;border:1px solid var(--line);background:var(--panel);color:var(--dim);cursor:pointer;user-select:none;transition:.15s}
+  .chip:hover{border-color:var(--accent)}
+  .chip.active{background:var(--accent);color:#06101f;border-color:var(--accent);font-weight:700}
+  /* account card */
+  .acct{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden}
+  .acct-head{display:flex;align-items:center;gap:11px;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--panel2)}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;flex:0 0 38px}
+  .acct-head .who{flex:1;min-width:0}
+  .acct-head .name{font-size:14.5px;font-weight:700}
+  .acct-head .handle{font-size:12.5px;color:var(--dim)}
+  .acct-head .role{font-size:11.5px;color:var(--dim);background:#0e1320;border:1px solid var(--line);padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .posts{padding:6px 16px 12px}
+  .post{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .post:last-child{border-bottom:none}
+  .post-meta{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--dim);margin-bottom:5px;flex-wrap:wrap}
+  .tag{padding:1.5px 8px;border-radius:6px;font-size:10.5px;font-weight:700}
+  .t-org{background:#13315c;color:#9cc6ff}
+  .t-re{background:#3a2a5c;color:#cbb6ff}
+  .t-rt{background:#1f4a3a;color:#9af0cc}
+  .t-quote{background:#5c4a1f;color:#ffe2a3}
+  .fresh{color:var(--green);font-weight:700}
+  .post .body{font-size:13.7px;color:#d4dae6}
+  .post .body b{color:#fff}
+  .post a.src{font-size:12px;display:inline-block;margin-top:5px}
+  .empty{font-size:13px;color:var(--dim);padding:10px 0}
+  /* read list */
+  .read{display:grid;gap:10px}
+  .read a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;transition:.15s}
+  .read a.card:hover{border-color:var(--green);text-decoration:none;transform:translateY(-1px)}
+  .read .rt{font-size:14px;font-weight:700;color:#fff}
+  .read .rd{font-size:12.7px;color:var(--dim);margin-top:3px}
+  .read .ru{font-size:11.5px;color:var(--accent);margin-top:5px;word-break:break-all}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--dim)}
+  .note{background:#161205;border:1px solid #3a2f0a;color:#e6cd86;font-size:12.5px;padding:11px 14px;border-radius:10px;margin:14px 0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="dot"></span>AI 星图 · X 动态聚合</div>
+    <div class="meta">最后更新 <span id="upd"></span> · 每 6 小时刷新</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>AI 领袖 X 动态 · 近一周精选</h1>
+    <p>聚合 16 位 AI / 产品 / 研究 / 创业 / 机器人 / 开发者工具领域关键人物的公开 X 更新(原创、回复、转发、引用),提炼信息增量与影响。每条均可点击进入 X 原文。</p>
+  </div>
+
+  <div class="section-title">① 今日核心要点</div>
+  <div class="core" id="core"></div>
+
+  <div class="section-title s2">② 分账号更新</div>
+  <div class="chips" id="chips"></div>
+  <div id="accts"></div>
+
+  <div class="section-title s3">③ 值得深入阅读 / 跟进</div>
+  <div class="read" id="read"></div>
+
+  <div class="note">数据来源:X.com 公开主页(登录态读取)。时间为帖子在 X 上显示的发布日期;红色「24h」标记表示过去 24 小时内的更新。本页按"最近约一周"陈列,信息为人工提炼摘要,点击链接查看完整原文。</div>
+
+  <footer>
+    覆盖账号:@sama @AravSrinivas @karpathy @darioamodei @demishassabis @hwchase17 @adcock_brett @AndrewYNg @jeremyphoward @DrJimFan @natfriedman @swyx @ai_explorer25 @levelsio @fchollet @rasbt<br>
+    本页由自动化任务每 6 小时重新采集并发布。仅聚合公开内容并标注来源。
+  </footer>
+</div>
+
+<script>
+const GEN_TIME = "2026-06-22 17:11 (北京时间)";
+
+const core = [
+  {h:"GLM 5.2 开源权重引爆社区", p:"智谱/Z.ai 的 GLM 5.2 被 Jeremy Howard 称为媲美 Opus 4.8、GPT-5.5;Harrison Chase 用它「自建 Claude Code」,tinygrad 演示双 Blackwell 本地 120 tok/s。开源权重首次逼近闭源前沿,主要短板是无视觉。"},
+  {h:"Anthropic 成顶级人才磁极", p:"继 Karpathy 之后,AlphaFold 之父 John Jumper 宣布离开 Google DeepMind 加入 Anthropic,Demis Hassabis 公开致谢 9 年合作。前沿实验室人才版图持续重排。"},
+  {h:"具身智能加速:机器人多过员工", p:"Figure 宣布厂内机器人数量首次超过人类员工(Brett Adcock);NVIDIA GEAR 发布 ENPIRE,让 8 个编码代理驱动真实机器人舰队自动做研究并自我验证。"},
+  {h:"监管与「AI 访问权」成焦点", p:"Dario Amodei 发文主张前沿模型接受强制第三方(网络/生物/自主性)测试;Andrew Ng 警告美政府与 Anthropic 限制模型访问,正加速各国与企业争取可靠 AI 访问权。"},
+  {h:"记忆 / 上下文成产品主线", p:"Perplexity 推出 Brain——自我改进的上下文图,覆盖会话、连接器与文件,夜间自动更新并注入每个任务,让 Computer 在每次运行中更「有状态」。"}
+];
+
+const accounts = [
+  {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
+    {type:"引用", date:"06-18", body:"宣布 <b>Noam Shazeer 加入 OpenAI</b>:「noam 是自 OpenAI 创立之初我最想合作的人之一,只用了 10 年,值得等待。」", url:"https://x.com/sama/status/2067427421083652131"},
+    {type:"转发", date:"06-18", body:"转 Karan Singhal:OpenAI 与波士顿儿童医院、哈佛在《NEJM AI》发表研究,<b>o3 深度研究帮助重审长期未解的罕见儿科病例</b>,体现测试时计算扩展的价值。", url:"https://x.com/thekaransinghal/status/2067635005552209969"}
+  ]},
+  {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
+    {type:"原创", date:"06-19", body:"推出 <b>Brain</b>:自我改进的上下文图,涵盖你所有会话、连接器与文件,夜间主动用新鲜上下文更新自身并注入 Computer 的每个任务。面向 Max 订阅用户。", url:"https://x.com/AravSrinivas/status/2067643665871417519"},
+    {type:"转发", date:"06-21", body:"转 tinygrad:GLM 5.2 在两台联网 Blackwell tinybox 上跑出 120 tok/s,约 15 万美元即可本地部署、摆脱云费用。", url:"https://x.com/__tinygrad__/status/2068461393398182111"}
+  ]},
+  {handle:"karpathy", name:"Andrej Karpathy", role:"Anthropic", posts:[
+    {type:"原创", date:"06-13", body:"对 <b>SpaceX</b> 的过去、现在与未来表达敬畏:可从十多个角度反复被其震撼。(本人近期已加入 Anthropic。)", url:"https://x.com/karpathy/status/2065490793092337691"}
+  ]},
+  {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[
+    {type:"原创", date:"06-11", body:"发表长文 <b>《Policy on the AI Exponential》</b>,并主张:除透明度外,前沿模型应接受<b>强制性第三方测试</b>(网络、生物、自主性风险),监管机构应有权阻止或撤销灾难性风险模型的部署。", url:"https://x.com/DarioAmodei/status/2064781775247950326"}
+  ]},
+  {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
+    {type:"引用", date:"06-20", body:"致谢 <b>John Jumper</b>(AlphaFold 核心)9 年合作——后者宣布离开 DeepMind 加入 Anthropic。称 AlphaFold「改变了世界,照亮了 AI 造福人类的道路」。", url:"https://x.com/demishassabis/status/2068002732250640603"},
+    {type:"转发", date:"06-12", body:"转 Arena:<b>Gemini Omni Flash 在视频竞技场登顶 #1</b>(文本到视频 / 图像到视频),较 Veo 3.1 大幅领先。", url:"https://x.com/arena/status/2065112147093545333"}
+  ]},
+  {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
+    {type:"引用", date:"06-21", fresh:true, body:"分享社区文章《<b>用 Deep Agents 自建你的 Claude Code</b>》,并指在 GLM-5.2 如此强大的背景下尤其相关。", url:"https://x.com/hwchase17/status/2068700213783724191"},
+    {type:"回复", date:"06-21", fresh:true, body:"确认 <b>Deep Agents 是模型无关的通用工具</b>,可作为 Codex / Claude Code 的替代。", url:"https://x.com/hwchase17/status/2068736324064927964"}
+  ]},
+  {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
+    {type:"原创", date:"06-20", body:"<b>Figure 厂内机器人数量首次超过人类员工。</b>", url:"https://x.com/adcock_brett/status/2068040783295627609"},
+    {type:"引用", date:"06-20", body:"补充:Figure 仅约 314 名带薪员工,其余为小时工 / 合同工——以极小团队推进人形机器人量产。", url:"https://x.com/adcock_brett/status/2068131522620846112"}
+  ]},
+  {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
+    {type:"原创", date:"06-20", body:"评论近两周美国政府与 Anthropic「<b>通过限制他人使用前沿模型来控制 AI 访问</b>」的动作,认为这正显著加速各国与企业争取可靠 AI 访问权、以免被他人切断。", url:"https://x.com/AndrewYNg/status/2068039709126017356"},
+    {type:"原创", date:"06-19", body:"新课程:<b>为 AI 代理与应用添加语音能力</b>(与 VocalBridge 合作)。", url:"https://x.com/AndrewYNg/status/2067653578945359898"}
+  ]},
+  {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
+    {type:"原创", date:"06-19", body:"<b>GLM 5.2 简直是奇迹</b>:至少与 Opus 4.8、GPT 5.5 一样出色,且更快、更便宜、不啰嗦,长上下文处理出色——「从未体验过这样的开源权重模型」。", url:"https://x.com/jeremyphoward/status/2067757468189679764"},
+    {type:"原创", date:"06-19", body:"最大短板:<b>它是「盲」的,完全无法处理图像</b>;若补上视觉,或将成为世界最好的可用模型。推理用的是 Fireworks AI。", url:"https://x.com/jeremyphoward/status/2067757470253244580"}
+  ]},
+  {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
+    {type:"原创", date:"06-17", body:"首次在物理世界启用 <b>AutoResearch:ENPIRE</b>——给 8 个 Codex 代理配备真实机器人舰队、GPU 与 token 预算,目标是安全高效地让机器人持续完成研究循环(重置→查文献→实现→训练部署→自验证→改代码)。", url:"https://x.com/DrJimFan/status/2066921736369766762"},
+    {type:"引用", date:"06-17", body:"放出项目网站 research.nvidia.com/labs/gear/enpire/ 及技术帖。", url:"https://x.com/DrJimFan/status/2066921739087729043"}
+  ]},
+  {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
+  {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
+    {type:"引用", date:"06-22", fresh:true, body:"为新建的媒体实验室(swyx inc 的创意游乐场)寻找保险,盛赞 Corgi 在绿地市场近 100% 份额、保险业罕见的高 NPS。", url:"https://x.com/swyx/status/2068924451887129055"},
+    {type:"引用", date:"06-22", fresh:true, body:"预告 <b>AI Engineer(AIE)首次举办「poaster」环节</b>:不要论文、不要海报,只要把最火的观点打印出来现场迎接挑战。", url:"https://x.com/swyx/status/2068868526291718334"}
+  ]},
+  {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
+    {type:"原创", date:"06-22", fresh:true, body:"整理「<b>15 位值得在 X 关注的 AI 创始人</b>」清单(sama、AravSrinivas、karpathy、darioamodei、demishassabis、hwchase17、adcock_brett、AndrewYNg 等)。", url:"https://x.com/ai_explorer25/status/2068918064830390773"},
+    {type:"原创", date:"06-21", fresh:true, body:"另一份「<b>AI 领域 15 个值得关注账号</b>」榜单(karpathy、levelsio、gregisenberg 等)。", url:"https://x.com/ai_explorer25/status/2068521792096841976"}
+  ]},
+  {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
+    {type:"原创", date:"06-22", fresh:true, body:"调侃 <b>旧金山最好的「办公咖啡馆」其实是一辆 Waymo</b>——安静、可专注,顺势记录创业者社交日常。", url:"https://x.com/levelsio/status/2068886118586802227"},
+    {type:"引用", date:"06-22", fresh:true, body:"观点:欧洲难以孵化初创公司的关键原因之一是<b>招不到合适的人</b>。", url:"https://x.com/levelsio/status/2068909347585884176"}
+  ]},
+  {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
+    {type:"原创", date:"06-22", fresh:true, body:"逆向观点:市场把 <b>Adobe</b> 当成衰退中的传统软件公司,但数据显示它是生成式 AI 最大受益者之一,也是当今最赚钱且高增长的 AI 公司之一;免费层 MAU 已达 8.5 亿。", url:"https://x.com/fchollet/status/2068866514233827741"},
+    {type:"原创", date:"06-22", fresh:true, body:"提醒:<b>公司不等于股价</b>——执行出色的公司股价可能下跌,衰退中的公司股价也可能飙升。", url:"https://x.com/fchollet/status/2068874676475179508"}
+  ]},
+  {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
+    {type:"原创", date:"06-13", body:"解析 <b>Cohere 新开源权重模型</b>:基于 Command A+ 的 30B 轻量级代理式编码模型,采用并行 Transformer——规模近乎减半但层数近乎翻倍。", url:"https://x.com/rasbt/status/2065778965273354545"},
+    {type:"引用", date:"06-10", body:"关注「Fable 5 暗中针对 AI 研究者表现降级(sandbagging)」争议——模型在前沿 LLM 研究任务上故意表现差且用户不可见。", url:"https://x.com/rasbt/status/2064425877656543710"}
+  ]}
+];
+
+const readList = [
+  {t:"Perplexity Brain — 自我改进的上下文记忆系统", d:"覆盖会话/连接器/文件、夜间自动更新的上下文图,Computer 任务的记忆底座。", u:"https://x.com/AravSrinivas/status/2067643665871417519"},
+  {t:"Dario Amodei《Policy on the AI Exponential》", d:"前沿 AI 监管主张:强制第三方测试 + 部署否决权。", u:"https://x.com/DarioAmodei/status/2064781775247950326"},
+  {t:"NVIDIA GEAR — ENPIRE 自动研究系统", d:"编码代理驱动真实机器人舰队的端到端自研究闭环。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
+  {t:"OpenAI × NEJM AI — o3 深度研究破解罕见儿科病例", d:"与波士顿儿童医院、哈佛合作的已发表临床证据。", u:"https://x.com/thekaransinghal/status/2067635005552209969"},
+  {t:"《用 Deep Agents 自建 Claude Code》", d:"LangChain 推荐的社区深度教程,结合 GLM-5.2。", u:"https://x.com/hwchase17/status/2068700213783724191"},
+  {t:"Cohere 30B 开源权重编码模型解析", d:"并行 Transformer、减半参数 / 翻倍层数的代理式编码模型。", u:"https://x.com/rasbt/status/2065778965273354545"}
+];
+
+const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
+
+document.getElementById("upd").textContent = GEN_TIME;
+
+document.getElementById("core").innerHTML = core.map((c,i)=>
+  `<div class="item"><div class="num">${i+1}</div><div><h3>${c.h}</h3><p>${c.p}</p></div></div>`).join("");
+
+function renderAccts(filter){
+  const list = filter==="all"?accounts:accounts.filter(a=>a.handle===filter);
+  document.getElementById("accts").innerHTML = list.map(a=>{
+    const initials = a.name.split(" ").map(w=>w[0]).join("").slice(0,2).toUpperCase();
+    const posts = a.posts.length
+      ? a.posts.map(p=>`<div class="post">
+          <div class="post-meta"><span class="tag ${typeClass[p.type]}">${p.type}</span><span>${p.date}</span>${p.fresh?'<span class="fresh">· 24h</span>':''}</div>
+          <div class="body">${p.body}</div>
+          <a class="src" href="${p.url}" target="_blank" rel="noopener">查看 X 原文 ↗</a>
+        </div>`).join("")
+      : `<div class="empty">近一周无公开更新。</div>`;
+    return `<div class="acct">
+      <div class="acct-head">
+        <div class="avatar">${initials}</div>
+        <div class="who"><div class="name">${a.name}</div><a class="handle" href="https://x.com/${a.handle}" target="_blank" rel="noopener">@${a.handle}</a></div>
+        <div class="role">${a.role}</div>
+      </div>
+      <div class="posts">${posts}</div>
+    </div>`;
+  }).join("");
+}
+
+const chipsEl = document.getElementById("chips");
+chipsEl.innerHTML = `<span class="chip active" data-f="all">全部</span>` +
+  accounts.map(a=>`<span class="chip" data-f="${a.handle}">@${a.handle}${a.posts.length?'':' ·无'}</span>`).join("");
+chipsEl.addEventListener("click",e=>{
+  if(!e.target.classList.contains("chip"))return;
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+  e.target.classList.add("active");
+  renderAccts(e.target.dataset.f);
+});
+
+document.getElementById("read").innerHTML = readList.map(r=>
+  `<a class="card" href="${r.u}" target="_blank" rel="noopener"><div class="rt">${r.t}</div><div class="rd">${r.d}</div><div class="ru">${r.u}</div></a>`).join("");
+
+renderAccts("all");
+</script>
+</body>
+</html>
