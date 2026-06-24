@@ -107,14 +107,14 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-06-24 18:15 (北京时间)";
+const GEN_TIME = "2026-06-25 00:14 (北京时间)";
 
 const core = [
-  {h:"自改进代理成主线:从「约束系统」到物理世界自动研究", p:"Harrison Chase 连发两条:Sydney Runkle 的「自约束(self-bracketing)——能自我改进的约束系统」(弱点挖掘→提出改进→确认无回归→循环,本质是循环工程,由 deepagents 支持,arXiv 2606.09498),以及 Viv 的「自改进提案循环应数据驱动」。呼应 Jim Fan 此前在物理世界启用 ENPIRE,让 8 个 Codex 代理驱动真实机器人舰队跑完整自研究闭环。"},
-  {h:"「上下文即算力」新叙事:模型要真正理解你的工作", p:"Andrej Karpathy 转推 Engram——「在你的上下文上扩展计算」的 AI,主张模型应深入理解你的工作,而非只靠训练数据。Aravind Srinivas 的 Perplexity Brain(自改进上下文图,夜间主动用新鲜上下文更新自身)是同一方向的产品化:把记忆与上下文做成持续自我改进的系统。"},
-  {h:"GLM-5.2 坐稳「最强开源权重」,登陆 Perplexity Agent API", p:"Sebastian Raschka 判断「GLM-5.2 是今天最好的开源权重模型」,架构复用 DeepSeek V3.2 的 MLA 与稀疏注意力 DSA、新增 IndexShare;Jeremy Howard 称其「简直是奇迹,至少与 Opus 4.8、GPT 5.5 一样出色且更快更便宜」。该模型现已在 Perplexity Agent API 上获得支持,开源生态全面提速。"},
-  {h:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖 + A24 合作", p:"Demis Hassabis 转推团队的 Project Genie 荣获戛纳狮子奖 AI 工艺类大奖——被称为「扩展世界模型的又一意想不到的成果」,可在线试用;DeepMind 同期与 A24 启动研究合作,力求未来创作工具由真正使用它们的创作者塑造。"},
-  {h:"François Chollet 双观点:代理式编码的「指数级」复杂性 + 市场非理性", p:"Chollet 警告:代理式编码会机械地累积不必要的代码,转移到上下文窗口、降低模型推理能力、再催生更多冗余代码——这是指数级的。同日他另谈市场:「市场效率是神话」,个体非理性由全球共享的非理性叙事驱动,几乎人人都是非理性的从众者。"}
+  {h:"人才地震:AlphaFold 之父 John Jumper 离开 DeepMind 加入 Anthropic", p:"Demis Hassabis 罕见公开发文,感谢诺奖得主 John Jumper「过去 9 年非凡的合作」——后者宣布在休整后将离开 Google DeepMind、加入 Anthropic。AlphaFold 核心人物的流动,是顶尖 AI / 科学人才在前沿实验室间重新洗牌的又一信号。"},
+  {h:"自改进代理成主线:从「约束系统」到物理世界自动研究", p:"Harrison Chase 连推 Sydney Runkle 的「自约束(self-bracketing)——能自我改进的约束系统」(弱点挖掘→提出改进→确认无回归→循环,由 deepagents 支持,arXiv 2606.09498),以及 Viv 的「自改进提案循环应数据驱动」。呼应 Jim Fan 在物理世界启用 ENPIRE,让 8 个 Codex 代理驱动真实机器人舰队跑完整自研究闭环。"},
+  {h:"「上下文即算力」+ 团队协作新范式:模型要真正理解你的工作", p:"Karpathy 转推 Engram——「在你的上下文上扩展计算」的 AI,主张模型应深入理解你的工作而非只靠训练数据;他还盛赞 Claude Tag 让 Claude 作为团队成员入驻 Slack、与人类活动「无缝融合」是与 AI 交互的全新范式。Perplexity Brain(夜间自更新的上下文图)是同方向产品化。"},
+  {h:"GLM-5.2 坐稳「最强开源权重」,登陆 Perplexity Agent API", p:"Sebastian Raschka 判断「GLM-5.2 是今天最好的开源权重模型」,架构复用 DeepSeek V3.2 的 MLA 与稀疏注意力 DSA;Jeremy Howard 称其堪比 Opus 4.8、GPT 5.5 且更快更便宜。该模型现已在 Perplexity Agent API 上获得支持,Project Genie 同期斩获戛纳狮子 AI 工艺大奖、DeepMind 牵手 A24。"},
+  {h:"François Chollet 三连观点:故障模式、代理式编码复杂性、市场非理性", p:"Chollet 提出「理解复杂系统的最佳方式是看边缘情况与故障模式,因为它们定义了系统的轮廓」;同时警告代理式编码会指数级累积冗余代码、降低模型推理;并称「市场效率是神话」,个体非理性由全球共享的非理性叙事驱动。"}
 ];
 
 const accounts = [
@@ -124,21 +124,21 @@ const accounts = [
     {type:"转发", date:"06-18", body:"转 Karan Singhal:OpenAI 与波士顿儿童医院、哈佛在《NEJM AI》发表研究,<b>o3 深度研究帮助重审长期未解的罕见儿科病例</b>,体现测试时计算扩展的价值。", url:"https://x.com/thekaransinghal/status/2067635005552209969"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"引用", date:"06-23", fresh:true, body:"<b>Ramp MCP 上线 Perplexity Computer</b>:带来 50 多种工具,把 Ramp 财务数据直接融入研究工作流——Computer 连接器生态持续扩张。", url:"https://x.com/AravSrinivas/status/2069442869275075007"},
+    {type:"引用", date:"06-23", body:"<b>Ramp MCP 上线 Perplexity Computer</b>:带来 50 多种工具,把 Ramp 财务数据直接融入研究工作流——Computer 连接器生态持续扩张。", url:"https://x.com/AravSrinivas/status/2069442869275075007"},
+    {type:"引用", date:"06-23", body:"转发并点评:正确实施的<b>数据中心液冷边际水耗几乎为零</b>,人们常把发电厂供水与冷却用水混为一谈。", url:"https://x.com/AravSrinivas/status/2069168109026693613"},
     {type:"原创", date:"06-23", body:"<b>GLM 现已在 Perplexity Agent API 上获得支持</b>——把当下最强开源权重模型接入代理 API 生态。", url:"https://x.com/AravSrinivas/status/2069276959251783797"},
     {type:"原创", date:"06-19", body:"推出 <b>Brain</b>:自我改进的上下文图,涵盖你所有会话、连接器与文件,夜间主动用新鲜上下文更新自身并注入 Computer 的每个任务。面向 Max 订阅用户。", url:"https://x.com/AravSrinivas/status/2067643665871417519"}
   ]},
   {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
+    {type:"引用", date:"06-24", fresh:true, body:"评 <b>Claude Tag</b>:让 Claude 作为团队成员入驻 Slack、与全组织人类活动「<b>无缝融合</b>」,一旦把跨工具/集成/内存/安全的幕后工程做到位即可即插即用——与 AI 交互的全新范式。", url:"https://x.com/karpathy/status/2069547676849557725"},
     {type:"转发", date:"06-24", fresh:true, body:"转 Engram:介绍 <b>Engram——在你的上下文上扩展计算的 AI</b>,主张模型应真正深入理解你的工作,而非只靠训练数据。", url:"https://x.com/EngramLab/status/2069465879696576844"},
     {type:"引用", date:"06-10", body:"盛赞 <b>Claude Fable 5 与 Mythos</b>:同一底层模型加额外安全防护,基准全面 SOTA;并强调「定性上」也是一次值得大版本号的巨大进步。", url:"https://x.com/karpathy/status/2064409694761054332"}
   ]},
-  {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[
-    {type:"原创", date:"06-11", body:"发表长文 <b>《Policy on the AI Exponential》</b>:AI 进展远超政策制定能力,阐述技术现状与弥合差距所需的行动。", url:"https://x.com/DarioAmodei/status/2064781775247950326"},
-    {type:"原创", date:"06-11", body:"主张:除透明度外,前沿模型应接受<b>强制性第三方测试</b>(网络、生物、自主性风险),并赋予监管机构阻止或撤销灾难性风险模型部署的权力。", url:"https://x.com/DarioAmodei/status/2064781778599268818"}
-  ]},
+  {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
     {type:"转发", date:"06-24", fresh:true, body:"转 Jack Parker-Holder:<b>Project Genie 荣获戛纳狮子奖 AI 工艺类大奖</b>——被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用。", url:"https://x.com/jparkerholder/status/2069540952784699520"},
-    {type:"转发", date:"06-22", body:"转 DeepMind:<b>与 A24 启动研究合作</b>,确保未来的创作工具由真正使用它们的创作者来塑造。", url:"https://x.com/GoogleDeepMind/status/2069066675895337405"}
+    {type:"转发", date:"06-22", body:"转 DeepMind:<b>与 A24 启动研究合作</b>,确保未来的创作工具由真正使用它们的创作者来塑造。", url:"https://x.com/GoogleDeepMind/status/2069066675895337405"},
+    {type:"引用", date:"06-20", body:"感谢 <b>John Jumper</b> 过去 9 年的非凡合作——这位 AlphaFold 核心、诺奖得主宣布将<b>离开 DeepMind、加入 Anthropic</b>;盛赞 AlphaFold「改变了世界,照亮了 AI 造福人类之路」。", url:"https://x.com/demishassabis/status/2068002732250640603"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
     {type:"转发", date:"06-24", fresh:true, body:"转 Sydney Runkle:<b>自约束(self-bracketing)——能自我改进的约束系统</b>。本质是循环工程:弱点挖掘→提出改进→确认有益且无回归→循环,由 deepagents 提供支持(arXiv 2606.09498)。", url:"https://x.com/sydneyrunkle/status/2069476285374464380"},
@@ -162,20 +162,21 @@ const accounts = [
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"原创", date:"06-24", fresh:true, body:"主持 <b>AI Engineer World's Fair 开幕之夜</b>,联动斯坦福 Touchy Feely(LIT/人际动力学)项目,称许多科技领导者都是其「秘密校友」,人际纽带颠覆了他这个工程师的思维。", url:"https://x.com/swyx/status/2069582337034330186"},
-    {type:"引用", date:"06-24", fresh:true, body:"力推与会的 <b>「AI 领域女性前沿(Women in AI Frontier)」社区活动</b>,对所有人开放,旨在建立本地友谊与社区。", url:"https://x.com/swyx/status/2069665232822366577"}
+    {type:"引用", date:"06-24", fresh:true, body:"应景调侃 <b>「祝大家 Karpathy 智能体日快乐」</b>,引用自己 2023 年那条受 Karpathy 启发、呼吁「正是你」该投身 AI 智能体的旧帖——智能体叙事三年成真。", url:"https://x.com/swyx/status/2069803483423994361"},
+    {type:"原创", date:"06-24", fresh:true, body:"主持 <b>AI Engineer World's Fair 开幕之夜</b>,联动斯坦福 Touchy Feely(LIT/人际动力学)项目,称许多科技领导者都是其「秘密校友」,人际纽带颠覆了他这个工程师的思维。", url:"https://x.com/swyx/status/2069582337034330186"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
     {type:"原创", date:"06-24", fresh:true, body:"整理「<b>AI 领域最佳 15 个关注账户</b>」清单(karpathy=大模型之王、levelsio=创业之王、rileybrown=vibecode 之王等),便于追踪各路风向。", url:"https://x.com/ai_explorer25/status/2069608952690839816"},
-    {type:"原创", date:"06-24", fresh:true, body:"列出「<b>9 个教我用 AI 真正赚钱的账号</b>」(levelsio 印钞产品、marclou 模板破 10 万美元、gregisenberg 百万创意等),侧重独立创业变现玩法。", url:"https://x.com/ai_explorer25/status/2069664162834522280"}
+    {type:"原创", date:"06-24", fresh:true, body:"开帖称已退订 Spotify / Disney+ / Apple TV+,<b>用 Claude 把笔记本变成「免费娱乐 + 学习中心」</b>,并给出 8 条提示词(如以「学习策展人」角色生成每周 <45 分钟的内容计划)。", url:"https://x.com/ai_explorer25/status/2069782426981953937"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
     {type:"原创", date:"06-24", fresh:true, body:"分享一段「<b>我爱 X</b>」的真实人情:一条找迈阿密住处的推文后,@jsngr 私信说有栋房子可免费住,于是他们就去了——展示社媒带来的创业者社交红利。", url:"https://x.com/levelsio/status/2069576434687824074"},
     {type:"原创", date:"06-18", body:"<b>Vibe Jam 2026 获奖揭晓</b>(由 Cursor + Bolt + Glif + Tripo 赞助,近 1000 份投稿):第一名 25,000 美元颁给一款「水豚送外卖」游戏。", url:"https://x.com/levelsio/status/2067364066193203333"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"原创", date:"06-23", fresh:true, body:"<b>代理式编码的复杂性「指数级」累积</b>:不必要代码进入代码库→转移到上下文窗口→降低模型推理→催生更多冗余代码(常为修复冗余引发的问题)。", url:"https://x.com/fchollet/status/2069483683955028265"},
-    {type:"原创", date:"06-23", fresh:true, body:"<b>「市场效率是一个神话」</b>:市场由人构成,人在个体与总体上都非理性;实践中个体非理性由全球共享的非理性叙事驱动——几乎每个人都是非理性的从众者。", url:"https://x.com/fchollet/status/2069555442951537134"}
+    {type:"原创", date:"06-24", fresh:true, body:"<b>「理解复杂系统的最佳方式是通过边缘情况与故障模式」</b>——因为正是它们定义了系统的轮廓。", url:"https://x.com/fchollet/status/2069808712890585191"},
+    {type:"原创", date:"06-23", body:"<b>代理式编码的复杂性「指数级」累积</b>:不必要代码进入代码库→转移到上下文窗口→降低模型推理→催生更多冗余代码(常为修复冗余引发的问题)。", url:"https://x.com/fchollet/status/2069483683955028265"},
+    {type:"原创", date:"06-23", body:"<b>「市场效率是一个神话」</b>:市场由人构成,人在个体与总体上都非理性;实践中个体非理性由全球共享的非理性叙事驱动——几乎每个人都是非理性的从众者。", url:"https://x.com/fchollet/status/2069555442951537134"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
     {type:"原创", date:"06-18", body:"<b>GLM-5.2 是今天最好的开源权重模型</b>:架构延续 GLM-5/5.1,复用 DeepSeek V3.2 的多头潜在注意力(MLA)与稀疏注意力(DSA),新增 IndexShare。", url:"https://x.com/rasbt/status/2067612153020838055"},
@@ -184,13 +185,15 @@ const accounts = [
 ];
 
 const readList = [
+  {t:"John Jumper 离开 DeepMind 加入 Anthropic(Hassabis 致谢)", d:"AlphaFold 核心、诺奖得主的流动,是前沿实验室顶尖科学人才重新洗牌的标志性事件。", u:"https://x.com/demishassabis/status/2068002732250640603"},
+  {t:"Claude Tag — Claude 作为团队成员入驻 Slack(karpathy 点评)", d:"把跨工具/集成/内存/安全的幕后工程做到位后即插即用,被 Karpathy 称为与 AI 交互的全新范式。", u:"https://x.com/karpathy/status/2069547676849557725"},
   {t:"Engram — 在你的上下文上扩展计算(karpathy 转推)", d:"主张模型应深入理解你的工作而非只靠训练数据;「上下文即算力」新叙事。", u:"https://x.com/EngramLab/status/2069465879696576844"},
   {t:"自约束(self-bracketing)— 能自我改进的约束系统", d:"循环工程:弱点挖掘→提出改进→确认无回归→循环,由 deepagents 支持(arXiv 2606.09498)。", u:"https://x.com/sydneyrunkle/status/2069476285374464380"},
   {t:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖", d:"扩展世界模型的又一意想不到成果;DeepMind 同期与 A24 启动创作工具研究合作。", u:"https://x.com/jparkerholder/status/2069540952784699520"},
   {t:"GLM-5.2 架构解析(rasbt)", d:"复用 DeepSeek 的 MLA 与稀疏注意力 DSA、新增 IndexShare 的最强开源权重模型,已登陆 Perplexity Agent API。", u:"https://x.com/rasbt/status/2067612153020838055"},
   {t:"NVIDIA GEAR — ENPIRE 物理世界自动研究系统", d:"8 个 Codex 代理驱动真实机器人舰队的端到端自研究闭环(重置→查文献→实现→训练→自验证→改代码)。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
   {t:"Sakana Fugu — 单一 API 的多代理编排系统", d:"「Fugu Ultra」匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也是集体智能」。", u:"https://x.com/hardmaru/status/2068884466056225025"},
-  {t:"Dario Amodei —《Policy on the AI Exponential》", d:"主张前沿模型应接受强制性第三方测试,监管机构有权阻止/撤销灾难性风险模型部署。", u:"https://x.com/DarioAmodei/status/2064781775247950326"},
+  {t:"Chollet — 用边缘情况与故障模式理解复杂系统", d:"「故障模式定义了系统的轮廓」;同期警告代理式编码的指数级复杂性与市场非理性。", u:"https://x.com/fchollet/status/2069808712890585191"},
   {t:"Perplexity Brain — 自改进上下文图", d:"夜间主动用新鲜上下文更新自身并注入 Computer 每个任务,使代理保持状态、自我改进。", u:"https://x.com/AravSrinivas/status/2067643665871417519"}
 ];
 
