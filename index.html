@@ -107,40 +107,41 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-06-24 14:02 (北京时间)";
+const GEN_TIME = "2026-06-24 18:15 (北京时间)";
 
 const core = [
-  {h:"开源逼近顶尖:GLM/智谱港股 IPO,生态加速集体智能", p:"swyx 透露 Z.ai(智谱)已于 1 月以每股 120 港元 IPO,GLM 击败 DeepSeek、在某些维度据称已是无可争议的顶级开源模型;Sebastian Raschka 仍维持「GLM-5.2 是当今最好的开源权重模型」判断。Jeremy Howard 转推 Sakana 推出单一 API 即可访问的多代理编排系统 Fugu,呼应「最强 AI 也将是集体智能」。"},
-  {h:"Claude Tag:人机协作进入「团队成员」新范式", p:"Andrej Karpathy 评价 Anthropic 新发布的 Claude Tag——Claude 可作为团队成员加入 Slack、访问指定频道与工具,@ 一下即可委派任务。他称这是与 Claude 交互的全新范式,关键在于把跨工具、集成、记忆、安全等幕后工程做到「即插即用」般无缝融入组织活动。"},
-  {h:"GPT-5.5-Cyber 全量版,主打「修复而非仅发现」", p:"Sam Altman 宣布 GPT-5.5-Cyber 完整版上线,在 CyberGym 上达到最先进性能;Patch The Planet 与 Codex Security 将帮助「解决」安全问题而非仅「发现」,并与美政府及安全生态合作。"},
-  {h:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖 + A24 合作", p:"Demis Hassabis 转推团队的 Project Genie 荣获戛纳狮子奖 AI 工艺类大奖——被称为扩展世界模型的又一意想不到的成果;DeepMind 同期与 A24 启动研究合作,力求未来创作工具由真正使用它们的创作者塑造。"},
-  {h:"自改进代理与「约束系统」成热点", p:"Harrison Chase 连续转推自改进的代理「约束系统」研究(弱点挖掘→提出改进→确认无回归→循环),强调这本质是循环工程、且应数据驱动,LangChain 生态为团队提供运行这些自改进循环的工具。François Chollet 则泼冷水谈市场:「市场效率是神话」,人在个体与总体上都受共享的非理性叙事驱动。"}
+  {h:"自改进代理成主线:从「约束系统」到物理世界自动研究", p:"Harrison Chase 连发两条:Sydney Runkle 的「自约束(self-bracketing)——能自我改进的约束系统」(弱点挖掘→提出改进→确认无回归→循环,本质是循环工程,由 deepagents 支持,arXiv 2606.09498),以及 Viv 的「自改进提案循环应数据驱动」。呼应 Jim Fan 此前在物理世界启用 ENPIRE,让 8 个 Codex 代理驱动真实机器人舰队跑完整自研究闭环。"},
+  {h:"「上下文即算力」新叙事:模型要真正理解你的工作", p:"Andrej Karpathy 转推 Engram——「在你的上下文上扩展计算」的 AI,主张模型应深入理解你的工作,而非只靠训练数据。Aravind Srinivas 的 Perplexity Brain(自改进上下文图,夜间主动用新鲜上下文更新自身)是同一方向的产品化:把记忆与上下文做成持续自我改进的系统。"},
+  {h:"GLM-5.2 坐稳「最强开源权重」,登陆 Perplexity Agent API", p:"Sebastian Raschka 判断「GLM-5.2 是今天最好的开源权重模型」,架构复用 DeepSeek V3.2 的 MLA 与稀疏注意力 DSA、新增 IndexShare;Jeremy Howard 称其「简直是奇迹,至少与 Opus 4.8、GPT 5.5 一样出色且更快更便宜」。该模型现已在 Perplexity Agent API 上获得支持,开源生态全面提速。"},
+  {h:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖 + A24 合作", p:"Demis Hassabis 转推团队的 Project Genie 荣获戛纳狮子奖 AI 工艺类大奖——被称为「扩展世界模型的又一意想不到的成果」,可在线试用;DeepMind 同期与 A24 启动研究合作,力求未来创作工具由真正使用它们的创作者塑造。"},
+  {h:"François Chollet 双观点:代理式编码的「指数级」复杂性 + 市场非理性", p:"Chollet 警告:代理式编码会机械地累积不必要的代码,转移到上下文窗口、降低模型推理能力、再催生更多冗余代码——这是指数级的。同日他另谈市场:「市场效率是神话」,个体非理性由全球共享的非理性叙事驱动,几乎人人都是非理性的从众者。"}
 ];
 
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
-    {type:"原创", date:"06-23", fresh:true, body:"发布 <b>GPT-5.5-Cyber 全量版</b>,在 CyberGym 上达到最先进性能;<b>Patch The Planet 与 Codex Security 主打「修复」而非仅「发现」安全问题</b>,并与美政府及安全生态合作。", url:"https://x.com/sama/status/2069121360744550796"},
-    {type:"引用", date:"06-18", body:"<b>Noam Shazeer 加入 OpenAI</b>:称其是「自创立之初就最想合作的人之一,只用了 10 年」——OpenAI 持续延揽顶尖人才。", url:"https://x.com/sama/status/2067427421083652131"},
+    {type:"原创", date:"06-23", body:"发布 <b>GPT-5.5-Cyber 全量版</b>,在 CyberGym 上达到最先进性能;<b>Patch The Planet 与 Codex Security 主打「修复」而非仅「发现」安全问题</b>,并与美政府及安全生态合作。", url:"https://x.com/sama/status/2069121360744550796"},
+    {type:"引用", date:"06-18", body:"<b>Noam Shazeer 加入 OpenAI</b>(由 Noam Brown 欢迎):调侃「不解释 Noam 们为何如此擅长 AI,归功于神圣仁慈」——延揽顶尖人才。", url:"https://x.com/sama/status/2067427678529974740"},
     {type:"转发", date:"06-18", body:"转 Karan Singhal:OpenAI 与波士顿儿童医院、哈佛在《NEJM AI》发表研究,<b>o3 深度研究帮助重审长期未解的罕见儿科病例</b>,体现测试时计算扩展的价值。", url:"https://x.com/thekaransinghal/status/2067635005552209969"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
     {type:"引用", date:"06-23", fresh:true, body:"<b>Ramp MCP 上线 Perplexity Computer</b>:带来 50 多种工具,把 Ramp 财务数据直接融入研究工作流——Computer 连接器生态持续扩张。", url:"https://x.com/AravSrinivas/status/2069442869275075007"},
-    {type:"原创", date:"06-19", body:"推出 <b>Brain</b>:自我改进的上下文图,涵盖你所有会话、连接器与文件,夜间主动用新鲜上下文更新自身并注入 Computer 的每个任务。面向 Max 订阅用户。", url:"https://x.com/AravSrinivas/status/2067643665871417519"},
-    {type:"转发", date:"06-20", body:"转 Computer:<b>命令面板上线</b>——输入 / 即可调用深度研究、计划模式等全部技能,已在网页端面向所有用户开放。", url:"https://x.com/AskPerplexity/status/2068072081515053512"}
+    {type:"原创", date:"06-23", body:"<b>GLM 现已在 Perplexity Agent API 上获得支持</b>——把当下最强开源权重模型接入代理 API 生态。", url:"https://x.com/AravSrinivas/status/2069276959251783797"},
+    {type:"原创", date:"06-19", body:"推出 <b>Brain</b>:自我改进的上下文图,涵盖你所有会话、连接器与文件,夜间主动用新鲜上下文更新自身并注入 Computer 的每个任务。面向 Max 订阅用户。", url:"https://x.com/AravSrinivas/status/2067643665871417519"}
   ]},
-  {handle:"karpathy", name:"Andrej Karpathy", role:"Anthropic", posts:[
-    {type:"引用", date:"06-23", fresh:true, body:"评价 Anthropic 新发布的 <b>Claude Tag</b>:这是与 Claude 交互的全新范式,可在全组织范围与人类活动「无缝融合」;关键在于把跨工具、集成、计算环境、记忆、安全等幕后工程做到「即插即用」。", url:"https://x.com/karpathy/status/2069547676849557725"},
-    {type:"转发", date:"06-23", fresh:true, body:"转 Engram:介绍 <b>Engram——在你的上下文上扩展计算的 AI</b>,主张模型应真正深入理解你的工作,而非只靠训练数据。", url:"https://x.com/EngramLab/status/2069465879696576844"}
+  {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
+    {type:"转发", date:"06-24", fresh:true, body:"转 Engram:介绍 <b>Engram——在你的上下文上扩展计算的 AI</b>,主张模型应真正深入理解你的工作,而非只靠训练数据。", url:"https://x.com/EngramLab/status/2069465879696576844"},
+    {type:"引用", date:"06-10", body:"盛赞 <b>Claude Fable 5 与 Mythos</b>:同一底层模型加额外安全防护,基准全面 SOTA;并强调「定性上」也是一次值得大版本号的巨大进步。", url:"https://x.com/karpathy/status/2064409694761054332"}
   ]},
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[
-    {type:"原创", date:"06-11", body:"发表长文 <b>《Policy on the AI Exponential》</b>,并主张:除透明度外,前沿模型应接受<b>强制性第三方测试</b>(网络、生物、自主性风险),监管机构应有权阻止或撤销灾难性风险模型的部署。", url:"https://x.com/DarioAmodei/status/2064781775247950326"}
+    {type:"原创", date:"06-11", body:"发表长文 <b>《Policy on the AI Exponential》</b>:AI 进展远超政策制定能力,阐述技术现状与弥合差距所需的行动。", url:"https://x.com/DarioAmodei/status/2064781775247950326"},
+    {type:"原创", date:"06-11", body:"主张:除透明度外,前沿模型应接受<b>强制性第三方测试</b>(网络、生物、自主性风险),并赋予监管机构阻止或撤销灾难性风险模型部署的权力。", url:"https://x.com/DarioAmodei/status/2064781778599268818"}
   ]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
-    {type:"转发", date:"06-23", fresh:true, body:"转 Jack Parker-Holder:<b>Project Genie 荣获戛纳狮子奖 AI 工艺类大奖</b>——被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用。", url:"https://x.com/jparkerholder/status/2069540952784699520"},
+    {type:"转发", date:"06-24", fresh:true, body:"转 Jack Parker-Holder:<b>Project Genie 荣获戛纳狮子奖 AI 工艺类大奖</b>——被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用。", url:"https://x.com/jparkerholder/status/2069540952784699520"},
     {type:"转发", date:"06-22", body:"转 DeepMind:<b>与 A24 启动研究合作</b>,确保未来的创作工具由真正使用它们的创作者来塑造。", url:"https://x.com/GoogleDeepMind/status/2069066675895337405"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"转发", date:"06-23", fresh:true, body:"转 Sydney Runkle:<b>自约束(self-bracketing)——能自我改进的约束系统</b>。本质是循环工程:弱点挖掘→提出改进→确认有益且无回归→循环,由 deepagents 提供支持(arXiv 2606.09498)。", url:"https://x.com/sydneyrunkle/status/2069476285374464380"},
+    {type:"转发", date:"06-24", fresh:true, body:"转 Sydney Runkle:<b>自约束(self-bracketing)——能自我改进的约束系统</b>。本质是循环工程:弱点挖掘→提出改进→确认有益且无回归→循环,由 deepagents 提供支持(arXiv 2606.09498)。", url:"https://x.com/sydneyrunkle/status/2069476285374464380"},
     {type:"转发", date:"06-23", fresh:true, body:"转 Viv:强调<b>自改进的提案循环应数据驱动</b>——自动研究正成为通用代理优化的好工具,LangChain 生态帮团队跑这些数据驱动的自改进循环。", url:"https://x.com/Vtrivedy10/status/2069453528234447123"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
@@ -149,31 +150,31 @@ const accounts = [
   ]},
   {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
     {type:"原创", date:"06-20", body:"评论近两周美国政府与 Anthropic「<b>通过限制他人使用前沿模型来控制 AI 访问</b>」的动作,认为这正显著加速各国与企业争取可靠 AI 访问权、以免被他人切断。", url:"https://x.com/AndrewYNg/status/2068039709126017356"},
-    {type:"原创", date:"06-19", body:"新课程:<b>为 AI 代理与应用添加语音能力</b>(与 VocalBridge 合作)。", url:"https://x.com/AndrewYNg/status/2067653578945359898"}
+    {type:"原创", date:"06-19", body:"新课程:<b>为 AI 代理与应用添加语音能力</b>(与 AI Fund 投资组合公司 VocalBridge 合作,CEO @_ashwyn 主讲)。", url:"https://x.com/AndrewYNg/status/2067653578945359898"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
-    {type:"原创", date:"06-23", fresh:true, body:"<b>「传动系统/Drivetrain 方法」重获关注</b>:定义目标→考虑杠杆→考虑数据→搭建装配线,核心是要有能实现目标的行动;O'Reilly 重新发布《Designing great data products》。", url:"https://x.com/jeremyphoward/status/2069339966380052725"},
-    {type:"转发", date:"06-22", body:"转 hardmaru / Sakana AI:推出 <b>Sakana Fugu——单一 API 即可访问的完整多代理编排系统</b>,「Fugu Ultra」性能匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也将是集体智能」。", url:"https://x.com/hardmaru/status/2068884466056225025"},
-    {type:"原创", date:"06-19", body:"<b>GLM 5.2 简直是奇迹</b>:至少与 Opus 4.8、GPT 5.5 一样出色,且更快、更便宜、不啰嗦,长上下文处理出色——「从未体验过这样的开源权重模型」。", url:"https://x.com/jeremyphoward/status/2067757468189679764"}
+    {type:"原创", date:"06-23", body:"<b>「传动系统/Drivetrain 方法」重获关注</b>:定义目标→考虑杠杆→考虑数据→搭建装配线,核心是要有能实现目标的行动;O'Reilly 重新发布《Designing great data products》。", url:"https://x.com/jeremyphoward/status/2069339966380052725"},
+    {type:"转发", date:"06-22", body:"转 hardmaru / Sakana AI:推出 <b>Sakana Fugu——单一 API 即可访问的完整多代理编排系统</b>,「Fugu Ultra」性能匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也将是集体智能」。", url:"https://x.com/hardmaru/status/2068884466056225025"}
   ]},
   {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
     {type:"原创", date:"06-17", body:"首次在物理世界启用 <b>AutoResearch:ENPIRE</b>——给 8 个 Codex 代理配备真实机器人舰队、GPU 与 token 预算,目标是安全高效地让机器人持续完成研究循环(重置→查文献→实现→训练部署→自验证→改代码)。", url:"https://x.com/DrJimFan/status/2066921736369766762"},
-    {type:"引用", date:"06-18", body:"幕后揭秘:实现 Physical AutoResearch 最难的是按 Enter *之前* 的全部准备——安全护栏放在首位,需要「整个村子」的工程与 loopcraft 设计。", url:"https://x.com/DrJimFan/status/2067283904986517866"}
+    {type:"原创", date:"06-17", body:"放出 <b>ENPIRE 项目网站与技术帖</b>(research.nvidia.com/labs/gear/enpire):由 Wenli Xiao 详解如何把整个研究闭环交给前沿编码代理。", url:"https://x.com/DrJimFan/status/2066921739087729043"}
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"原创", date:"06-24", fresh:true, body:"<b>Z.ai(智谱)已于 1 月以每股 120 港元 IPO</b>:当初几乎无人用 GLM,如今他们用「世界上无可争议的顶级开源模型」击败 DeepSeek,在某些维度据称就是顶尖模型。", url:"https://x.com/swyx/status/2069598378191941835"},
-    {type:"转发", date:"06-24", fresh:true, body:"转 Alex Volkov:<b>AI Engineer World's Fair 2026 「Token Billionaires」主题火爆</b>(金卡、私人休息室),日 token 消耗超 1B 的开发者社群正成规模。", url:"https://x.com/altryne/status/2069644438897324493"}
+    {type:"原创", date:"06-24", fresh:true, body:"主持 <b>AI Engineer World's Fair 开幕之夜</b>,联动斯坦福 Touchy Feely(LIT/人际动力学)项目,称许多科技领导者都是其「秘密校友」,人际纽带颠覆了他这个工程师的思维。", url:"https://x.com/swyx/status/2069582337034330186"},
+    {type:"引用", date:"06-24", fresh:true, body:"力推与会的 <b>「AI 领域女性前沿(Women in AI Frontier)」社区活动</b>,对所有人开放,旨在建立本地友谊与社区。", url:"https://x.com/swyx/status/2069665232822366577"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
     {type:"原创", date:"06-24", fresh:true, body:"整理「<b>AI 领域最佳 15 个关注账户</b>」清单(karpathy=大模型之王、levelsio=创业之王、rileybrown=vibecode 之王等),便于追踪各路风向。", url:"https://x.com/ai_explorer25/status/2069608952690839816"},
-    {type:"转发", date:"06-23", fresh:true, body:"整理 <b>2026 年学习数据分析的认证课程</b>清单:Python、SQL、统计与 R、数据科学 R 基础、Excel 与 PowerBI。", url:"https://x.com/ai_explorer25/status/2069357168915317221"}
+    {type:"原创", date:"06-24", fresh:true, body:"列出「<b>9 个教我用 AI 真正赚钱的账号</b>」(levelsio 印钞产品、marclou 模板破 10 万美元、gregisenberg 百万创意等),侧重独立创业变现玩法。", url:"https://x.com/ai_explorer25/status/2069664162834522280"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"原创", date:"06-18", body:"<b>Vibe Jam 2026 获奖揭晓</b>(由 Cursor + Bolt + Glif + Tripo 赞助,近 1000 份投稿):第一名 25,000 美元颁给一款「水豚送外卖」游戏。", url:"https://x.com/levelsio/status/2067364066193203333"},
-    {type:"原创", date:"06-24", fresh:true, body:"分享一段「<b>我爱 X</b>」的真实人情:一条推文后 @jsngr 私信说迈阿密有栋房子可免费住,于是他们就去了——展示社媒带来的创业者社交红利。", url:"https://x.com/levelsio/status/2069576434687824074"}
+    {type:"原创", date:"06-24", fresh:true, body:"分享一段「<b>我爱 X</b>」的真实人情:一条找迈阿密住处的推文后,@jsngr 私信说有栋房子可免费住,于是他们就去了——展示社媒带来的创业者社交红利。", url:"https://x.com/levelsio/status/2069576434687824074"},
+    {type:"原创", date:"06-18", body:"<b>Vibe Jam 2026 获奖揭晓</b>(由 Cursor + Bolt + Glif + Tripo 赞助,近 1000 份投稿):第一名 25,000 美元颁给一款「水豚送外卖」游戏。", url:"https://x.com/levelsio/status/2067364066193203333"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
+    {type:"原创", date:"06-23", fresh:true, body:"<b>代理式编码的复杂性「指数级」累积</b>:不必要代码进入代码库→转移到上下文窗口→降低模型推理→催生更多冗余代码(常为修复冗余引发的问题)。", url:"https://x.com/fchollet/status/2069483683955028265"},
     {type:"原创", date:"06-23", fresh:true, body:"<b>「市场效率是一个神话」</b>:市场由人构成,人在个体与总体上都非理性;实践中个体非理性由全球共享的非理性叙事驱动——几乎每个人都是非理性的从众者。", url:"https://x.com/fchollet/status/2069555442951537134"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
@@ -183,14 +184,14 @@ const accounts = [
 ];
 
 const readList = [
-  {t:"Claude Tag — 人机协作的「团队成员」范式(karpathy 评)", d:"Claude 作为成员加入 Slack、访问指定频道与工具,@ 即可委派任务;无缝融入组织活动。", u:"https://x.com/karpathy/status/2069547676849557725"},
-  {t:"GPT-5.5-Cyber 全量发布", d:"CyberGym SOTA;Patch The Planet 与 Codex Security 主打「修复」而非仅「发现」。", u:"https://x.com/sama/status/2069121360744550796"},
-  {t:"GLM-5.2 架构解析(rasbt)", d:"复用 DeepSeek 的 MLA 与稀疏注意力 DSA、新增 IndexShare 的最强开源权重模型。", u:"https://x.com/rasbt/status/2067612153020838055"},
-  {t:"Sakana Fugu — 单一 API 的多代理编排系统", d:"「Fugu Ultra」匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也是集体智能」。", u:"https://x.com/hardmaru/status/2068884466056225025"},
+  {t:"Engram — 在你的上下文上扩展计算(karpathy 转推)", d:"主张模型应深入理解你的工作而非只靠训练数据;「上下文即算力」新叙事。", u:"https://x.com/EngramLab/status/2069465879696576844"},
   {t:"自约束(self-bracketing)— 能自我改进的约束系统", d:"循环工程:弱点挖掘→提出改进→确认无回归→循环,由 deepagents 支持(arXiv 2606.09498)。", u:"https://x.com/sydneyrunkle/status/2069476285374464380"},
   {t:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖", d:"扩展世界模型的又一意想不到成果;DeepMind 同期与 A24 启动创作工具研究合作。", u:"https://x.com/jparkerholder/status/2069540952784699520"},
-  {t:"NVIDIA GEAR — ENPIRE 自动研究系统", d:"编码代理驱动真实机器人舰队的端到端自研究闭环。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
-  {t:"Jeremy Howard — Drivetrain 数据产品方法", d:"定义目标→杠杆→数据→装配线;O'Reilly 重新发布《Designing great data products》。", u:"https://x.com/jeremyphoward/status/2069339966380052725"}
+  {t:"GLM-5.2 架构解析(rasbt)", d:"复用 DeepSeek 的 MLA 与稀疏注意力 DSA、新增 IndexShare 的最强开源权重模型,已登陆 Perplexity Agent API。", u:"https://x.com/rasbt/status/2067612153020838055"},
+  {t:"NVIDIA GEAR — ENPIRE 物理世界自动研究系统", d:"8 个 Codex 代理驱动真实机器人舰队的端到端自研究闭环(重置→查文献→实现→训练→自验证→改代码)。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
+  {t:"Sakana Fugu — 单一 API 的多代理编排系统", d:"「Fugu Ultra」匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也是集体智能」。", u:"https://x.com/hardmaru/status/2068884466056225025"},
+  {t:"Dario Amodei —《Policy on the AI Exponential》", d:"主张前沿模型应接受强制性第三方测试,监管机构有权阻止/撤销灾难性风险模型部署。", u:"https://x.com/DarioAmodei/status/2064781775247950326"},
+  {t:"Perplexity Brain — 自改进上下文图", d:"夜间主动用新鲜上下文更新自身并注入 Computer 每个任务,使代理保持状态、自我改进。", u:"https://x.com/AravSrinivas/status/2067643665871417519"}
 ];
 
 const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
