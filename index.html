@@ -107,7 +107,7 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-06-25 06:13 (北京时间)";
+const GEN_TIME = "2026-06-25 14:01 (北京时间)";
 
 const core = [
   {h:"GLM-5.2 拿下「开源 ARC-AGI-2 最强」,持续刷屏", p:"过去 24 小时 François Chollet 转发 ARC Prize:<b>GLM-5.2 在 ARC-AGI-2 拿下 22.8%(每题 $0.25)、ARC-AGI-1 达 77%</b>,是迄今开源模型在 ARC-AGI-2 上的最强成绩,与 GPT-5.4/5.5(低推理档)相当——他直言「这是迄今开源模型的最强表现」。叠加 rasbt 早前「今天最好的开源权重模型」定调,以及该模型已登陆 Perplexity Agent API,GLM-5.2 成为本周最强主线。"},
@@ -124,7 +124,7 @@ const accounts = [
     {type:"转发", date:"06-18", body:"转 Karan Singhal:OpenAI 与波士顿儿童医院、哈佛在《NEJM AI》发表研究,<b>o3 深度研究帮助重审长期未解的罕见儿科病例</b>,体现测试时计算扩展的价值。", url:"https://x.com/thekaransinghal/status/2067635005552209969"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"转发", date:"06-24", fresh:true, body:"转 Perplexity:<b>推出 Counsel Computer</b>——Computer 现已接入律师日常使用的研究数据库、文档与事项管理工具(midpage、LegalZoom、Docusign、netdocuments 等),可提取可引用来源,面向所有 Pro / Max 订阅者。", url:"https://x.com/perplexity_ai/status/2069866668671766804"},
+    {type:"引用", date:"06-24", fresh:true, body:"<b>Computer 现已接入法律研究数据</b>——推出 Counsel Computer,连接律师日常使用的研究数据库、文档与事项管理工具(midpage、LegalZoom、Docusign、netdocuments 等),可提取可引用来源,面向所有 Pro / Max 订阅者。", url:"https://x.com/AravSrinivas/status/2069915863277334868"},
     {type:"引用", date:"06-23", body:"<b>Ramp MCP 上线 Perplexity Computer</b>:带来 50 多种工具,把 Ramp 财务数据直接融入研究工作流——Computer 连接器生态持续扩张。", url:"https://x.com/AravSrinivas/status/2069442869275075007"},
     {type:"引用", date:"06-23", body:"转发并点评:正确实施的<b>数据中心液冷边际水耗几乎为零</b>,人们常把发电厂供水与冷却用水混为一谈。", url:"https://x.com/AravSrinivas/status/2069168109026693613"},
     {type:"原创", date:"06-23", body:"<b>GLM 现已在 Perplexity Agent API 上获得支持</b>——把当下最强开源权重模型接入代理 API 生态。", url:"https://x.com/AravSrinivas/status/2069276959251783797"},
@@ -143,7 +143,8 @@ const accounts = [
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
     {type:"原创", date:"06-24", fresh:true, body:"提出 <b>LangSmith Engine 作为「睡眠时间计算」(sleep-time compute)</b>:代理记忆常被类比为「睡眠时计算」或「做梦」——后台进程分析代理轨迹、更新记忆存储。今天展示在 LangSmith 中如何实现:全量追踪轨迹→用 Engine 分析→把记忆写回 Context Hub。", url:"https://x.com/hwchase17/status/2069876667791613976"},
-    {type:"转发", date:"06-24", fresh:true, body:"转 LangChain:<b>「大多数代理不会学习,它们只是留下痕迹」</b>——用 LangSmith Engine 解决表面问题、把记忆更新写回 Context Hub,让代理在运行之间真正改进、真正闭环。", url:"https://x.com/LangChain/status/2069829376884015220"}
+    {type:"转发", date:"06-24", fresh:true, body:"转 LangChain:<b>「大多数代理不会学习,它们只是留下痕迹」</b>——用 LangSmith Engine 解决表面问题、把记忆更新写回 Context Hub,让代理在运行之间真正改进、真正闭环。", url:"https://x.com/LangChain/status/2069829376884015220"},
+    {type:"转发", date:"06-24", fresh:true, body:"转 Sydney Runkle:<b>「一个代理也得有梦想」</b>——正如人类在睡眠中整合所学,代理也能跨多次运行学习,呼应「睡眠时间计算」类比。", url:"https://x.com/hwchase17/status/2069876667791613976"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
     {type:"原创", date:"06-20", body:"<b>Figure 厂内机器人数量首次超过人类员工。</b>", url:"https://x.com/adcock_brett/status/2068040783295627609"},
@@ -163,11 +164,12 @@ const accounts = [
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
+    {type:"原创", date:"06-25", fresh:true, body:"分享<b>技术演讲经验</b>(面向下周 AI Engineer World's Fair 的讲者):<b>AI 生成的 SVG 优于 AI 生成的图片</b>,一场演讲最多容忍 4 张 AI 垃圾配图;干货来自数千小时工程师/研究者演讲的观察。", url:"https://x.com/swyx/status/2069964772003770673"},
     {type:"引用", date:"06-24", fresh:true, body:"力荐 <b>Latent.Space 新播客</b>「为什么 Frontier...」:干货密集——为何 Databricks 打败 Snowflake、为何「人人都在构建 meta harness」、LTAP 如何解决 HTAP 之梦,以及 MosaicML + DBRX 等。", url:"https://x.com/swyx/status/2069864073202905501"},
     {type:"转发", date:"06-23", body:"转 E2B:Matt Brockman 将在 AI Engineer 办 <b>「沙箱五大故障模式及应对」研讨会</b>——现场触发并修补突发流量、回调丢失、状态泄露、失控执行与脆弱模板。", url:"https://x.com/e2b/status/2069181793283289516"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"06-24", fresh:true, body:"整理「<b>AI 领域最佳 15 个关注账户</b>」清单(karpathy=大模型之王、levelsio=创业之王、rileybrown=vibecode 之王等),便于追踪各路风向。", url:"https://x.com/ai_explorer25/status/2069608952690839816"},
+    {type:"原创", date:"06-25", fresh:true, body:"整理「<b>各前沿实验室最值得关注的账号</b>」清单(按 Anthropic / OpenAI 等分组:karpathy 必关注且新近加入 Anthropic、@bcherny 为 Claude Code 创建者、@polynoamial 主推理研究等),便于按实验室追踪一手风向。", url:"https://x.com/ai_explorer25/status/2069971341369823305"},
     {type:"原创", date:"06-24", fresh:true, body:"开帖称已退订 Spotify / Disney+ / Apple TV+,<b>用 Claude 把笔记本变成「免费娱乐 + 学习中心」</b>,并给出 8 条提示词(如以「学习策展人」角色生成每周 <45 分钟的内容计划)。", url:"https://x.com/ai_explorer25/status/2069782426981953937"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
