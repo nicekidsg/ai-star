@@ -107,14 +107,14 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-06-25 18:13 (北京时间)";
+const GEN_TIME = "2026-06-26 15:05 (北京时间)";
 
 const core = [
-  {h:"GLM-5.2 拿下「开源 ARC-AGI-2 最强」,持续刷屏", p:"过去 24 小时 François Chollet 转发 ARC Prize:<b>GLM-5.2 在 ARC-AGI-2 拿下 22.8%(每题 $0.25)、ARC-AGI-1 达 77%</b>,是迄今开源模型在 ARC-AGI-2 上的最强成绩,与 GPT-5.4/5.5(低推理档)相当——他直言「这是迄今开源模型的最强表现」。叠加 rasbt 早前「今天最好的开源权重模型」定调,以及该模型已登陆 Perplexity Agent API,GLM-5.2 成为本周最强主线。"},
-  {h:"「睡眠时间计算 / 记忆」成代理新范式", p:"过去几小时 Harrison Chase 密集推介 <b>LangSmith Engine 作为「睡眠时间计算」(sleep-time compute)</b>:后台进程分析代理轨迹、把记忆更新写回 Context Hub,让代理「在运行之间真正改进」,并被类比为代理的「做梦」。与 Perplexity Brain(夜间自更新的上下文图)同向——自改进记忆正从概念走向产品。"},
-  {h:"人才地震:AlphaFold 之父 John Jumper 离开 DeepMind 加入 Anthropic", p:"Demis Hassabis 罕见公开发文,感谢诺奖得主 John Jumper「过去 9 年非凡的合作」——后者宣布在休整后将离开 Google DeepMind、加入 Anthropic。AlphaFold 核心人物的流动,是顶尖 AI / 科学人才在前沿实验室间重新洗牌的又一信号。"},
-  {h:"「上下文即算力」+ Claude 作为团队成员的协作新范式", p:"Karpathy 转推 Engram——「在你的上下文上扩展计算」的 AI,主张模型应真正深入理解你的工作而非只靠训练数据;并盛赞 <b>Claude Tag</b> 让 Claude 作为团队成员入驻 Slack、与全组织人类活动「无缝融合」,把幕后工程做到位即可即插即用,是与 AI 交互的全新范式。"},
-  {h:"Perplexity Computer 连接器生态扩张:法律 + 财务", p:"过去 24 小时 Aravind Srinivas 接连放出 <b>Counsel Computer</b>(接入 midpage、LegalZoom、Docusign、netdocuments 等律师常用研究/文档/事项库,面向 Pro/Max)与 <b>Ramp MCP</b>(50+ 财务工具直入研究工作流)——Computer 正快速沉淀垂直行业的连接器生态。"}
+  {h:"Figure F.03 人形机器人入驻宝马工厂,F.02 退役", p:"过去 24 小时 Brett Adcock 连发:<b>Figure 第三代人形机器人 F.03 已在宝马斯巴达堡工厂亮相</b>(下周披露更多),同时确认<b>将拆解大部分 F.02 机体</b>为新一代让路,并预告「可能做些史诗级的事」。人形机器人迭代与产线落地双双提速。"},
+  {h:"GLM-5.2 热度不减:推理冲到 318 tok/s,仍是最强开源权重", p:"GLM-5.2 持续本周主线。Jeremy Howard 转发 Dmytro Dzhulgakov:<b>GLM-5.2 推理速度从 280 提升到 318 token/s「且仍有提升空间」</b>;叠加 rasbt「今天最好的开源权重模型」、Chollet 援引的 ARC-AGI-2 22.8% 数据,以及已登陆 Perplexity Agent API——开源最强模型的工程化全面加速。"},
+  {h:"Gemma 4 上线 2.5 个月下载破 2 亿", p:"Demis Hassabis 转发 Google Gemma:<b>Gemma 4 在短短 2.5 个月内下载量达 2 亿次</b>——作为对比,Gemma 3 时期整个家族累计才 1 亿。开放权重模型的社区采用速度持续走高。"},
+  {h:"代理「睡眠时间计算 / 自改进记忆」持续推进", p:"Harrison Chase 与 LangChain 本周密集推介 <b>LangSmith Engine 作为代理的「睡眠时间计算」(sleep-time compute)</b>:后台分析轨迹、把记忆写回 Context Hub,让代理「在运行之间真正改进」。过去 24 小时延伸到可观测性生态(追踪 AI SDK 7、「自愈软件」融资等)——自改进代理正从概念走向产品。"},
+  {h:"AI 破解古卷:整卷赫库兰尼姆莎草纸首次被完整解读", p:"Pieter Levels 等转传 HN 热帖:<b>一整卷碳化的赫库兰尼姆古卷首次被完整解读</b>——继 Vesuvius Challenge 之后,AI 辅助的无损成像 + 文字识别在古典学领域再下一城,是 AI 服务科学的标志性进展。"}
 ];
 
 const accounts = [
@@ -124,7 +124,8 @@ const accounts = [
     {type:"转发", date:"06-18", body:"转 Karan Singhal:OpenAI 与波士顿儿童医院、哈佛在《NEJM AI》发表研究,<b>o3 深度研究帮助重审长期未解的罕见儿科病例</b>,体现测试时计算扩展的价值。", url:"https://x.com/thekaransinghal/status/2067635005552209969"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"引用", date:"06-24", fresh:true, body:"<b>Computer 现已接入法律研究数据</b>——推出 Counsel Computer,连接律师日常使用的研究数据库、文档与事项管理工具(midpage、LegalZoom、Docusign、netdocuments 等),可提取可引用来源,面向所有 Pro / Max 订阅者。", url:"https://x.com/AravSrinivas/status/2069915863277334868"},
+    {type:"原创", date:"06-26", fresh:true, body:"近 24 小时以个人感悟为主(如「<b>建立高痛苦承受力的最好方法,是提醒自己痛苦是暂时的</b>」),AI / 产品增量有限。", url:"https://x.com/AravSrinivas/status/2070385155290877991"},
+    {type:"引用", date:"06-24", body:"<b>Computer 现已接入法律研究数据</b>——推出 Counsel Computer,连接律师日常使用的研究数据库、文档与事项管理工具(midpage、LegalZoom、Docusign、netdocuments 等),可提取可引用来源,面向所有 Pro / Max 订阅者。", url:"https://x.com/AravSrinivas/status/2069915863277334868"},
     {type:"引用", date:"06-23", body:"<b>Ramp MCP 上线 Perplexity Computer</b>:带来 50 多种工具,把 Ramp 财务数据直接融入研究工作流——Computer 连接器生态持续扩张。", url:"https://x.com/AravSrinivas/status/2069442869275075007"},
     {type:"引用", date:"06-23", body:"转发并点评:正确实施的<b>数据中心液冷边际水耗几乎为零</b>,人们常把发电厂供水与冷却用水混为一谈。", url:"https://x.com/AravSrinivas/status/2069168109026693613"},
     {type:"原创", date:"06-23", body:"<b>GLM 现已在 Perplexity Agent API 上获得支持</b>——把当下最强开源权重模型接入代理 API 生态。", url:"https://x.com/AravSrinivas/status/2069276959251783797"},
@@ -137,16 +138,20 @@ const accounts = [
   ]},
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
+    {type:"转发", date:"06-25", fresh:true, body:"转 Google Gemma:<b>Gemma 4 上线短短 2.5 个月下载量突破 2 亿次</b>——而 Gemma 3 时期整个家族累计才 1 亿,开放权重模型社区采用持续加速。", url:"https://x.com/googlegemma/status/2070180154069176399"},
     {type:"转发", date:"06-23", body:"转 Jack Parker-Holder:<b>Project Genie 荣获戛纳狮子奖 AI 工艺类大奖</b>——被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用。", url:"https://x.com/jparkerholder/status/2069540952784699520"},
     {type:"转发", date:"06-22", body:"转 DeepMind:<b>与 A24 启动研究合作</b>,确保未来的创作工具由真正使用它们的创作者来塑造。", url:"https://x.com/GoogleDeepMind/status/2069066675895337405"},
     {type:"引用", date:"06-20", body:"感谢 <b>John Jumper</b> 过去 9 年的非凡合作——这位 AlphaFold 核心、诺奖得主宣布将<b>离开 DeepMind、加入 Anthropic</b>;盛赞 AlphaFold「改变了世界,照亮了 AI 造福人类之路」。", url:"https://x.com/demishassabis/status/2068002732250640603"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"原创", date:"06-24", fresh:true, body:"提出 <b>LangSmith Engine 作为「睡眠时间计算」(sleep-time compute)</b>:代理记忆常被类比为「睡眠时计算」或「做梦」——后台进程分析代理轨迹、更新记忆存储。今天展示在 LangSmith 中如何实现:全量追踪轨迹→用 Engine 分析→把记忆写回 Context Hub。", url:"https://x.com/hwchase17/status/2069876667791613976"},
-    {type:"转发", date:"06-24", fresh:true, body:"转 LangChain:<b>「大多数代理不会学习,它们只是留下痕迹」</b>——用 LangSmith Engine 解决表面问题、把记忆更新写回 Context Hub,让代理在运行之间真正改进、真正闭环。", url:"https://x.com/LangChain/status/2069829376884015220"},
-    {type:"转发", date:"06-24", fresh:true, body:"转 Sydney Runkle:<b>「一个代理也得有梦想」</b>——正如人类在睡眠中整合所学,代理也能跨多次运行学习,呼应「睡眠时间计算」类比。", url:"https://x.com/hwchase17/status/2069876667791613976"}
+    {type:"转发", date:"06-26", fresh:true, body:"转 David Duong:<b>用 LangSmith 追踪 AI SDK 7 的操作</b>——在应用中注册一次遥测,即可把追踪数据发往可观测性平台,延续「代理可观测性」叙事。", url:"https://x.com/__dqbd/status/2070311911208419368"},
+    {type:"转发", date:"06-25", fresh:true, body:"转 Sherwood:其团队<b>融资 800 万美元构建「自愈软件」</b>——面向快速迭代工程团队的下一代可观测性平台,主打自动修复而非又一个 AI SRE。", url:"https://x.com/shcallaway/status/2070151536257503519"},
+    {type:"原创", date:"06-24", body:"提出 <b>LangSmith Engine 作为「睡眠时间计算」(sleep-time compute)</b>:代理记忆常被类比为「睡眠时计算」或「做梦」——后台进程分析代理轨迹、更新记忆存储。全量追踪轨迹→用 Engine 分析→把记忆写回 Context Hub。", url:"https://x.com/hwchase17/status/2069876667791613976"},
+    {type:"转发", date:"06-24", body:"转 LangChain:<b>「大多数代理不会学习,它们只是留下痕迹」</b>——用 LangSmith Engine 解决表面问题、把记忆更新写回 Context Hub,让代理在运行之间真正改进、真正闭环。", url:"https://x.com/LangChain/status/2069829376884015220"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
+    {type:"原创", date:"06-26", fresh:true, body:"<b>将拆解大部分 F.02 机体</b>为新一代让路——并预告「可能会做些史诗级的事」。", url:"https://x.com/adcock_brett/status/2070333239085191583"},
+    {type:"原创", date:"06-25", fresh:true, body:"<b>Figure 第三代人形机器人 F.03 已在宝马斯巴达堡工厂亮相</b>,下周披露更多内容。", url:"https://x.com/adcock_brett/status/2070180603493052750"},
     {type:"原创", date:"06-20", body:"<b>Figure 厂内机器人数量首次超过人类员工。</b>", url:"https://x.com/adcock_brett/status/2068040783295627609"},
     {type:"引用", date:"06-20", body:"补充:Figure 仅约 314 名带薪员工,其余为小时工 / 合同工——以极小团队推进人形机器人量产。", url:"https://x.com/adcock_brett/status/2068131522620846112"}
   ]},
@@ -155,6 +160,8 @@ const accounts = [
     {type:"原创", date:"06-19", body:"新课程:<b>为 AI 代理与应用添加语音能力</b>(与 AI Fund 投资组合公司 VocalBridge 合作,CEO @_ashwyn 主讲)。", url:"https://x.com/AndrewYNg/status/2067653578945359898"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
+    {type:"转发", date:"06-25", fresh:true, body:"转 Dmytro Dzhulgakov:<b>GLM-5.2 推理速度从 280 提升到 318 token/s,且「仍有提升空间」</b>——开源最强模型的服务侧持续优化。", url:"https://x.com/dzhulgakov/status/2070034860438384918"},
+    {type:"转发", date:"06-25", fresh:true, body:"转 Sholto Douglas:盛赞 <b>Intercept——一项 5 亿美元慈善倡议</b>:对 4 年内可进入第二阶段的广谱预防医学做股权投资、资助尚不具商业可行性的基础研究、并验证远紫外 UVC 空气消毒。", url:"https://x.com/_sholtodouglas/status/2069820234601742485"},
     {type:"原创", date:"06-23", body:"<b>「传动系统/Drivetrain 方法」重获关注</b>:定义目标→考虑杠杆→考虑数据→搭建装配线,核心是要有能实现目标的行动;O'Reilly 重新发布《Designing great data products》。", url:"https://x.com/jeremyphoward/status/2069339966380052725"},
     {type:"转发", date:"06-22", body:"转 hardmaru / Sakana AI:推出 <b>Sakana Fugu——单一 API 即可访问的完整多代理编排系统</b>,「Fugu Ultra」性能匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也将是集体智能」。", url:"https://x.com/hardmaru/status/2068884466056225025"}
   ]},
@@ -164,23 +171,26 @@ const accounts = [
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
+    {type:"转发", date:"06-26", fresh:true, body:"转推新节目 <b>「与 OpenAI 首席研究官下厨」</b>(Mark Chen 主厨,与 @swyx、@allenpark 录制):边做菜边聊 AGI、o1、评测与扩展。", url:"https://x.com/lindsmccallum/status/2070308790038364594"},
     {type:"原创", date:"06-25", fresh:true, body:"分享<b>技术演讲经验</b>(面向下周 AI Engineer World's Fair 的讲者):<b>AI 生成的 SVG 优于 AI 生成的图片</b>,一场演讲最多容忍 4 张 AI 垃圾配图;干货来自数千小时工程师/研究者演讲的观察。", url:"https://x.com/swyx/status/2069964772003770673"},
-    {type:"引用", date:"06-24", fresh:true, body:"力荐 <b>Latent.Space 新播客</b>「为什么 Frontier...」:干货密集——为何 Databricks 打败 Snowflake、为何「人人都在构建 meta harness」、LTAP 如何解决 HTAP 之梦,以及 MosaicML + DBRX 等。", url:"https://x.com/swyx/status/2069864073202905501"},
-    {type:"转发", date:"06-24", fresh:true, body:"转 Jo Kristian Bergum:将在 AI Engineer World's Fair 演讲 <b>「BM25 在代理式搜索中的非理性有效性」</b>——GPT-5 在搜索上惊人地强,改变了 BM25 作为基准的叙事(搜索与检索专场,6/30)。", url:"https://x.com/jobergum/status/2069846639863308618"},
+    {type:"引用", date:"06-24", body:"力荐 <b>Latent.Space 新播客</b>「为什么 Frontier...」:干货密集——为何 Databricks 打败 Snowflake、为何「人人都在构建 meta harness」、LTAP 如何解决 HTAP 之梦,以及 MosaicML + DBRX 等。", url:"https://x.com/swyx/status/2069864073202905501"},
+    {type:"转发", date:"06-24", body:"转 Jo Kristian Bergum:将在 AI Engineer World's Fair 演讲 <b>「BM25 在代理式搜索中的非理性有效性」</b>——GPT-5 在搜索上惊人地强,改变了 BM25 作为基准的叙事(搜索与检索专场,6/30)。", url:"https://x.com/jobergum/status/2069846639863308618"},
     {type:"转发", date:"06-23", body:"转 E2B:Matt Brockman 将在 AI Engineer 办 <b>「沙箱五大故障模式及应对」研讨会</b>——现场触发并修补突发流量、回调丢失、状态泄露、失控执行与脆弱模板。", url:"https://x.com/e2b/status/2069181793283289516"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"06-25", fresh:true, body:"置顶整理「<b>2026 年 20 门完全免费的编程课程</b>」(Python、JavaScript、SQL、Java、React 19 等,均为 YouTube 播放列表),面向想系统自学开发的人。", url:"https://x.com/ai_explorer25/status/2070047846943097019"},
-    {type:"原创", date:"06-25", fresh:true, body:"整理「<b>各前沿实验室最值得关注的账号</b>」清单(按 Anthropic / OpenAI 等分组:karpathy 必关注且新近加入 Anthropic、@bcherny 为 Claude Code 创建者、@polynoamial 主推理研究等),便于按实验室追踪一手风向。", url:"https://x.com/ai_explorer25/status/2069971341369823305"},
-    {type:"原创", date:"06-24", fresh:true, body:"开帖称已退订 Spotify / Disney+ / Apple TV+,<b>用 Claude 把笔记本变成「免费娱乐 + 学习中心」</b>,并给出 8 条提示词(如以「学习策展人」角色生成每周 <45 分钟的内容计划)。", url:"https://x.com/ai_explorer25/status/2069782426981953937"}
+    {type:"原创", date:"06-26", fresh:true, body:"置顶「<b>AI 领域最值得关注的 15 个账号</b>」(karpathy=LLM 之王、levelsio、gregisenberg=创业点子王、rileybrown=vibecode 王、jackfriks=独立应用王等),便于一站式追踪关键人物。", url:"https://x.com/ai_explorer25/status/2070394127372403174"},
+    {type:"原创", date:"06-26", fresh:true, body:"整理「<b>获取 AI 内幕泄漏的最佳账号</b>」清单(@scaling01、@elder_plinius=越狱各模型、@testingcatalog=追踪 API 端点、@theo 等),戏谑地按「家族群聊」分组。", url:"https://x.com/ai_explorer25/status/2070333727700656480"},
+    {type:"原创", date:"06-25", fresh:true, body:"置顶整理「<b>2026 年 20 门完全免费的编程课程</b>」(Python、JavaScript、SQL、Java、React 19 等,均为 YouTube 播放列表),面向想系统自学开发的人。", url:"https://x.com/ai_explorer25/status/2070047846943097019"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"原创", date:"06-18", body:"<b>Vibe Jam 2026 获奖揭晓</b>(由 Cursor + Bolt + Glif + Tripo 赞助,近 1000 份投稿):第一名 25,000 美元颁给一款「水豚送外卖」游戏。", url:"https://x.com/levelsio/status/2067364066193203333"},
-    {type:"引用", date:"06-24", fresh:true, body:"近 24 小时多为生活类吐槽(欧洲航司航班关空调「省气候」实为无效、餐厅苏打水做法等),AI / 产品相关增量有限。", url:"https://x.com/levelsio/status/2069882492736188445"}
+    {type:"转发", date:"06-26", fresh:true, body:"转 HN 热帖:<b>一整卷碳化的赫库兰尼姆古卷首次被完整解读</b>——继 Vesuvius Challenge 后,AI 辅助的无损成像 + 文字识别在古典学领域再下一城。", url:"https://x.com/levelsio/status/2070374692406309213"},
+    {type:"原创", date:"06-25", fresh:true, body:"折腾成功:<b>让一批 DOS 老游戏重新跑起来</b>——延续其 vibe coding / 复古技术折腾风格。", url:"https://x.com/levelsio/status/2070255055152779329"},
+    {type:"原创", date:"06-18", body:"<b>Vibe Jam 2026 获奖揭晓</b>(由 Cursor + Bolt + Glif + Tripo 赞助,近 1000 份投稿):第一名 25,000 美元颁给一款「水豚送外卖」游戏。", url:"https://x.com/levelsio/status/2067364066193203333"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"引用", date:"06-24", fresh:true, body:"评 ARC Prize 数据:<b>GLM-5.2 在 ARC-AGI-2 拿下 22.8%($0.25/题)、ARC-AGI-1 达 77%</b>,「这是迄今由开源模型在 ARC-AGI-2 上取得的最强性能」,与 GPT-5.4/5.5(低推理档)相当。", url:"https://x.com/fchollet/status/2069858556552298519"},
-    {type:"原创", date:"06-24", fresh:true, body:"<b>「最复杂的现象源于非常简单规则的可扩展重组」</b>——无论星系、芯片还是神经网络,找到正确的原始构建模块,复杂性就会自然显现。", url:"https://x.com/fchollet/status/2069842045779517644"},
+    {type:"原创", date:"06-25", fresh:true, body:"<b>「软件工程师的真正衡量标准,不是写出巧妙代码,而是无情地保护代码库免受不必要巧妙性的侵扰」</b>。", url:"https://x.com/fchollet/status/2070270168362872982"},
+    {type:"原创", date:"06-25", fresh:true, body:"<b>「当执行成本下降,品味、策略与架构愿景的价值会急剧飙升」</b>——以前认知预算多花在微观细节,如今可自由聚焦宏观层面。", url:"https://x.com/fchollet/status/2070191976134435032"},
+    {type:"引用", date:"06-24", body:"评 ARC Prize 数据:<b>GLM-5.2 在 ARC-AGI-2 拿下 22.8%($0.25/题)、ARC-AGI-1 达 77%</b>,「这是迄今由开源模型在 ARC-AGI-2 上取得的最强性能」,与 GPT-5.4/5.5(低推理档)相当。", url:"https://x.com/fchollet/status/2069858556552298519"},
     {type:"原创", date:"06-23", body:"<b>「理解复杂系统的最佳方式是看边缘情况与故障模式」</b>——它们定义了系统的轮廓;同期还警告代理式编码会指数级累积冗余代码、降低模型推理,并称「市场效率是神话」。", url:"https://x.com/fchollet/status/2069808712890585191"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
@@ -190,16 +200,16 @@ const accounts = [
 ];
 
 const readList = [
-  {t:"GLM-5.2 创开源 ARC-AGI-2 最强(ARC Prize 数据,Chollet 转评)", d:"ARC-AGI-2 22.8%($0.25/题)、ARC-AGI-1 77%,与 GPT-5.4/5.5 低推理档相当;开源权重模型的能力里程碑。", u:"https://x.com/fchollet/status/2069858556552298519"},
+  {t:"Figure F.03 人形机器人入驻宝马斯巴达堡工厂(Brett Adcock)", d:"第三代人形机器人产线落地,F.02 同步退役;人形机器人迭代与量产双双提速。", u:"https://x.com/adcock_brett/status/2070180603493052750"},
+  {t:"GLM-5.2 推理速度冲到 318 tok/s(Jeremy Howard 转发)", d:"从 280 提升到 318 token/s 且仍有空间;叠加 ARC-AGI-2 最强成绩与 Perplexity Agent API,开源最强模型工程化全面加速。", u:"https://x.com/dzhulgakov/status/2070034860438384918"},
+  {t:"Gemma 4 上线 2.5 个月下载破 2 亿(Demis Hassabis 转发)", d:"Gemma 3 时期整个家族累计才 1 亿;开放权重模型社区采用速度持续走高。", u:"https://x.com/googlegemma/status/2070180154069176399"},
   {t:"LangSmith Engine — 代理的「睡眠时间计算」", d:"后台分析代理轨迹、把记忆写回 Context Hub,让代理在运行之间真正改进;自改进记忆的产品化范式。", u:"https://x.com/hwchase17/status/2069876667791613976"},
-  {t:"Perplexity Counsel Computer — 法律垂直连接器", d:"接入 midpage、LegalZoom、Docusign、netdocuments 等律师常用库,可提取可引用来源;Computer 生态向行业纵深扩张。", u:"https://x.com/perplexity_ai/status/2069866668671766804"},
+  {t:"AI 完整解读整卷赫库兰尼姆古卷(levelsio 转传 HN)", d:"继 Vesuvius Challenge 后,AI 辅助无损成像 + 文字识别在古典学领域再下一城。", u:"https://x.com/levelsio/status/2070374692406309213"},
+  {t:"GLM-5.2 创开源 ARC-AGI-2 最强(ARC Prize 数据,Chollet 转评)", d:"ARC-AGI-2 22.8%($0.25/题)、ARC-AGI-1 77%,与 GPT-5.4/5.5 低推理档相当。", u:"https://x.com/fchollet/status/2069858556552298519"},
   {t:"John Jumper 离开 DeepMind 加入 Anthropic(Hassabis 致谢)", d:"AlphaFold 核心、诺奖得主的流动,是前沿实验室顶尖科学人才重新洗牌的标志性事件。", u:"https://x.com/demishassabis/status/2068002732250640603"},
-  {t:"Claude Tag — Claude 作为团队成员入驻 Slack(karpathy 点评)", d:"把跨工具/集成/内存/安全的幕后工程做到位后即插即用,被 Karpathy 称为与 AI 交互的全新范式。", u:"https://x.com/karpathy/status/2069547676849557725"},
-  {t:"Engram — 在你的上下文上扩展计算(karpathy 转推)", d:"主张模型应深入理解你的工作而非只靠训练数据;「上下文即算力」新叙事。", u:"https://x.com/EngramLab/status/2069465879696576844"},
-  {t:"GLM-5.2 架构解析(rasbt)", d:"复用 DeepSeek 的 MLA 与稀疏注意力 DSA、新增 IndexShare 的最强开源权重模型,已登陆 Perplexity Agent API。", u:"https://x.com/rasbt/status/2067612153020838055"},
-  {t:"DeepMind Project Genie 获戛纳狮子 AI 工艺大奖", d:"扩展世界模型的又一意想不到成果;DeepMind 同期与 A24 启动创作工具研究合作。", u:"https://x.com/jparkerholder/status/2069540952784699520"},
+  {t:"Intercept — 5 亿美元广谱预防医学慈善倡议(jeremyphoward 转发)", d:"对 4 年内可进入二期的预防医学股权投资、资助基础研究、验证远紫外 UVC 空气消毒。", u:"https://x.com/_sholtodouglas/status/2069820234601742485"},
   {t:"NVIDIA GEAR — ENPIRE 物理世界自动研究系统", d:"8 个 Codex 代理驱动真实机器人舰队的端到端自研究闭环(重置→查文献→实现→训练→自验证→改代码)。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
-  {t:"Sakana Fugu — 单一 API 的多代理编排系统", d:"「Fugu Ultra」匹配 Fable / Mythos 且无出口管制风险;呼应「最强 AI 也是集体智能」。", u:"https://x.com/hardmaru/status/2068884466056225025"}
+  {t:"GLM-5.2 架构解析(rasbt)", d:"复用 DeepSeek 的 MLA 与稀疏注意力 DSA、新增 IndexShare 的最强开源权重模型。", u:"https://x.com/rasbt/status/2067612153020838055"}
 ];
 
 const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
