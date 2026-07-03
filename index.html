@@ -107,91 +107,94 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-06-29 10:41 (北京时间)";
+const GEN_TIME = "2026-07-03 11:04 (北京时间)";
 
 const core = [
-  {h:"OpenAI 首款自研 AI 芯片 Jalapeño 量产,ChatGPT 5.5 模型同步更新", p:"过去 24 小时 Sam Altman 连发:<b>OpenAI 与 Broadcom 合作、从零设计的首款 AI 芯片「Jalapeño」已实现量产</b>,专为 ChatGPT / Codex / API 及未来代理产品的 LLM 工作负载打造(「团队煮好了,辣味十足」);同时确认<b>本周更新了 ChatGPT 使用的 5.5 即时模型</b>。自研算力栈与模型迭代双线推进。"},
-  {h:"本地开源权重编码代理走向成熟", p:"Sebastian Raschka 发布<b>「用开源权重模型搭建本地编码代理」新文章,一切 100% 本地运行</b>;他实测 Qwen-Code / Codex / Claude Code 等框架,认为 <b>30B MoE 是平衡点,在 Mac / DGX Spark 上约 40 tok/s,已接近 Pro 订阅的 GPT-5.5</b>。叠加 Jeremy Howard 转发的 GLM-5.2 推理冲到 318 tok/s——开源权重 + 本地化正成为「严肃工作」的可行选项。"},
-  {h:"AI 进入一线临床:亚专科医生称前沿模型已远超自己", p:"Jeremy Howard 转发皮肤科深度亚专科医生 Matthew Zirwas:<b>「前沿模型尚未准备好用于医学」的说法完全错误</b>——他已把 Opus 4.x 纳入临床工作流每天使用半年,称在自己 25 年深耕的精确细分领域「它比我强得多,差距巨大」;呼应 Eric Topol 对多模态医学推理的评测。"},
-  {h:"LangChain 双线推进:Harbor 沙盒评估 + 舰队代理入驻 Slack", p:"Harrison Chase 过去 24 小时:推介 <b>Harbor——运行需沙盒化评估的方式,自托管沙盒即将推出</b>;并演示<b>「舰队代理」可在公司已在使用的 Slack / Teams 频道中共享协作</b>。代理可观测性与多代理协作持续产品化。"},
-  {h:"机器人资本热:风投激增,Figure 园区数百人形机器人", p:"Brett Adcock 转评 a16z 数据:<b>风险投资对机器人的兴趣正在激增</b>,直言「还处于早期,怀疑一两年内增长 10 倍」;并形容漫步 Figure 园区<b>「就像踏入《我,机器人》——到处都是人形机器人」</b>。具身智能的资本与落地同步升温。"}
+  {h:"NVIDIA GEAR 推出 ASPIRE:机器人自我进化技能库,续作 ENPIRE", p:"Jim Fan 宣布 <b>ENPIRE → ASPIRE</b>,Physical AutoResearch 系列第二部作品:<b>机器人获得可自我进化、无限累积的 /skills 技能库</b>,解决第 100 个任务时不再像第一个一样一无所知;编码代理观察模拟与真实机器人的多模态感官轨迹自主构建技能。NVIDIA GEAR 联合密歇根大学等机构发布项目画廊与白皮书。"},
+  {h:"Google DeepMind 双发新模型,Gemini Omni Flash 登顶 Video Arena", p:"Demis Hassabis 转发 Google DeepMind:<b>同时发布「Nano Banana 2 Lite」(最快最便宜的 Gemini 图像模型)与「Gemini Omni Flash」</b>;后者随即<b>在 Video Arena 以 1404 Elo 评分登顶</b>,多模态竞争持续升温。"},
+  {h:"Figure 03 人形机器人进驻宝马工厂,执行真实物流工作流", p:"Brett Adcock 宣布 <b>Figure 03 已抵达宝马集团斯巴达堡工厂,开始执行物流工作流程</b>;同时展示第七代仿真手部设计,称「逼真到像戴了手套的人手」——具身智能从实验室走向量产产线。"},
+  {h:"AI 芯片新玩家 Etched 走出隐身:超 10 亿美元合同,融资 8 亿美元", p:"Karpathy 转发 Etched:<b>团队完成 A0 流片、搭建首批机架,已获超 10 亿美元客户合同并筹集 8 亿美元融资</b>,早期客户测试显示其在推理工作负载上实现最先进吞吐——AI 专用芯片赛道再添重量级选手。"},
+  {h:"「循环工程」成新热词,Claude Code / OpenClaw 创造者带火", p:"Andrew Ng 观察到<b>「循环工程」因 Claude Code 创建者 Boris Cherny 与 OpenClaw 创建者 Peter Steinberger 的提及在社交媒体走红</b>,正成为编码代理领域的新共识框架——开发者工具话语持续演进。"}
 ];
 
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
-    {type:"引用", date:"06-27", fresh:true, body:"评 OpenAI 首款自研芯片(「<b>团队煮好了,辣味十足</b>」):<b>「Jalapeño」由 OpenAI 从零设计、与 Broadcom 合作量产</b>,专为驱动 ChatGPT、Codex、API 及未来代理型产品的 LLM 工作负载而构建——「芯片即 AI」。", url:"https://x.com/sama/status/2070614666288795703"},
-    {type:"原创", date:"06-27", fresh:true, body:"其他消息:<b>本周更新了 ChatGPT 中使用的 5.5 即时(instant)模型</b>,并称很喜欢更新后的效果。", url:"https://x.com/sama/status/2070612055225483692"},
-    {type:"转发", date:"06-26", fresh:true, body:"转 OpenAI 基金会:通过 <b>AI 韧性计划加入 Intercept 作为创始合作伙伴</b>——随着 AI 加速生物医学进步,也要为滥用风险(含潜在工程化疫情)做好准备。", url:"https://x.com/FoundationOAI/status/2070533340416164196"}
+    {type:"原创", date:"07-03", fresh:true, body:"闲聊:<b>「去世界杯比赛总是很棒,但在美国生日周在美国观看美国队获胜简直令人难以置信」</b>——获得 35 万赞的高热度轻松帖。", url:"https://x.com/sama/status/2072773542576586790"},
+    {type:"转发", date:"06-26", body:"转 OpenAI 基金会:通过 <b>AI 韧性计划加入 Intercept 作为创始合作伙伴</b>——随着 AI 加速生物医学进步,也要为滥用风险(含潜在工程化疫情)做好准备。", url:"https://x.com/FoundationOAI/status/2070533340416164196"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"原创", date:"06-28", fresh:true, body:"<b>「每个企业都将拥有自己的『模型-利用-沙盒-评估』飞轮,并针对每瓦特令牌价值优化」</b>——理由是公司对领域、客户与工作流的隐性知识独一无二,这是未来趋势。", url:"https://x.com/AravSrinivas/status/2070938739350900944"},
-    {type:"原创", date:"06-28", fresh:true, body:"观点:<b>「提高上限比提高下限更容易」</b>。", url:"https://x.com/AravSrinivas/status/2071359311264322014"},
-    {type:"原创", date:"06-19", body:"推出 <b>Brain</b>:自我改进的上下文图,涵盖你所有会话、连接器与文件,夜间主动用新鲜上下文更新自身并注入 Computer 的每个任务。面向 Max 订阅用户。", url:"https://x.com/AravSrinivas/status/2067643665871417519"}
+    {type:"原创", date:"07-03", fresh:true, body:"评 Arm CEO Rene Haas 访谈(AI CPU 需求「爆棚」):<b>「Vera CPUs are great!」</b>——看好 Arm 架构 CPU 在 AI 基础设施中的角色。", url:"https://x.com/AravSrinivas/status/2072834801179247008"},
+    {type:"原创", date:"07-03", fresh:true, body:"观点:<b>「模型在本地硬件上运行的最佳应用将是个人机器人——没有人愿意把家流式传输到服务器上」</b>,本地硬件届时也会成为数字任务的「代币水龙头」。", url:"https://x.com/AravSrinivas/status/2072727777179258986"},
+    {type:"原创", date:"06-28", body:"<b>「每个企业都将拥有自己的『模型-利用-沙盒-评估』飞轮,并针对每瓦特令牌价值优化」</b>——理由是公司对领域、客户与工作流的隐性知识独一无二,这是未来趋势。", url:"https://x.com/AravSrinivas/status/2070938739350900944"}
   ]},
   {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
-    {type:"引用", date:"06-24", body:"评 <b>Claude Tag</b>:让 Claude 作为团队成员入驻 Slack、与全组织人类活动「<b>无缝融合</b>」,一旦把跨工具/集成/内存/安全的幕后工程做到位即可即插即用——与 AI 交互的全新范式。", url:"https://x.com/karpathy/status/2069547676849557725"},
+    {type:"转发", date:"06-30", body:"转 Etched:<b>「我们即将走出隐身模式」</b>——完成 A0 流片、搭建首批机架,已获<b>超 10 亿美元客户合同并筹集 8 亿美元融资</b>,早期客户测试显示其在推理工作负载上实现最先进吞吐。", url:"https://x.com/Etched/status/2071972062202343590"},
     {type:"转发", date:"06-24", body:"转 Engram:介绍 <b>Engram——在你的上下文上扩展计算的 AI</b>,主张模型应真正深入理解你的工作,而非只靠训练数据。", url:"https://x.com/EngramLab/status/2069465879696576844"}
   ]},
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
-    {type:"转发", date:"06-26", body:"转 Google Gemma:<b>Gemma 4 上线短短 2.5 个月下载量突破 2 亿次</b>——而 Gemma 3 时期整个家族累计才 1 亿,开放权重模型社区采用持续加速。", url:"https://x.com/googlegemma/status/2070180154069176399"},
-    {type:"转发", date:"06-24", body:"转 Jack Parker-Holder:<b>Project Genie 荣获戛纳狮子奖 AI 工艺类大奖</b>——被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用。", url:"https://x.com/jparkerholder/status/2069540952784699520"}
+    {type:"转发", date:"07-03", fresh:true, body:"转 Design Arena:<b>Google DeepMind 的 Gemini Omni Flash 在 Video Arena 上以 1404 Elo 评分登顶</b>。", url:"https://x.com/Designarena/status/2072759122366509130"},
+    {type:"转发", date:"07-01", body:"转 Google DeepMind:<b>同时发布两款新模型——「Nano Banana 2 Lite」(最快最便宜的 Gemini 图像模型)与「Gemini Omni Flash」</b>。", url:"https://x.com/GoogleDeepMind/status/2071988044878516466"},
+    {type:"转发", date:"06-26", body:"转 Google Gemma:<b>Gemma 4 上线短短 2.5 个月下载量突破 2 亿次</b>——而 Gemma 3 时期整个家族累计才 1 亿,开放权重模型社区采用持续加速。", url:"https://x.com/googlegemma/status/2070180154069176399"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"引用", date:"06-28", fresh:true, body:"推介 <b>Harbor——运行需要沙盒化的评估的绝佳方式</b>,并预告<b>自托管沙盒即将推出</b>(回应社区关于在 LangSmith sandboxes 中做评估、能否自托管的提问)。", url:"https://x.com/hwchase17/status/2071373847237206138"},
-    {type:"原创", date:"06-28", fresh:true, body:"<b>「舰队代理」可在公司已开展工作的频道(Slack、Teams 等)中共享协作</b>——附 Caspar 演示如何把它们引入 Slack 的视频。", url:"https://x.com/hwchase17/status/2071306189846257665"},
-    {type:"转发", date:"06-28", fresh:true, body:"转 kepo:<b>DeepAgents 在 Harness 里「真他妈有用」</b>——社区对其代理框架的实测好评。", url:"https://x.com/kepochnik/status/2071300191983157657"}
+    {type:"引用", date:"07-03", fresh:true, body:"回应「LLM wiki 正在被忽视」的观点(用编码代理构建知识库是当下最有价值应用之一),简评一句:<b>「wikis!」</b>——呼应 OpenWiki 等新工具的走红。", url:"https://x.com/hwchase17/status/2072777199489515653"},
+    {type:"转发", date:"07-03", fresh:true, body:"转 Viv:在 AI Engineer World's Fair 演讲分享<b>编码代理的 Eval + Improvement 循环基础设施与 UX</b>,LangSmith 被提及为评估与持续改进编码代理的关键工具。", url:"https://x.com/Vtrivedy10/status/2072761926413955568"},
+    {type:"转发", date:"07-02", fresh:true, body:"转 Chip Lay 试用 <b>OpenWiki</b> 的体验:此前需手动让 Claude 为项目生成 wiki,如今有了专门工具——LLM 知识库赛道渐热。", url:"https://x.com/chiplay/status/2072702176619794844"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
-    {type:"引用", date:"06-28", fresh:true, body:"转评 a16z「本周图表」:<b>风险投资对机器人技术的兴趣正在激增</b>——直言「我们还处于早期,我怀疑这会在一两年内增长 10 倍」。", url:"https://x.com/adcock_brett/status/2071072826455691773"},
-    {type:"引用", date:"06-27", fresh:true, body:"<b>「漫步在 Figure 的园区里感觉就像踏入《我,机器人》——到处都是人形机器人」</b>:数百台人形机器人四处走动、采集训练数据、被评估模型性能、执行家务与物流。", url:"https://x.com/adcock_brett/status/2070888298885824580"}
+    {type:"原创", date:"06-30", body:"<b>Figure 03 人形机器人已抵达宝马集团斯巴达堡工厂,开始执行物流工作流程</b>——具身智能从实验室走向真实产线。", url:"https://x.com/adcock_brett/status/2071973594268327993"},
+    {type:"原创", date:"06-30", body:"<b>手部设计已迭代到第七代</b>,「太难设计了!」——最新设计逼真到<b>「看起来就像一个人戴着手套」</b>。", url:"https://x.com/adcock_brett/status/2071811006515536109"},
+    {type:"引用", date:"06-28", body:"转评 a16z「本周图表」:<b>风险投资对机器人技术的兴趣正在激增</b>——直言「我们还处于早期,我怀疑这会在一两年内增长 10 倍」。", url:"https://x.com/adcock_brett/status/2071072826455691773"}
   ]},
   {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
-    {type:"原创", date:"06-20", body:"评论近两周美国政府与 Anthropic「<b>通过限制他人使用前沿模型来控制 AI 访问</b>」的动作,认为这正显著加速各国与企业争取可靠 AI 访问权、以免被他人切断。", url:"https://x.com/AndrewYNg/status/2068039709126017356"},
-    {type:"原创", date:"06-19", body:"新课程:<b>为 AI 代理与应用添加语音能力</b>(与 AI Fund 投资组合公司 VocalBridge 合作,CEO @_ashwyn 主讲)。", url:"https://x.com/AndrewYNg/status/2067653578945359898"}
+    {type:"原创", date:"07-01", body:"观察:<b>「循环工程」正成为热门流行词</b>——由 Claude Code 创建者 Boris Cherny 与 OpenClaw 创建者 Peter Steinberger 的相关提及在社交媒体带火,编码代理的迭代循环范式正被更多人讨论。", url:"https://x.com/AndrewYNg/status/2071988145667928442"},
+    {type:"原创", date:"06-20", body:"评论近两周美国政府与 Anthropic「<b>通过限制他人使用前沿模型来控制 AI 访问</b>」的动作,认为这正显著加速各国与企业争取可靠 AI 访问权、以免被他人切断。", url:"https://x.com/AndrewYNg/status/2068039709126017356"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
-    {type:"原创", date:"06-28", fresh:true, body:"<b>报告 Opus 4.8 异常</b>:第一次看到它「几乎完全停止思考」——即便在最高推理设置下回答也很糟,而用 <b>Opus 4.6 重复同一提示则运行良好</b>(他每天都在用)。", url:"https://x.com/jeremyphoward/status/2071102619020636397"},
-    {type:"转发", date:"06-28", fresh:true, body:"转皮肤科亚专科医生 Matthew Zirwas:<b>「前沿模型尚未准备好用于医学」完全错误</b>——他已把 Opus 4.x 纳入临床工作流每天用半年,在自己 25 年深耕的精确细分领域「它比我强得多,差距巨大」;呼应 Eric Topol 的多模态医学推理评测。", url:"https://x.com/MattZirwas/status/2070943871568367860"},
-    {type:"转发", date:"06-25", body:"转 Dmytro Dzhulgakov:<b>GLM-5.2 推理速度从 280 提升到 318 token/s,且「仍有提升空间」</b>——开源最强模型的服务侧持续优化。", url:"https://x.com/dzhulgakov/status/2070034860438384918"}
+    {type:"转发", date:"06-30", body:"转 Sara Dragutinovic:<b>Muon 优化器真有那么好吗?</b>——超越训练速度表层后发现隐藏代价:Muon 丧失了梯度下降式老牌优化器的「简单性偏好」,而这对泛化能力至关重要。", url:"https://x.com/sara_drag/status/2071927620564815937"},
+    {type:"转发", date:"06-30", body:"转 Yifan Wu:介绍 <b>SWE-Together——基于真实用户-代理编码会话构建的多轮基准测试</b>,指出编码代理常被当作应试者评测(给定完整规范、按最终代码打分),但真实编码协助是持续互动的过程。", url:"https://x.com/yifannnwu/status/2071976415223050636"},
+    {type:"转发", date:"06-30", body:"转 Hanchi Sun:关注美团(「中国版 DoorDash」)推出的 <b>Longcat 2.0</b>——提醒大家不要错过这一模型更新。", url:"https://x.com/sun_hanchi/status/2071664412612833516"}
   ]},
   {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
-    {type:"原创", date:"06-17", body:"(本周无新帖,最近重要更新)首次在物理世界启用 <b>AutoResearch:ENPIRE</b>——给 8 个 Codex 代理配备真实机器人舰队、GPU 与 token 预算,让机器人安全高效地持续完成研究循环(重置→查文献→实现→训练部署→自验证→改代码)。", url:"https://x.com/DrJimFan/status/2066921736369766762"}
+    {type:"原创", date:"07-01", body:"宣布 <b>ENPIRE → ASPIRE</b>,Physical AutoResearch 系列第二部作品:正在为机器人构建<b>可自我改进的组件</b>,一项 /技能 接一项。", url:"https://x.com/DrJimFan/status/2072337488782475390"},
+    {type:"原创", date:"07-01", body:"详解 <b>ASPIRE</b>:为机器人提供<b>可自我进化、无限累积的 /skills 技能库</b>——机器人解决第 100 个任务时不再像解决第一个一样一无所知,编码代理观察模拟与真实机器人的多模态感官轨迹来启动技能学习。NVIDIA GEAR、密歇根大学等机构联合发布项目画廊与白皮书。", url:"https://x.com/DrJimFan/status/2072004190856212902"}
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"原创", date:"06-28", fresh:true, body:"<b>AI Engineer World's Fair 周本周在旧金山开幕</b>:今天下午 Moscone 领取徽章并参加新工程师迎新——认识朋友、规划周程、回馈新手。", url:"https://x.com/swyx/status/2071364057622569151"},
-    {type:"原创", date:"06-28", fresh:true, body:"大会规模:<b>已突破 6000 名参会者,周末或达 7000 人即宣布售罄</b>——「下周这里将是 AI 的风暴中心」;学生/转职者可走 /associates 通道。", url:"https://x.com/swyx/status/2070920495051280623"}
+    {type:"转发", date:"07-03", fresh:true, body:"转 Mada Seghete:感谢在 <b>AI Engineer World's Fair 策划 GTM 赛道</b>——「听说明年我们需要更大的房间」,大会圆满收官、社区反响热烈。", url:"https://x.com/mada299/status/2072810731834372101"},
+    {type:"转发", date:"07-03", fresh:true, body:"转 John Lindquist:向 swyx 与 <b>AI Engineer 团队致以「巨大的感谢」</b>——本届大会持续收获参会者的正面反馈。", url:"https://x.com/johnlindquist/status/2072790747229966635"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"06-29", fresh:true, body:"置顶整理「<b>各前沿实验室最值得关注的账号</b>」清单,帮助持续追踪 Anthropic、OpenAI 等机构的一手动态。", url:"https://x.com/ai_explorer25/status/2071420892106863031"},
-    {type:"原创", date:"06-28", fresh:true, body:"转引 Sam Altman「<b>我们很快会看到 10 人的十亿美元公司</b>」「若我现在 22 岁会觉得自己是史上最幸运的孩子」,鼓动读者本周末就用 AI 工具搭一个「一人公司」。", url:"https://x.com/ai_explorer25/status/2071216544860831918"},
-    {type:"原创", date:"06-28", fresh:true, body:"整理「<b>30 个 Claude 必知术语</b>」速查指南(Prompt、Opus 等),用大白话解释,便于下一次 AI 对话前查阅。", url:"https://x.com/ai_explorer25/status/2071111356934471885"}
+    {type:"原创", date:"07-03", fresh:true, body:"发布「<b>10 位活跃 AI 研究者</b>」清单,榜首为 @karpathy(Andrej Karpathy)、@rasbt(Sebastian Raschka)等——发帖仅 27 分钟即获关注。", url:"https://x.com/ai_explorer25/status/2072870694778818902"},
+    {type:"原创", date:"07-02", fresh:true, body:"置顶「<b>15 位应关注的 AI 创始人</b>」清单:@sama(OpenAI)、@AravSrinivas(Perplexity)、@karpathy 等悉数在列。", url:"https://x.com/ai_explorer25/status/2072565366866473001"},
+    {type:"原创", date:"07-02", fresh:true, body:"提到<b>「寓言 5」(Fable 5)带着免费试用版重返 ZenMux</b>——通过兼容 OpenAI/Anthropic 的统一 API 可访问 100+ 模型,并具备完整可观测性。", url:"https://x.com/ai_explorer25/status/2072677050926948836"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"原创", date:"06-28", fresh:true, body:"晒数据:<b>自己在 GitHub 私有仓库的提交数最多,约 16 万次贡献</b>——「只比 OpenAI 的固定费率编码者少几次提交」,展示其高强度 vibe coding 产出。", url:"https://x.com/levelsio/status/2071223354283958400"},
-    {type:"原创", date:"06-28", fresh:true, body:"复古折腾:<b>重建了一个 Nullsoft SHOUTcast 流媒体服务器</b>(Winamp 自托管广播平台,2011 年巅峰约 90 万并发听众、4.5 万活跃电台)——延续其复古技术 hack 风格。", url:"https://x.com/levelsio/status/2071204673856442764"}
+    {type:"原创", date:"07-03", fresh:true, body:"观点:<b>「X 真的很有影响力,制定政策的人确实会读它,尤其是帖子火了的时候」</b>——回应「别抱怨、专心搞独立开发」的批评,认为吐槽帖也能推动社会改善。", url:"https://x.com/levelsio/status/2072763688851824873"},
+    {type:"原创", date:"07-03", fresh:true, body:"轻松一帖:<b>「我阅读我的 X 动态」</b>。", url:"https://x.com/levelsio/status/2072773443456479419"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"原创", date:"06-28", fresh:true, body:"观点:<b>「只有艺术与科学能将人类提升至崇高境界;但魔力不在成果,而在创造与发现的过程,以及感受与理解的体验」</b>。", url:"https://x.com/fchollet/status/2070958512281415960"}
+    {type:"原创", date:"07-03", fresh:true, body:"观点:<b>「AI 的大部分终将趋向于直觉引导的符号化世界建模,即深度学习引导的程序合成」</b>——符号化建模能让系统用最少数据构建紧凑、可复用、高度泛化的心理模型,他认为这「不可避免」。", url:"https://x.com/fchollet/status/2072779641639875048"},
+    {type:"原创", date:"07-03", fresh:true, body:"补充:<b>「许多工作流正转向 LRM 引导的框架来操纵符号程序」</b>——称这是符号学习目前一种粗糙但可用的形式。", url:"https://x.com/fchollet/status/2072780506928971869"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
-    {type:"原创", date:"06-27", body:"发布新文章 <b>《Using Local Coding Agents》:用开源权重模型搭建本地编码代理,一切 100% 本地运行</b>——许多人问过他的设置,希望借此激励大家用本地模型做「严肃工作」。", url:"https://x.com/rasbt/status/2070871630201463137"},
-    {type:"原创", date:"06-26", body:"实测心得:在 Qwen-Code、Codex、Claude Code 等框架里试不同本地开源 LLM,<b>30B MoE 是相当不错的平衡点</b>,能解决有挑战的问题,且在 <b>Mac 或 DGX Spark 上约 40 tok/s,已接近 Pro 订阅的 GPT-5.5</b>。", url:"https://x.com/rasbt/status/2070518167399698490"}
+    {type:"原创", date:"06-30", body:"新书 <b>《从零开始构建推理模型》正式发货</b>——历时 18 个月写作、编码与实验,440 页全彩内容,涵盖从零开始的推理扩展、强化学习与蒸馏,首批样书已到货。", url:"https://x.com/rasbt/status/2071945864088535126"},
+    {type:"原创", date:"06-27", body:"发布新文章 <b>《Using Local Coding Agents》:用开源权重模型搭建本地编码代理,一切 100% 本地运行</b>——许多人问过他的设置,希望借此激励大家用本地模型做「严肃工作」。", url:"https://x.com/rasbt/status/2070871630201463137"}
   ]}
 ];
 
 const readList = [
-  {t:"OpenAI 首款自研 AI 芯片 Jalapeño 量产(Sam Altman)", d:"从零设计、与 Broadcom 合作量产,专为 ChatGPT / Codex / API 及未来代理产品的 LLM 工作负载打造——OpenAI 自建算力栈的关键一步。", u:"https://x.com/sama/status/2070614666288795703"},
-  {t:"用开源权重模型搭建本地编码代理(Sebastian Raschka)", d:"《Using Local Coding Agents》:100% 本地运行;30B MoE 在 Mac / DGX Spark 上约 40 tok/s,已接近 Pro 订阅的 GPT-5.5。", u:"https://x.com/rasbt/status/2070871630201463137"},
-  {t:"亚专科医生实测:前沿模型在其细分领域远超自己(jeremyphoward 转 Zirwas)", d:"皮肤科深度亚专科医生把 Opus 4.x 纳入临床半年,称差距巨大;反驳「前沿模型未准备好用于医学」,呼应 Eric Topol 评测。", u:"https://x.com/MattZirwas/status/2070943871568367860"},
-  {t:"Harbor — 运行沙盒化评估的方式,自托管即将推出(Harrison Chase)", d:"配合「舰队代理」入驻 Slack / Teams 频道共享协作,LangChain 持续推进代理可观测性与多代理产品化。", u:"https://x.com/hwchase17/status/2071373847237206138"},
-  {t:"a16z:风险投资对机器人的兴趣正在激增(Brett Adcock 转评)", d:"Adcock 称「还处于早期,一两年内或增长 10 倍」;Figure 园区已有数百台人形机器人采集数据、执行任务。", u:"https://x.com/adcock_brett/status/2071072826455691773"},
-  {t:"Gemma 4 上线 2.5 个月下载破 2 亿(Demis Hassabis 转发)", d:"Gemma 3 时期整个家族累计才 1 亿;开放权重模型社区采用速度持续走高。", u:"https://x.com/googlegemma/status/2070180154069176399"},
-  {t:"Project Genie 荣获戛纳狮子奖 AI 工艺类大奖(Hassabis 转发)", d:"被称为「扩展世界模型的又一意想不到的成果」,可在线亲自试用——世界模型走入主流创意场景。", u:"https://x.com/jparkerholder/status/2069540952784699520"},
-  {t:"AI Engineer World's Fair 本周在旧金山开幕(swyx)", d:"已破 6000 参会者、周末或达 7000 售罄;「下周这里将是 AI 的风暴中心」。", u:"https://x.com/swyx/status/2071364057622569151"},
-  {t:"NVIDIA GEAR — ENPIRE 物理世界自动研究系统(Jim Fan)", d:"8 个 Codex 代理驱动真实机器人舰队的端到端自研究闭环(重置→查文献→实现→训练→自验证→改代码)。", u:"https://x.com/DrJimFan/status/2066921736369766762"},
-  {t:"各前沿实验室最值得关注的账号清单(AI_Explorer)", d:"一站式追踪 Anthropic、OpenAI 等机构一手动态的关注名单,适合想紧跟前沿的人。", u:"https://x.com/ai_explorer25/status/2071420892106863031"}
+  {t:"《从零开始构建推理模型》正式发货(Sebastian Raschka)", d:"历时 18 个月写作、编码与实验的新书,440 页全彩内容,涵盖推理扩展、强化学习与蒸馏,首批样书已到货。", u:"https://x.com/rasbt/status/2071945864088535126"},
+  {t:"ASPIRE:机器人自我进化技能库(Jim Fan / NVIDIA GEAR)", d:"ENPIRE 续作,机器人获得可无限累积的 /skills 技能库,编码代理观察多模态感官轨迹自主构建技能,已发布项目画廊与白皮书。", u:"https://x.com/DrJimFan/status/2072004190856212902"},
+  {t:"LLM Wiki 正被忽视,OpenWiki 走红(Harrison Chase / 社区)", d:"用编码代理构建知识库被认为是当下最有价值的 AI 应用之一;OpenWiki 等工具让这一流程自动化,LangSmith 持续布局评估基础设施。", u:"https://x.com/hwchase17/status/2072777199489515653"},
+  {t:"Muon 优化器的隐藏代价(Jeremy Howard 转 Sara Dragutinovic)", d:"Muon 训练更快,但丧失了梯度下降式的「简单性偏好」,而这对模型泛化能力至关重要。", u:"https://x.com/sara_drag/status/2071927620564815937"},
+  {t:"SWE-Together:真实用户-代理编码会话基准(Jeremy Howard 转 Yifan Wu)", d:"区别于「给定完整规范、按最终代码打分」的传统评测,聚焦真实、持续互动的编码协助过程。", u:"https://x.com/yifannnwu/status/2071976415223050636"},
+  {t:"符号化世界建模是 AI 的必然方向(François Chollet)", d:"认为 AI 终将趋向直觉引导的符号化建模(深度学习引导的程序合成),LRM 引导的符号程序操纵已是粗糙但可用的雏形。", u:"https://x.com/fchollet/status/2072779641639875048"},
+  {t:"Figure 03 进驻宝马工厂执行物流工作流(Brett Adcock)", d:"人形机器人从实验室走向真实产线;第七代仿真手部设计已「逼真到像戴了手套」。", u:"https://x.com/adcock_brett/status/2071973594268327993"},
+  {t:"Etched 走出隐身:超 10 亿美元合同、8 亿美元融资(Karpathy 转发)", d:"AI 推理芯片新玩家完成 A0 流片、搭建首批机架,早期客户测试显示最先进吞吐表现。", u:"https://x.com/Etched/status/2071972062202343590"},
+  {t:"「循环工程」成新热词(Andrew Ng)", d:"因 Claude Code 创建者 Boris Cherny 与 OpenClaw 创建者 Peter Steinberger 的提及而走红,反映编码代理迭代范式的持续演进。", u:"https://x.com/AndrewYNg/status/2071988145667928442"},
+  {t:"X 对政策制定者的真实影响力(Pieter Levels)", d:"回应「别抱怨、专心搞独立开发」的批评,认为在 X 上发声(尤其帖子火了时)确实能推动政策与社会讨论。", u:"https://x.com/levelsio/status/2072763688851824873"}
 ];
 
 const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
