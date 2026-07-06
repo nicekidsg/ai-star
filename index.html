@@ -107,7 +107,7 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-06 10:45 (北京时间)";
+const GEN_TIME = "2026-07-06 11:04 (北京时间)";
 
 const core = [
   {h:"代理行业范式转移:从「代理框架」到「代理测试平台」", p:"Harrison Chase 总结:行业正从 <b>~代理框架~(langchain、ai sdk、llama index)转向 ~代理测试平台~(deepagents、claude agent SDK、EVE)</b>;LangChain 新开源的 <b>OpenWiki(自动为代码库生成并持续更新 wiki)3 天斩获 1.7k GitHub 星</b>,下一步将扩展到 Notion/Gmail/Slack 等通用记忆源。"},
@@ -124,7 +124,7 @@ const accounts = [
     {type:"原创", date:"07-05", fresh:true, body:"续帖:<b>「他们真的把『生命、自由和追求幸福』诠释得淋漓尽致」</b>。本周 sama 仅此三帖,均为个人感怀。", url:"https://x.com/sama/status/2073636003215249515"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"转发", date:"07-05", fresh:true, body:"转 Ilya Sutskever 的「<b>250!</b>」——AI 圈大佬们齐贺美国建国 250 周年。", url:"https://x.com/ilyasut/status/2073568142480314771"},
+    {type:"转发", date:"07-05", body:"转 Ilya Sutskever 的「<b>250!</b>」——AI 圈大佬们齐贺美国建国 250 周年。", url:"https://x.com/ilyasut/status/2073568142480314771"},
     {type:"引用", date:"07-03", body:"评 Arm CEO Rene Haas 访谈(AI CPU 需求「爆棚」):<b>「Vera CPUs are great!」</b>——看好 Arm 架构 CPU 在 AI 基础设施中的角色。", url:"https://x.com/AravSrinivas/status/2072834801179247008"},
     {type:"原创", date:"07-03", body:"观点:<b>「模型在本地硬件上运行的最佳应用将是个人机器人——没有人愿意把家流式传输到服务器上」</b>,本地硬件届时也会成为数字任务的「代币水龙头」。", url:"https://x.com/AravSrinivas/status/2072727777179258986"},
     {type:"转发", date:"07-02", body:"转 Perplexity 官方:<b>Claude Fable 5 再次作为编排模型在 Computer 中可用</b>;此前一天 <b>Claude Sonnet 5 已向 Pro/Max 订阅者开放</b>并可选为协调模型——前沿模型正快速进入 Perplexity 编排层。", url:"https://x.com/perplexity_ai/status/2072433125104505226"},
@@ -142,7 +142,8 @@ const accounts = [
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
     {type:"原创", date:"07-05", fresh:true, body:"行业判断:<b>代理行业已从「~代理框架~」(langchain、ai sdk、llama index)转向「~代理测试平台~」(deepagents、claude agent SDK、EVE)</b>——并指出 deepagents 比 EVE 早了约 10 个月。", url:"https://x.com/hwchase17/status/2073793142739132625"},
-    {type:"原创", date:"07-05", fresh:true, body:"发问:<b>有人在用 Google Cloud 的开放知识格式(OKF)管理 wiki 吗?</b>——继续探索代理记忆与知识库的标准化格式。", url:"https://x.com/hwchase17/status/2073805140738609176"},
+    {type:"原创", date:"07-05", fresh:true, body:"发问:<b>有人在用 Google Cloud 的开放知识格式(OKF)管理 wiki 吗?</b>——继续探索代理记忆与知识库的标准化格式;社区已有人把深度代理 + OKF 用于自己的 wiki(LangGraph pipeline 处理原始 markdown)。", url:"https://x.com/hwchase17/status/2073805140738609176"},
+    {type:"转发", date:"07-05", fresh:true, body:"转 Christian Adib:<b>「招聘 AI 人才时,要找那些一直紧跟行业发展轨迹的人,尤其是开源软件——事情发展得很快」</b>;另有社区评价「想跟上行业动态,跟着 LangChain 团队做就行,他们的一切都是开源的」。", url:"https://x.com/AdibChristian/status/2073797230784340242"},
     {type:"原创", date:"07-03", body:"<b>OpenWiki 两天斩获 1.7k GitHub 星</b>:开源代理自动为代码库生成 wiki 并随仓库变化持续更新;最多的请求是「更通用」——正征集 Notion/Gmail/Slack/GDrive 等记忆源需求。", url:"https://x.com/hwchase17/status/2073106473404838082"},
     {type:"转发", date:"07-04", body:"转 Min Choi:<b>OpenWiki 让 AI 编码代理获得长期仓库上下文,无需把所有内容塞进 CLAUDE.md</b>——发布即走红。", url:"https://x.com/minchoi/status/2073157575407722776"},
     {type:"转发", date:"07-03", body:"转 kammeows:社区已做出 <b>LangGraph Sync</b>——可视化编辑 langgraph 工作流,图形与 Python 代码实时双向同步。", url:"https://x.com/kammeowss/status/2072935920077254999"}
@@ -166,29 +167,32 @@ const accounts = [
     {type:"转发", date:"06-30", body:"转 Sara Dragutinovic:<b>Muon 优化器的隐藏代价</b>——训练更快,但丧失了梯度下降式优化器的「简单性偏好」,而这对泛化至关重要。", url:"https://x.com/sara_drag/status/2071927620564815937"}
   ]},
   {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
+    {type:"引用", date:"07-01", body:"<b>「ENPIRE → ASPIRE」:Physical AutoResearch 系列第二作</b>——「我们正在构建机器人自我改进的组件,一项 /技能 接一项」,点明该系列的整体路线图。", url:"https://x.com/DrJimFan/status/2072337488782475390"},
     {type:"原创", date:"07-01", body:"发布 <b>ASPIRE</b>(Physical AutoResearch 系列第二作,续 ENPIRE):<b>机器人获得可自我进化、无限累积的 /skills 技能库</b>——解决第 100 个任务时不再像第一个一样一无所知;编码代理观察模拟与真实机器人的多模态感官轨迹,对控制程序做进化搜索并沉淀专业知识。", url:"https://x.com/DrJimFan/status/2072004190856212902"},
     {type:"原创", date:"07-01", body:"<b>ASPIRE 项目画廊与白皮书上线(research.nvidia.com)</b>:NVIDIA GEAR 联合密歇根大学、伯克利与 CMU 合作完成,合作者 Guanzhi Wang 有深入解读线程。", url:"https://x.com/DrJimFan/status/2072004192294830583"}
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
     {type:"原创", date:"07-05", fresh:true, body:"美国 250 周年长文 <b>《What America has meant to me》</b>:「每次我对美国失望,事后都证明是个错误;而美国从未放弃过我」——全文见 swyx.io/america250。", url:"https://x.com/swyx/status/2073657149067321412"},
-    {type:"转发", date:"07-04", fresh:true, body:"转 Yohei(BabyAGI 作者)的 <b>AI Engineer 周总结:围绕开源模型的讨论显著增多</b>——企业开始把低级任务切换到开源模型,模型路由公司与确定性分类器等创新在增加。", url:"https://x.com/yoheinakajima/status/2073446817174520227"},
+    {type:"转发", date:"07-04", body:"转 Yohei(BabyAGI 作者)的 <b>AI Engineer 周总结:围绕开源模型的讨论显著增多</b>——企业开始把低级任务切换到开源模型,模型路由公司与确定性分类器等创新在增加。", url:"https://x.com/yoheinakajima/status/2073446817174520227"},
     {type:"引用", date:"07-03", body:"点赞 AIE 现场 <b>Greptile 的「我们抓虫子」快闪活动</b>:「这就是现在新媒体的样子」——AI Engineer World's Fair 社区文化出圈。", url:"https://x.com/swyx/status/2072961609094562283"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
     {type:"原创", date:"07-06", fresh:true, body:"新清单「<b>AI 领域最值得关注的 15 个账号</b>」:@karpathy(LLM 之王)、@steipete(OpenClaw 作者)、@levelsio(创业之王)等在列。", url:"https://x.com/ai_explorer25/status/2073957606612410825"},
     {type:"原创", date:"07-05", fresh:true, body:"解读黄仁勋 51 分钟访谈:<b>「现在没人再写提示了,新工作是编写和处理循环」</b>——称这是定义 2026 下半年的转变,并附循环使用指南。", url:"https://x.com/ai_explorer25/status/2073660238809514063"},
-    {type:"原创", date:"07-05", fresh:true, body:"置顶「<b>10 位活跃 AI 研究者</b>」清单:Karpathy、Raschka、Ng、李飞飞、Hassabis 等在列。", url:"https://x.com/ai_explorer25/status/2073595218880831718"}
+    {type:"原创", date:"07-05", body:"「<b>10 位活跃 AI 研究者</b>」清单:Karpathy、Raschka、Ng、李飞飞、Hassabis 等在列。", url:"https://x.com/ai_explorer25/status/2073595218880831718"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
     {type:"原创", date:"07-05", fresh:true, body:"怀旧发问:<b>「你最怀念 Windows XP 时代哪些应用?MSN Messenger?Bonzai Buddy?WinRAR?」</b>", url:"https://x.com/levelsio/status/2073913168561058153"},
     {type:"原创", date:"07-05", fresh:true, body:"能源观点:<b>「几块太阳能板就能为整个空调系统供电,完全不需要电网——太阳最晒时正是你最需要空调、发电也最多的时候,完美组合」</b>(他自己就这么干)。", url:"https://x.com/levelsio/status/2073833116381118638"},
-    {type:"原创", date:"07-05", fresh:true, body:"健康碎碎念:<b>「简单碳水让我疲倦嗜睡腹胀;但蔬菜水果浆果也是碳水——是更好的『复杂碳水』」</b>,附「你唯一需要的食物」表情包。", url:"https://x.com/levelsio/status/2073901304913781073"}
+    {type:"原创", date:"07-05", fresh:true, body:"健康碎碎念:<b>「简单碳水让我疲倦嗜睡腹胀;但蔬菜水果浆果也是碳水——是更好的『复杂碳水』」</b>,附「你唯一需要的食物」表情包。", url:"https://x.com/levelsio/status/2073901304913781073"},
+    {type:"引用", date:"07-04", body:"气候观点:<b>「最大的谬误是暗示我们需要『去增长』来修复气候变化」</b>——他认为可以「装空调 + 修复气候 + 避免每年数万欧洲人死于高温」并行,去增长只会让社会更穷。", url:"https://x.com/levelsio/status/2073550663250821328"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
     {type:"原创", date:"07-06", fresh:true, body:"格言体:<b>「现实的一切都是可编程的。你只需要弄清楚如何去做——而做到这一点的方法就是对其进行建模」</b>。", url:"https://x.com/fchollet/status/2073927440779694477"},
     {type:"原创", date:"07-05", fresh:true, body:"脑洞:<b>「未来将有『潜在空间考古学家』来探究 21 世纪的模型权重,以重建一种早已灭绝的文化」</b>。", url:"https://x.com/fchollet/status/2073873983729287317"},
-    {type:"原创", date:"07-04", body:"美国 250 周年长评:<b>美国例外主义不在于财富与权力,而在于「来自世界各地的被遗弃者能在这里从头开始、重塑自我、实现潜力」</b>——空白起点与「努力就有回报」的承诺。", url:"https://x.com/fchollet/status/2073206662580859378"}
+    {type:"原创", date:"07-04", body:"美国 250 周年长评:<b>美国例外主义不在于财富与权力,而在于「来自世界各地的被遗弃者能在这里从头开始、重塑自我、实现潜力」</b>——空白起点与「努力就有回报」的承诺。", url:"https://x.com/fchollet/status/2073206662580859378"},
+    {type:"原创", date:"07-04", body:"一句话判断:<b>「长期的唯一瓶颈是信息和能源」</b>。", url:"https://x.com/fchollet/status/2073198603577983288"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
     {type:"原创", date:"06-30", body:"新书 <b>《从零开始构建推理模型》(Build a Reasoning Model (From Scratch))正式发货</b>——历时 18 个月,440 页全彩,涵盖推理扩展、强化学习与蒸馏;Manning 已发货,亚马逊可预订。", url:"https://x.com/rasbt/status/2071945864088535126"},
