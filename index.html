@@ -107,7 +107,7 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-06 12:16 (北京时间)";
+const GEN_TIME = "2026-07-06 18:12 (北京时间)";
 
 const core = [
   {h:"代理行业范式转移:从「代理框架」到「代理测试平台」", p:"Harrison Chase 总结:行业正从 <b>~代理框架~(langchain、ai sdk、llama index)转向 ~代理测试平台~(deepagents、claude agent SDK、EVE)</b>;LangChain 新开源的 <b>OpenWiki(自动为代码库生成并持续更新 wiki)3 天斩获 1.7k GitHub 星</b>,下一步将扩展到 Notion/Gmail/Slack 等通用记忆源。"},
@@ -120,13 +120,14 @@ const core = [
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
     {type:"原创", date:"07-05", fresh:true, body:"感性一帖:<b>「我们的大孩子第一次把两个词连在一起,我对此认知壮举的惊叹程度,大约和对 GPT-5.6 发现新数学原理一样」</b>——顺带确认了 GPT-5.6 在数学发现上的进展,浏览超 100 万。", url:"https://x.com/sama/status/2073791666553844074"},
-    {type:"原创", date:"07-05", fresh:true, body:"美国建国 250 周年:<b>「感谢创造美国理念的人们、250 年来建设它的人们,以及未来 250 年传承它的人们——历史上最令人印象深刻的社会实验」</b>。", url:"https://x.com/sama/status/2073635910512726444"},
-    {type:"原创", date:"07-05", fresh:true, body:"续帖:<b>「他们真的把『生命、自由和追求幸福』诠释得淋漓尽致」</b>。", url:"https://x.com/sama/status/2073636003215249515"},
+    {type:"原创", date:"07-05", body:"美国建国 250 周年:<b>「感谢创造美国理念的人们、250 年来建设它的人们,以及未来 250 年传承它的人们——历史上最令人印象深刻的社会实验」</b>。", url:"https://x.com/sama/status/2073635910512726444"},
+    {type:"原创", date:"07-05", body:"续帖:<b>「他们真的把『生命、自由和追求幸福』诠释得淋漓尽致」</b>。", url:"https://x.com/sama/status/2073636003215249515"},
     {type:"原创", date:"06-26", body:"周初大新闻回顾:<b>发布 GPT-5.6 系列新模型「Sol」——聪明、高效、与 GPT-5.5 同价</b>;但<b>「应美国政府的要求」以有限预览形式推出</b>,而非原计划的开放访问,正与政府协作尽快实现通用可用。同系列还将推出 <b>Terra:以一半价格提供 5.5 级性能</b>。", url:"https://x.com/sama/status/2070607488274358364"},
     {type:"原创", date:"06-26", body:"补充性能数字:<b>Sol 达 750 token/秒</b>,7 月将下放至 5.6 系列;同周 <b>ChatGPT 的 5.5 即时模型也已更新</b>,「不是完全的随意使用代币,但我们正在努力改进」。", url:"https://x.com/sama/status/2070609922631537024"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
     {type:"转发", date:"07-05", body:"转 Ilya Sutskever 的「<b>250!</b>」——AI 圈大佬们齐贺美国建国 250 周年。", url:"https://x.com/ilyasut/status/2073568142480314771"},
+    {type:"引用", date:"07-02", body:"上播客:<b>做客 Joe Rogan Experience 第 2521 集</b>——AI 搜索创业者登上全美最大播客之一,节目已上线。", url:"https://x.com/AravSrinivas/status/2072371845853262163"},
     {type:"引用", date:"07-03", body:"评 Arm CEO Rene Haas 访谈(AI CPU 需求「爆棚」):<b>「Vera CPUs are great!」</b>——看好 Arm 架构 CPU 在 AI 基础设施中的角色。", url:"https://x.com/AravSrinivas/status/2072834801179247008"},
     {type:"原创", date:"07-03", body:"观点:<b>「模型在本地硬件上运行的最佳应用将是个人机器人——没有人愿意把家流式传输到服务器上」</b>,本地硬件届时也会成为数字任务的「代币水龙头」。", url:"https://x.com/AravSrinivas/status/2072727777179258986"},
     {type:"转发", date:"07-02", body:"转 Perplexity 官方:<b>Claude Fable 5 再次作为编排模型在 Computer 中可用</b>;此前一天 <b>Claude Sonnet 5 已向 Pro/Max 订阅者开放</b>并可选为协调模型——前沿模型正快速进入 Perplexity 编排层。", url:"https://x.com/perplexity_ai/status/2072433125104505226"},
@@ -143,6 +144,7 @@ const accounts = [
     {type:"转发", date:"06-30", body:"转 Google DeepMind:<b>双发新模型——「Nano Banana 2 Lite」(最快最便宜的 Gemini 图像模型)与「Gemini Omni Flash」</b>,后者已可通过 Gemini API 和 AI Studio 生成与编辑高质量视频。", url:"https://x.com/GoogleDeepMind/status/2071988044878516466"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
+    {type:"转发", date:"07-06", fresh:true, body:"转 Julia Schottenstein:<b>Max Agency 播客新集——LangChain 如何构建 Engine(他们的「代理工程代理」)</b>,聊了谁来构建代理、怎么构建、用什么工具构建;标题很点题:「最好的 AI 代理其实是团队」。", url:"https://x.com/j_schottenstein/status/2073945601683996982"},
     {type:"原创", date:"07-05", fresh:true, body:"行业判断:<b>代理行业已从「~代理框架~」(langchain、ai sdk、llama index)转向「~代理测试平台~」(deepagents、claude agent SDK、EVE)</b>——并指出 deepagents 比 EVE 早了约 10 个月。", url:"https://x.com/hwchase17/status/2073793142739132625"},
     {type:"原创", date:"07-05", fresh:true, body:"发问:<b>有人在用 Google Cloud 的开放知识格式(OKF)管理 wiki 吗?</b>——继续探索代理记忆与知识库的标准化格式;社区已有人把深度代理 + OKF 用于自己的 wiki(LangGraph pipeline 处理原始 markdown)。", url:"https://x.com/hwchase17/status/2073805140738609176"},
     {type:"转发", date:"07-05", fresh:true, body:"转 Christian Adib:<b>「招聘 AI 人才时,要找那些一直紧跟行业发展轨迹的人,尤其是开源软件——事情发展得很快」</b>;另有社区评价「想跟上行业动态,跟着 LangChain 团队做就行,他们的一切都是开源的」。", url:"https://x.com/AdibChristian/status/2073797230784340242"},
@@ -175,14 +177,14 @@ const accounts = [
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"原创", date:"07-05", fresh:true, body:"美国 250 周年长文 <b>《What America has meant to me》</b>:「每次我对美国失望,事后都证明是个错误;而美国从未放弃过我」——全文见 swyx.io/america250。", url:"https://x.com/swyx/status/2073657149067321412"},
+    {type:"原创", date:"07-05", body:"美国 250 周年长文 <b>《What America has meant to me》</b>:「每次我对美国失望,事后都证明是个错误;而美国从未放弃过我」——全文见 swyx.io/america250。", url:"https://x.com/swyx/status/2073657149067321412"},
     {type:"转发", date:"07-04", body:"转 Yohei(BabyAGI 作者)的 <b>AI Engineer 周总结:围绕开源模型的讨论显著增多</b>——企业开始把低级任务切换到开源模型,模型路由公司与确定性分类器等创新在增加。", url:"https://x.com/yoheinakajima/status/2073446817174520227"},
     {type:"引用", date:"07-03", body:"点赞 AIE 现场 <b>Greptile 的「我们抓虫子」快闪活动</b>:「这就是现在新媒体的样子」——AI Engineer World's Fair 社区文化出圈。", url:"https://x.com/swyx/status/2072961609094562283"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
     {type:"引用", date:"07-06", fresh:true, body:"最新观察:<b>「我们已习惯 AI 生成文本和图像;现在更多注意力转向物理世界中的行动,这是自然的下一步」</b>——引用 Robbyant 全自主机器人演示。", url:"https://x.com/ai_explorer25/status/2073977345678229906"},
     {type:"原创", date:"07-06", fresh:true, body:"新清单「<b>AI 领域最值得关注的 15 个账号</b>」:@karpathy(LLM 之王)、@steipete(OpenClaw 作者)、@levelsio(创业之王)等在列。", url:"https://x.com/ai_explorer25/status/2073957606612410825"},
-    {type:"原创", date:"07-05", fresh:true, body:"解读黄仁勋 51 分钟访谈:<b>「现在没人再写提示了,新工作是编写和处理循环」</b>——称这是定义 2026 下半年的转变,并附循环使用指南。", url:"https://x.com/ai_explorer25/status/2073660238809514063"},
+    {type:"原创", date:"07-05", body:"解读黄仁勋 51 分钟访谈:<b>「现在没人再写提示了,新工作是编写和处理循环」</b>——称这是定义 2026 下半年的转变,并附循环使用指南。", url:"https://x.com/ai_explorer25/status/2073660238809514063"},
     {type:"原创", date:"07-05", body:"「<b>10 位活跃 AI 研究者</b>」清单:Karpathy、Raschka、Ng、李飞飞、Hassabis 等在列。", url:"https://x.com/ai_explorer25/status/2073595218880831718"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
