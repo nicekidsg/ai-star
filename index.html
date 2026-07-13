@@ -107,29 +107,27 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-11 12:24 (北京时间)";
+const GEN_TIME = "2026-07-13 10:37 (北京时间)";
 
 const core = [
-  {h:"GPT-5.6 Sol 全面铺开:M365 Copilot 首选、ARC-AGI-3 新 SOTA、限额两度重置", p:"Altman 官宣 <b>GPT-5.6 成为 Microsoft 365 Copilot 首选模型</b>并连发多帖为 5.6 sol 造势;<b>ARC Prize 确认 GPT-5.6 Sol 以 7.8% 创 ARC-AGI-3 新 SOTA</b>(首个通过验证击败该游戏基准的前沿模型);OpenAI 24 小时内两次重置 ChatGPT Work/Codex 速率限制,<b>构建周 7/13 开启</b>。"},
-  {h:"协调器模型混战:Grok 4.5、GPT-5.6 Sol、GLM 5.2 齐聚 Perplexity Computer", p:"Perplexity 一周内三路并进:<b>Grok 4.5 在其评估中以极具竞争力的成本拿下所有前沿模型最高分</b>(马斯克转发助阵,Enterprise 已启用);GPT-5.6 Sol/Terra 同步上线;<b>自家基于 GLM 5.2 后训练的协调器以 Opus 约 1/3 成本接近前沿性能</b>。Aravind 更抛出「本地 harness 终将成为消耗前沿 token 的操作系统」论。"},
-  {h:"代理式编码进入「另一个世界」,但删库警钟敲响", p:"Chollet 感叹<b>过去 6 个月代理式编码进步「令人震惊」</b>;Raschka 给出<b>「高努力档 Luna 优先」</b>的实用选型法;levelsio 现身说法:<b>编码代理删掉了他的服务器</b>——「别在笔记本上裸跑代理」,备份救了他。"},
-  {h:"从 Slack 到 PR:代理工作流工程化(OpenSWE + 审查提示技巧)", p:"LangChain 团队<b>每天从 Slack 直接调用 OpenSWE 完成「对话到代码」</b>,实习生长文《Inside OpenSWE》复盘构建历程;Brace Sproul 的审查窍门走红:<b>告诉代理「这个 PR 来自你不太信任的同事」,它会挑出更多改进点</b>。"},
-  {h:"AI 工程师文化之辩:2026 年还要读代码吗", p:"AIE 大会 Geoffrey Litt 主旨演讲主张<b>「让人们理解代码如何工作很重要」</b>;Theo、Hashimoto、Primeagen 同台辩论<b>「AI 工程师还应该阅读代码吗」</b>;Andrew Ng 则呼吁以<b>「无许可创新」理念保护开源 AI</b>;Bun 官宣用 Rust 重写(Karpathy 转发)。"}
+  {h:"GPT-5.6 Sol Ultra 证明 50 年数学猜想,Altman 发起「5.6 sol 最酷作品」悬赏", p:"Noam Brown 官宣 <b>GPT-5.6 Sol Ultra 证明了一个已有 50 年历史的数学猜想</b>——与此前案例不同,这次用的是「今天公开可用」的模型(Altman 转发);Altman 随后发起活动:<b>用 5.6 sol 构建最酷东西的人将获得一份「来自 OpenAI 档案的特别礼物」</b>,并表态「到目前为止,我很确定 AI 总体上是在创造就业」——这出乎他自己的预期。"},
+  {h:"学习基础设施之争:Nadella 抛出「反向信息悖论」,Aravind 隔空呼应", p:"Satya Nadella 发文《The Reverse Information Paradox》,Aravind Srinivas 引用并点破行业现状的讽刺:<b>对蒸馏施加限制性条款、却保留从客户数据中学习的权利——学习流动只朝一个方向时,经济价值会向学习基础设施所有者集中</b>,因此「必须把学习基础设施分发给每一家公司,让它们控制自己的学习循环」;他还预告 Perplexity 将很快在 <b>Vera CPUs</b> 上发布成果,收益「远高于 50%」。"},
+  {h:"Anthropic 延长 Fable 5 付费访问、Claude Code 周限额 +50%,社区仍不买账", p:"Claude 官方宣布<b>为所有付费计划延长 Claude Fable 5 的访问权限,并将 Claude Code 每周速率限制提高 50%</b>;但 elvis 等用户批评这种「先收回再延期」的做法对用户破坏性极大(Jeremy Howard 转发):「要么留在订阅里,要么直接放进 API,别玩把戏」。"},
+  {h:"Chollet:强 AI 逆转了受益曲线——现在是高技能程序员受益最大", p:"Chollet 连发观点:<b>一年前的弱代码生成工具「抬高底线」、对高手基本无用;如今的强 AI 完全颠倒——高技能程序员反而获益最大</b>;他还提出「尝试、失败、更新心智模型、再尝试」是智能的核心,应当庆祝能优雅失败并即时适应的模型。rasbt 则更新对比图:<b>Grok 4.5 处于性价比帕累托前沿</b>。"},
+  {h:"机器人与代理实战:Figure 电池组下线千块,Claude Code 救服务器", p:"Figure <b>BotQ 产线完成第 1,000 块 F.03 人形机器人 EVT 电池组</b>(加州制造),Adcock 的新 AI 实验室 Hark 进入全力冲刺;levelsio 分享实战:服务器疑似宕机,<b>通过 Hetzner 救援控制台 + Claude Code 快速定位问题</b>;swyx 发布《AI Engineer will be the LAST job》并以杰文斯悖论论证:知识工作单位成本下降后,总需求上升而非下降。"}
 ];
 
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
-    {type:"原创", date:"07-10", fresh:true, body:"官宣:<b>GPT-5.6 现已成为 Microsoft 365 Copilot 的首选模型</b>——OpenAI 在企业办公入口再下一城。", url:"https://x.com/sama/status/2075585386441789605"},
-    {type:"原创", date:"07-10", fresh:true, body:"「看到大家这么喜欢 <b>5.6 sol</b>,我们非常高兴!」——新模型口碑发酵,Altman 连发多帖造势。", url:"https://x.com/sama/status/2075579646373216282"},
-    {type:"引用", date:"07-10", fresh:true, body:"引用 Tibo:为庆祝 <b>GPT-5.6 Sol 发布,24 小时内两次重置 ChatGPT Work 和 Codex 的速率限制</b>;Altman 配文「今天阳光明媚」。", url:"https://x.com/sama/status/2075579012223787402"},
-    {type:"转发", date:"07-09", body:"转 OpenAI Devs:<b>OpenAI 构建周 7 月 13 日开始</b>——一周内全球直播课程与社区活动,「带上你待办事项里的那个想法,用 Codex 把它构建出来」,注册已开放。", url:"https://x.com/OpenAIDevs/status/2075294038648148385"}
+    {type:"原创", date:"07-13", fresh:true, body:"发起悬赏:<b>「我很想看看人们用 5.6 sol 构建的有趣东西」——做出最酷作品的人将获得一份来自 OpenAI 档案的特别礼物</b>。", url:"https://x.com/sama/status/2076398253332140410"},
+    {type:"原创", date:"07-12", body:"罕见表态:<b>「到目前为止,我很确定 AI 总体上是在创造就业」</b>——他坦言这出乎自己预期:「我以为到了这种能力水平会看到一些(就业)影响。这种趋势有可能继续!」", url:"https://x.com/sama/status/2076036901824532530"},
+    {type:"引用", date:"07-12", body:"引用 Tibo「<b>桌面应用一天的增长超过过去两周总和</b>」的数据,配文「哇」——ChatGPT 桌面端增长曲线陡峭。", url:"https://x.com/sama/status/2076034163418014199"},
+    {type:"转发", date:"07-11", body:"转 Noam Brown:<b>GPT-5.6 Sol Ultra 证明了一个已有 50 年历史的数学猜想</b>——与 Erdős Unit Distance Problem 不同,这次用的是「今天公开可用」的模型。", url:"https://x.com/polynoamial/status/2075646048425431469"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"引用", date:"07-11", fresh:true, body:"<b>Grok 4.5 现已为 Perplexity Enterprise 组织启用</b>,并作为协调器模型进入 Computer(Pro/Max 订阅者可用)。", url:"https://x.com/AravSrinivas/status/2075756798221619591"},
-    {type:"转发", date:"07-10", fresh:true, body:"转 Grok 官方:<b>Grok 4.5 在 Perplexity Computer 评估中以极具竞争力的成本拿下所有前沿模型最高分</b>;马斯克也转发「在 Perplexity 中试用 Grok 4.5」助阵。", url:"https://x.com/grok/status/2075671276992221579"},
-    {type:"引用", date:"07-10", body:"<b>GPT-5.6 Sol 现已作为 Computer 内的协调模型提供,Sol 和 Terra 同时上线为 Pro/Max 用户的搜索模型</b>。", url:"https://x.com/AravSrinivas/status/2075377195691000062"},
-    {type:"原创", date:"07-09", body:"观点:<b>当完全本地的 harness + 模型 + 运行时足够优秀,它会成为你使用前沿模型的最佳入口</b>——前沿模型退居其内部「顾问工具」,harness 最终演化成消耗前沿 token 的操作系统。", url:"https://x.com/AravSrinivas/status/2075349828385788236"},
-    {type:"引用", date:"07-09", body:"官宣研究预览:<b>基于 GLM 5.2 后训练的 Computer 协调器模型——以 Opus 约 1/3 的成本(0.344×)实现接近前沿的性能</b>,与顾问模型配对时达到 Opus 4.8 级表现。", url:"https://x.com/AravSrinivas/status/2075226438228402178"}
+    {type:"引用", date:"07-13", fresh:true, body:"引用 Satya Nadella《The Reverse Information Paradox》并点破讽刺:<b>对蒸馏施加限制、却保留从客户数据中学习的权利——学习流动只朝一个方向时,价值会向学习基础设施所有者集中</b>,「必须把学习基础设施分发给每一家公司,让它们控制自己的学习循环」。", url:"https://x.com/AravSrinivas/status/2076422398853984324"},
+    {type:"原创", date:"07-13", fresh:true, body:"预告:<b>「收益远高于 50%。我们将很快在 Vera CPUs 上发布」</b>——Perplexity 的硬件侧优化即将亮相。", url:"https://x.com/AravSrinivas/status/2076391586087526764"},
+    {type:"引用", date:"07-09", body:"置顶研究预览:<b>基于 GLM 后训练的 Computer 协调器模型——以 Opus 约 1/3 的成本(0.344×)实现接近前沿的性能</b>,与顾问模型配对时达到 Opus 4.8 级表现。", url:"https://x.com/AravSrinivas/status/2075226438228402178"}
   ]},
   {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
     {type:"转发", date:"07-08", body:"转 Jarred Sumner:<b>「用 Rust 重写 Bun」</b>——Bun 创始人官宣重大重写决定,附长文解释动机。", url:"https://x.com/jarredsumner/status/2074973674332123157"},
@@ -138,65 +136,60 @@ const accounts = [
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
     {type:"转发", date:"07-08", body:"转 Google 高管:<b>世界杯阿根廷打进制胜球后,谷歌搜索迎来史上最高使用量</b>——「看到世界杯引发的全球热情真棒,期待半决赛和决赛」。", url:"https://x.com/thefox/status/2074878171392909774"},
-    {type:"转发", date:"07-08", body:"转 Josh Woodward 向社区征集:<b>「Gemini App 有什么本该做好却令你惊讶做不好的事?」</b>——产品团队公开收集短板。", url:"https://x.com/joshwoodward/status/2074847444823674883"},
-    {type:"转发", date:"07-06", body:"转 Google DeepMind:<b>Apptronik 扩建机器人公园设施,最新 Apollo 2 人形平台收集的真实世界数据将用于训练和推进 Gemini Robotics</b>——数据闭环持续运转。", url:"https://x.com/GoogleDeepMind/status/2074157282477154597"},
-    {type:"转发", date:"07-02", body:"转 Design Arena:<b>Gemini Omni Flash 以 1404 Elo 登顶 Video Arena</b>,领先幅度为该榜史上最大之一。", url:"https://x.com/Designarena/status/2072759122366509130"}
+    {type:"转发", date:"07-08", body:"转 Josh Woodward 向社区征集:<b>「Gemini App 有什么本该做好却令你惊讶做不好的事?」</b>——产品团队公开收集短板。", url:"https://x.com/joshwoodward/status/2074847444823674883"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"转发", date:"07-11", fresh:true, body:"转 Brace Sproul 的代理审查技巧:<b>让代理审查其他代理生成的 PR 时,告诉它「这是你不太信任的同事提交的」</b>——它会更卖力地找出改进/优化点。", url:"https://x.com/BraceSproul/status/2075734916109873285"},
-    {type:"转发", date:"07-10", fresh:true, body:"转 LangChain 同事:<b>「我每天多次直接从 Slack 使用 OpenSWE」</b>——从对话到代码的路径被打通;Harrison 补充 Ramp、Stripe 等公司早已内建类似系统。", url:"https://x.com/ankush_gola11/status/2075711354162630851"},
-    {type:"转发", date:"07-10", fresh:true, body:"转实习生长文<b>《Inside OpenSWE》</b>:复盘 LangChain 开源异步编码代理 Open SWE 当前版本的构建历程与工程决策。", url:"https://x.com/AranYogesh/status/2075675711407640839"}
+    {type:"原创", date:"07-12", fresh:true, body:"梳理 LangSmith 全家桶定位:<b>沙盒与部署(云端)、数百种模型集成(LangChain)、深度代理、可观测性追踪、递归改进引擎</b>——回应「AI 领域一切都进展太快」的感慨。", url:"https://x.com/hwchase17/status/2076086628221960685"},
+    {type:"转发", date:"07-12", fresh:true, body:"转 Josh Rosen:<b>「别让他们告诉你一切都只关乎模型,基础设施同样重要」</b>——为 LangSmith 的基础设施叙事背书。", url:"https://x.com/JoshARosen/status/2076115255986401399"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI 创始人", posts:[
+    {type:"原创", date:"07-11", body:"制造里程碑:<b>BotQ 产线为 F.03 人形机器人完成第 1,000 块 EVT 电池组</b>——「在加利福尼亚制造」。", url:"https://x.com/adcock_brett/status/2075961574398054484"},
     {type:"引用", date:"07-09", body:"晒全员大会视频:<b>F.03 早期启动幕后</b>——「F.01、F.02、F.03 都在一年内完成设计并开始行走,每台都是硬件软件从头重新设计的全新架构」。", url:"https://x.com/adcock_brett/status/2075234184164196580"},
-    {type:"引用", date:"07-08", body:"<b>「刚离开 Hark 办公室,团队正处于全力冲刺模式」</b>——他对数字 AI 的未来方向「有稍微不同的看法」,新东西即将展示。", url:"https://x.com/adcock_brett/status/2074722161118556209"},
-    {type:"引用", date:"07-03", body:"创业心得(20 年经验浓缩 30 秒):<b>「初创公司有一个巨大的过滤器,几乎淘汰所有人——但它是可以突破的,即使几乎没有资金」</b>。", url:"https://x.com/adcock_brett/status/2073062758573367440"}
+    {type:"引用", date:"07-08", body:"<b>「刚离开 Hark 办公室,团队正处于全力冲刺模式」</b>——他对数字 AI 的未来方向「有稍微不同的看法」,新东西即将展示。", url:"https://x.com/adcock_brett/status/2074722161118556209"}
   ]},
   {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
     {type:"引用", date:"07-09", body:"推荐 Adam Thierer 关于<b>「无许可创新」</b>的里程碑著作:「无需事先向政府请求许可就能发明创造时,我们能得到最好的想法——<b>保护开源 AI 现在是确保这一点的关键组成部分</b>」。", url:"https://x.com/AndrewYNg/status/2075271586400403567"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
-    {type:"转发", date:"07-02", body:"转 Keno Fischer:<b>Fable 完成功能审查后自我标记「我似乎引入了一个关键安全漏洞」,而 Opus 4.8 看同样代码却说没什么问题</b>——新一代模型的安全防护差异「事后看来显而易见」。", url:"https://x.com/KenoFischer/status/2072494633414774891"}
+    {type:"转发", date:"07-13", fresh:true, body:"转 elvis 对 Anthropic 的批评:<b>官方虽宣布为所有付费计划延长 Fable 5 访问、Claude Code 周限额 +50%,但「先收回再延期」的做法对用户破坏性很大</b>——「要么留在订阅里,要么直接放进 API,别玩把戏」。", url:"https://x.com/omarsar0/status/2076381743016276304"}
   ]},
-  {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
-    {type:"引用", date:"07-01", body:"<b>「ENPIRE → ASPIRE」:Physical AutoResearch 系列第二作</b>——为机器人构建可自我进化、逐项累积的 /skills 技能库,「一项技能接一项地构建机器人自我改进的组件」。", url:"https://x.com/DrJimFan/status/2072337488782475390"}
-  ]},
+  {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"转发", date:"07-10", fresh:true, body:"转 AI Engineer 大会:<b>Geoffrey Litt 的 Design Eng 主旨演讲上线——「我认为让人们理解代码如何工作很重要」</b>。", url:"https://x.com/aiDotEngineer/status/2075706238554534338"},
-    {type:"转发", date:"07-10", fresh:true, body:"转辩论视频:<b>「2026 年,AI 工程师还应该阅读代码吗?」</b>——Theo、Mitchell Hashimoto、Primeagen 等同台交锋的争议话题。", url:"https://x.com/altryne/status/2075636819291689219"}
+    {type:"引用", date:"07-13", fresh:true, body:"引用 Sam Altman「AI 创造就业」帖,以杰文斯悖论展开:<b>当熟练使用编码代理的人 + 代理扩展到所有知识工作,单位知识工作成本下降 → 总工作量与对更好知识的需求会上升,而不是下降</b>。", url:"https://x.com/swyx/status/2076155833428431012"},
+    {type:"原创", date:"07-12", fresh:true, body:"发布 Latent.Space 新文<b>《AI Engineer will be the LAST job》</b>——AI 工程师将是「最后一份工作」的论述。", url:"https://x.com/swyx/status/2076216180529156097"},
+    {type:"原创", date:"07-13", fresh:true, body:"金句:<b>「疯狂的定义就是进行多次 rollout 却不期待任何优势(advantage)」</b>——用 RL 术语玩梗,区别在于内省/反向传播。", url:"https://x.com/swyx/status/2076345087634620528"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"07-11", fresh:true, body:"新清单:<b>值得关注的 10 位活跃 AI 研究者</b>——@karpathy、@rasbt、@AndrewYNg 等在列。", url:"https://x.com/ai_explorer25/status/2075769548284838035"},
-    {type:"原创", date:"07-10", fresh:true, body:"<b>2026 年 20 门完全免费的编程课程</b>清单(Python、JavaScript 等,全部为 YouTube 播放列表直链)。", url:"https://x.com/ai_explorer25/status/2075557547889824064"},
-    {type:"引用", date:"07-09", body:"点评 <b>LingBot-VA 2.0(能提前思考并实时行动的具身原生模型)</b>:语义表示 + 本地因果预训练 + 高效推理的组合「技术上非常有趣」。", url:"https://x.com/ai_explorer25/status/2075272942079152418"}
+    {type:"原创", date:"07-12", fresh:true, body:"新清单:<b>通过玩游戏学编程</b>——Kubernetes(k8sgames)、DevOps(devops.games)、Linux(overthewire)、Git(ohmygit)、Python(codecombat)等直链合集。", url:"https://x.com/ai_explorer25/status/2076183390580273528"},
+    {type:"原创", date:"07-12", fresh:true, body:"置顶清单:<b>每个前沿实验室最值得关注的账号</b>——Anthropic 侧点名 @karpathy(「最近加入了 Anthropic」)、Claude Code 创建者 @bcherny 等。", url:"https://x.com/ai_explorer25/status/2076131933797634437"},
+    {type:"原创", date:"07-11", body:"科普帖:<b>30 个 Claude 必知术语</b>——用大白话解释 Prompt、Opus 等概念,面向新手的速查指南。", url:"https://x.com/ai_explorer25/status/2075935872126746876"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"引用", date:"07-10", fresh:true, body:"<b>用 Claude Code 等编码代理做小网站/应用的乐趣:产品和「能对话的代理」你同时拥有</b>——比把 Claude/ChatGPT 当聊天应用更好用。", url:"https://x.com/levelsio/status/2075689548575621143"},
-    {type:"引用", date:"07-10", fresh:true, body:"警示:<b>「不要在笔记本上裸跑编码代理的又一个理由——它们可能删掉你所有文件!」</b>这次代理删了他的服务器,幸好有备份。", url:"https://x.com/levelsio/status/2075686309767594038"},
-    {type:"原创", date:"07-09", body:"方法论分享:<b>「我做得还行的一件事是提前抓住趋势」</b>——正在用 vibecoding 把脑中的趋势图谱可视化成图表。", url:"https://x.com/levelsio/status/2075356658738278873"}
+    {type:"原创", date:"07-13", fresh:true, body:"实战故事:网站疑似宕机、SSH 连不上,正准备重置服务器时<b>想起 Hetzner 救援控制台,登入后「问 Claude Code 发生了什么」快速定位问题</b>——Tailscale 使用者的典型踩坑。", url:"https://x.com/levelsio/status/2076385674723557584"},
+    {type:"引用", date:"07-13", fresh:true, body:"继续安利睡眠温度实验:<b>18°C/64°F 下睡出 98% 睡眠评分</b>——「大多数人没意识到自己睡得多糟,直到在正确温度下睡觉」。", url:"https://x.com/levelsio/status/2076442140935115088"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"原创", date:"07-10", fresh:true, body:"感叹:<b>「过去 6 个月代理式编码的进步速度令人震惊,现在完全是另一个世界」</b>。", url:"https://x.com/fchollet/status/2075646052951376196"},
-    {type:"转发", date:"07-09", body:"转 ARC Prize:<b>GPT-5.6 Sol 在 ARC-AGI-3 创下 7.8% 新 SOTA</b>——首个通过验证击败 ARC-AGI-3 游戏的前沿模型,擅长在从未遇到的情境中定位。", url:"https://x.com/arcprize/status/2075270869992264003"},
-    {type:"原创", date:"07-09", body:"观察:<b>人类开始自然模仿 LLM 的写作风格</b>——不断阅读某种文风必然被同化,区分人类与「笨拙的机器」正变得更有挑战。", url:"https://x.com/fchollet/status/2075322891886063841"}
+    {type:"原创", date:"07-13", fresh:true, body:"观点:<b>「尝试、失败、更新心智模型、再尝试的过程,是智能的核心。我们应该庆祝那些优雅地失败并即时适应的模型」</b>。", url:"https://x.com/fchollet/status/2076462727422431312"},
+    {type:"原创", date:"07-12", fresh:true, body:"重要观察:<b>弱代码生成工具曾「抬高底线」、对高手无用;如今的强 AI 完全颠倒——高技能程序员反而获益最大</b>,受益曲线被倒转。", url:"https://x.com/fchollet/status/2076310779482317104"},
+    {type:"原创", date:"07-11", body:"感叹:<b>「过去 6 个月代理式编码的进步速度令人震惊,现在完全是另一个世界」</b>。", url:"https://x.com/fchollet/status/2075646052951376196"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
-    {type:"原创", date:"07-10", fresh:true, body:"代理编码选型经验:<b>除非需要 Terra Ultra 的性能,否则用更高努力档位的 Luna 更划算(性能相同或更好、更便宜);Sol High 以下的档位可以直接忘掉</b>。", url:"https://x.com/rasbt/status/2075573860796436626"},
-    {type:"原创", date:"07-10", body:"理解框架:<b>把 Sol/Terra/Luna 看作训练扩展 vs 推理扩展的组合</b>(三者本身也是不同规模的模型)。", url:"https://x.com/rasbt/status/2075407542042132825"},
-    {type:"原创", date:"07-09", body:"吐槽选择过载:<b>2 种模式 × 3 个模型 × 5 档努力 = 30 种可能的查询配置</b>——「我喜欢选择,但……」。", url:"https://x.com/rasbt/status/2075369179817902176"}
+    {type:"原创", date:"07-12", body:"应要求更新模型对比图,纳入 <b>Grok 4.5 与 Meta Muse Spark 1.1:「Grok 4.5 似乎处于帕累托前沿,性价比很高」</b>(数据来自 Artificial Analysis Coding Agent Index,已附 harness 信息)。", url:"https://x.com/rasbt/status/2075982283509571666"},
+    {type:"原创", date:"07-11", body:"勘误说明:此前图表存在标签移位,<b>Ultra = Max;据其了解 Ultra 主要通过运行 Max 并使用 4 个子代理来实现加速</b>,模型间相对比较仍然成立。", url:"https://x.com/rasbt/status/2075961865683825141"},
+    {type:"原创", date:"07-10", body:"代理编码选型经验:<b>除非需要 Terra Ultra 的性能,否则用更高努力档位的 Luna 更划算;Sol High 以下的档位可以直接忘掉</b>。", url:"https://x.com/rasbt/status/2075573860796436626"}
   ]}
 ];
 
 const readList = [
-  {t:"Inside OpenSWE:LangChain 开源异步编码代理构建复盘", d:"实习生视角长文,讲述 Open SWE 当前版本(Slack 直连、从对话到代码)的工程决策与踩坑,Harrison Chase 转发推荐。", u:"https://x.com/AranYogesh/status/2075675711407640839"},
-  {t:"Perplexity 自研协调器:GLM 5.2 后训练,约 1/3 Opus 成本接近前沿", d:"研究预览版已上线 Computer——被训练为「在需要时升级调用前沿模型」,与顾问模型配对时达到 Opus 4.8 级表现。", u:"https://x.com/AravSrinivas/status/2075226438228402178"},
-  {t:"ARC-AGI-3:GPT-5.6 Sol 创 7.8% 新 SOTA(ARC Prize)", d:"首个通过验证击败 ARC-AGI-3 游戏的前沿模型,在从未遇到的情境中定位能力最佳——通用推理基准再被推进。", u:"https://x.com/arcprize/status/2075270869992264003"},
-  {t:"Geoffrey Litt:Design Eng 主旨演讲(AI Engineer 大会)", d:"「我认为让人们理解代码如何工作很重要」——AI 时代设计工程的定位,视频已上线 YouTube;可搭配「2026 年还要读代码吗」辩论一起看。", u:"https://x.com/aiDotEngineer/status/2075706238554534338"},
-  {t:"用 Rust 重写 Bun(Jarred Sumner,Karpathy 转发)", d:"Bun 创始人官宣重大重写决定,附长文解释动机——运行时生态的技术路线大事件。", u:"https://x.com/jarredsumner/status/2074973674332123157"},
-  {t:"rasbt 的 GPT-5.6 选型速查:高努力档 Luna 优先", d:"「除非需要 Terra Ultra,否则高努力档 Luna 性能相同或更好且更便宜;Sol High 以下直接忘掉」——附训练 vs 推理扩展的理解框架。", u:"https://x.com/rasbt/status/2075573860796436626"},
-  {t:"2026 年 20 门完全免费的编程课程(ai_explorer25 清单)", d:"Python、JavaScript 等 20 个方向的免费 YouTube 播放列表合集,适合系统补基础。", u:"https://x.com/ai_explorer25/status/2075557547889824064"},
-  {t:"ASPIRE:机器人自我进化技能库(NVIDIA GEAR)", d:"机器人 /skills 技能库可自我进化、无限累积;Physical AutoResearch 系列第二作。", u:"https://x.com/DrJimFan/status/2072337488782475390"}
+  {t:"GPT-5.6 Sol Ultra 证明 50 年数学猜想(Noam Brown)", d:"与 Erdős Unit Distance Problem 案例不同,这次是「今天公开可用」的模型完成的——AI 做原创数学的又一里程碑,Altman 转发。", u:"https://x.com/polynoamial/status/2075646048425431469"},
+  {t:"Satya Nadella:《The Reverse Information Paradox》", d:"智能时代企业如何定价知识?Aravind 引用并延伸:学习流单向流动时,价值向学习基础设施所有者集中——「必须把学习基础设施分发给每一家公司」。", u:"https://x.com/AravSrinivas/status/2076422398853984324"},
+  {t:"swyx / Latent.Space:《AI Engineer will be the LAST job》", d:"配合其杰文斯悖论论述阅读:知识工作单位成本下降 → 总需求上升;AI 工程师是「最后一份工作」。", u:"https://x.com/swyx/status/2076216180529156097"},
+  {t:"rasbt 更新版模型性价比图:Grok 4.5 处帕累托前沿", d:"纳入 Grok 4.5 与 Meta Muse Spark 1.1,基于 Artificial Analysis Coding Agent Index,附 harness 信息与勘误(Ultra = Max + 4 子代理)。", u:"https://x.com/rasbt/status/2075982283509571666"},
+  {t:"Chollet:强 AI 倒转了程序员受益曲线", d:"弱工具抬高底线、强工具放大顶端——对「AI 让编程民主化」叙事的重要修正,搭配「优雅失败是智能核心」一起读。", u:"https://x.com/fchollet/status/2076310779482317104"},
+  {t:"Perplexity 自研协调器:GLM 后训练,约 1/3 Opus 成本接近前沿", d:"研究预览版已上线 Computer——与顾问模型配对时达到 Opus 4.8 级表现;下一步关注其 Vera CPUs 发布。", u:"https://x.com/AravSrinivas/status/2075226438228402178"},
+  {t:"通过玩游戏学编程(ai_explorer25 清单)", d:"Kubernetes、DevOps、Linux、Git、Python、CSS 等方向的游戏化学习站点直链合集。", u:"https://x.com/ai_explorer25/status/2076183390580273528"},
+  {t:"levelsio:Hetzner 救援控制台 + Claude Code 服务器急救实录", d:"网站「宕机」、SSH 失联的排障路径:救援控制台登入后让 Claude Code 诊断——独立开发者的实用运维经验。", u:"https://x.com/levelsio/status/2076385674723557584"}
 ];
 
 const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
