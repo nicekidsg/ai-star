@@ -107,14 +107,14 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-14 12:16 (北京时间)";
+const GEN_TIME = "2026-07-14 18:14 (北京时间)";
 
 const core = [
-  {h:"Codex 活跃用户达 600 万、一天涨 100 万,或已反超 Claude Code", p:"Latent.Space 指出(swyx 转发):<b>Tibo 宣布 Codex 活跃用户 600 万,且约一天内跃升 100 万</b>——而 Claude Code 上一次公开的用户数还是 2 月的 200 万,「Codex……刚刚超过 Claude Code 了吗?」成为今日开发者圈最大话题。"},
-  {h:"Anthropic 限额风波持续,Altman 连发数帖隔空开火", p:"Anthropic 宣布<b>为所有付费计划延长 Fable 5 访问、Claude Code 周限额 +50%</b>,但社区仍批评「先收回再延期」是玩把戏(Jeremy Howard 转发);Altman 则密集发声:<b>「为最好的模型而来,因为我们不会轻蔑对待你而留下来」</b>,并调侃 Claude「难题很棒,但前提是我们认为你足够优秀,不会悄悄降低你的权限」,还感叹「看到我们的模型终于擅长设计了」。"},
-  {h:"Grok 4.5 攻势:Perplexity 数小时完成集成,rasbt 确认其居帕累托前沿", p:"Aravind Srinivas 解释<b>几小时内把 Grok 4.5 集成进 Perplexity Computer 的两个原因:内部评估得分最高且最具成本效益、ZDR(零数据保留)从一开始就可用</b>;rasbt 更新对比图确认 <b>Grok 4.5 处于性价比帕累托前沿</b>(数据来自 Artificial Analysis Coding Agent Index)。"},
-  {h:"Gemini Omni Flash 登顶文生/图生视频双榜,DeepMind 深化机器人布局", p:"Demis 转发:<b>谷歌 Gemini Omni 系列首个模型 Omni Flash 在 Artificial Analysis 文生视频与图生视频双榜登顶第 1,略胜字节 Seedance 2.0</b>;DeepMind 同时扩大与 <b>Apptronik</b> 的合作,用 Apollo 平台真实世界数据训练 Gemini Robotics。"},
-  {h:"Agent harness 成新焦点;Hark 办公室开张、Figure 电池组破千", p:"LangChain 阵营力推<b>「为特定任务构建高度定制化的测试框架/harness」</b>打法,讨论模型×训练框架×任务契合度;Brett Adcock 的 <b>Hark 新办公室开放(圣何塞 11 万平方英尺、47 个空缺职位)</b>,Figure BotQ 完成第 1,000 块 F.03 电池组;fchollet 提醒:<b>强 AI 已倒转受益曲线,高技能程序员获益最大</b>。"}
+  {h:"Demis 发布重磅长文:《A Framework for Frontier AI》,称 AGI 已近", p:"Demis Hassabis 一小时前置顶发布长文 <b>《A Framework for Frontier AI and the Dawning of a New Age》</b>,开篇即言「这是人类历史的关键时刻」——DeepMind 掌门人系统阐述通向 AGI 的治理与安全框架,今日必读。"},
+  {h:"Codex 活跃用户达 600 万、一天涨 100 万,或已反超 Claude Code", p:"Latent.Space 指出(swyx 转发):<b>Tibo 宣布 Codex 活跃用户 600 万,且约一天内跃升 100 万</b>——而 Claude Code 上一次公开的用户数还是 2 月的 200 万,「Codex……刚刚超过 Claude Code 了吗?」成为开发者圈最大话题。"},
+  {h:"Anthropic 限额风波持续,Altman 连发数帖隔空开火", p:"Anthropic 宣布<b>为所有付费计划延长 Fable 5 访问、Claude Code 周限额 +50%</b>,但社区仍批评「先收回再延期」是玩把戏(Jeremy Howard 转发);Altman 则密集发声:<b>「为最好的模型而来,因为我们不会轻蔑对待你而留下来」</b>,并调侃 Claude「难题很棒,但前提是我们认为你足够优秀,不会悄悄降低你的权限」。"},
+  {h:"Grok 4.5 攻势:Perplexity 数小时完成集成,rasbt 确认其居帕累托前沿", p:"Aravind Srinivas 解释<b>几小时内把 Grok 4.5 集成进 Perplexity Computer 的两个原因:内部评估得分最高且最具成本效益、ZDR(零数据保留)从一开始就可用</b>;rasbt 更新对比图确认 <b>Grok 4.5 处于性价比帕累托前沿</b>;Aravind 另提出突破算力功率瓶颈的两条路径:<b>本地模型协调大部分令牌流、太空太阳能数据中心</b>。"},
+  {h:"Gemini Omni Flash 登顶视频双榜;Agent 可靠性与 harness 成新焦点", p:"Demis 转发:<b>Gemini Omni Flash 在 Artificial Analysis 文生/图生视频双榜登顶第 1,略胜字节 Seedance 2.0</b>;LangChain 阵营力推<b>「为特定任务构建定制化 harness」</b>打法;ai_explorer25 长文直指<b>「人人都在做 Agent 演示,几乎没人能交付可靠的 Agent」</b>。"}
 ];
 
 const accounts = [
@@ -125,6 +125,8 @@ const accounts = [
     {type:"原创", date:"07-13", fresh:true, body:"营销金句直指竞对:<b>「为最好的模型而来,因为我们不会轻蔑对待你而留下来」</b>——获超百万浏览。", url:"https://x.com/sama/status/2076780425280954658"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
+    {type:"原创", date:"07-14", fresh:true, body:"哲学短句:<b>「有时候,最优行动就是不行动」</b>。", url:"https://x.com/AravSrinivas/status/2076907075834355749"},
+    {type:"原创", date:"07-13", fresh:true, body:"提出突破数据中心推理功率瓶颈的两条可行路径:<b>1)本地模型协调大部分令牌流;2)太空中的太阳能数据中心</b>。", url:"https://x.com/AravSrinivas/status/2076748122383155330"},
     {type:"引用", date:"07-13", fresh:true, body:"解释<b>几小时内将 Grok 4.5 集成进 Perplexity Computer 的两个原因:1)内部评估得分最高且最具成本效益;2)ZDR(零数据保留)从一开始就可用</b>,「这就是我们的客户想要的」。", url:"https://x.com/AravSrinivas/status/2076699450177892354"},
     {type:"引用", date:"07-13", fresh:true, body:"定位升级:<b>「Computer 本质上是一个工作空间」</b>——Perplexity Mac 应用上线多账户与类 Gmail 的账户切换。", url:"https://x.com/AravSrinivas/status/2076668957940142239"},
     {type:"转发", date:"07-13", fresh:true, body:"转粉丝总结:<b>Joe Rogan 花 2.5 小时采访 Aravind</b>——聊工作的未来、未来十年会蓬勃发展的人、让事业 AI-proof 的 5 项技能。", url:"https://x.com/veroalex0110/status/2076676438162350156"}
@@ -134,6 +136,7 @@ const accounts = [
   ]},
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
+    {type:"原创", date:"07-14", fresh:true, body:"置顶发布重磅长文 <b>《A Framework for Frontier AI and the Dawning of a New Age》</b>:「这是人类历史的关键时刻」——系统阐述 AGI 的定义、通向 AGI 的路径与治理安全框架。", url:"https://x.com/demishassabis/status/2076957440109625718"},
     {type:"转发", date:"07-13", fresh:true, body:"转 Artificial Analysis:<b>Gemini Omni Flash 在文生视频与图生视频双榜首次登顶第 1,略胜字节跳动 Seedance 2.0</b>——Gemini Omni 系列首个模型交出成绩单。", url:"https://x.com/ArtificialAnlys/status/2076747075036045645"},
     {type:"转发", date:"07-08", body:"转 Google 高管:<b>世界杯阿根廷打进制胜球后,谷歌搜索迎来史上最高使用量</b>——「期待半决赛和决赛」。", url:"https://x.com/thefox/status/2074878171392909774"},
     {type:"转发", date:"07-06", body:"转 Google DeepMind:与 <b>Apptronik 扩大研究合作,Apollo 人形平台采集的真实世界数据将用于训练 Gemini Robotics</b>。", url:"https://x.com/GoogleDeepMind/status/2074157282477154597"}
@@ -162,6 +165,7 @@ const accounts = [
     {type:"原创", date:"07-14", fresh:true, body:"发布本期 AINews:<b>《not much happened today》</b>——大新闻间歇期的日常盘点。", url:"https://x.com/swyx/status/2076832040155271202"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
+    {type:"原创", date:"07-14", fresh:true, body:"新长文:<b>《Everyone's Building Agents. Almost No One Can Ship a Reliable One.》</b>——「你的时间线上满是 Agent 演示视频,但可靠交付才是真正的分水岭」。", url:"https://x.com/ai_explorer25/status/2076907289500672332"},
     {type:"原创", date:"07-14", fresh:true, body:"新置顶清单:<b>10 位活跃在 X 上的 AI 研究者</b>——@karpathy、@rasbt、@AndrewYNg、@drfeifei 等一站式关注列表。", url:"https://x.com/ai_explorer25/status/2076857009459384434"},
     {type:"引用", date:"07-13", fresh:true, body:"观察:<b>「我们终于到了企业对治理和所有权的关注程度与对智能的关注程度一样多的阶段」</b>——引用 ActAVA Cura:1T 参数医疗代理模型,递归自我改进训练,企业自有部署。", url:"https://x.com/ai_explorer25/status/2076717603956162858"},
     {type:"原创", date:"07-13", fresh:true, body:"长文:<b>《The $0 Path From Beginner to Your First AI Job》</b>——不花钱 12 个月进入 AI 行业的路线图,反驳「入行必须烧钱读学位/训练营」。", url:"https://x.com/ai_explorer25/status/2076573662149558469"}
@@ -172,7 +176,8 @@ const accounts = [
     {type:"原创", date:"07-13", fresh:true, body:"回归感言式玩梗:<b>「大家好,互关们,三年后再次见到你们真好,很高兴你们都回到我的时间线上」</b>。", url:"https://x.com/levelsio/status/2076816455815807006"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"原创", date:"07-13", fresh:true, body:"吐槽信息过载:<b>「一切都发生得太频繁了」</b>。", url:"https://x.com/fchollet/status/2076722972715536619"},
+    {type:"原创", date:"07-13", body:"谈智能的本质:<b>「尝试、失败、更新心智模型,然后再次尝试的过程,是智能的核心。我们应该庆祝那些优雅地失败并即时适应的模型」</b>。", url:"https://x.com/fchollet/status/2076462727422431312"},
+    {type:"原创", date:"07-12", body:"观察 AI 代码工具受益曲线的倒转:<b>弱 AI 工具抬高底线、对高手无用;现在的强 AI 恰恰相反——高技能程序员获益最大</b>。", url:"https://x.com/fchollet/status/2076310779482317104"},
     {type:"原创", date:"07-11", body:"感叹:<b>「过去 6 个月代理式编码的进步速度令人震惊,现在完全是另一个世界」</b>。", url:"https://x.com/fchollet/status/2075646052951376196"},
     {type:"原创", date:"07-10", body:"观察:<b>人类开始自然而然地模仿 LLM 的写作方式</b>——「你会不由自主地模仿你不断阅读的风格」,这让区分人类与机器变得更有挑战。", url:"https://x.com/fchollet/status/2075322891886063841"},
     {type:"转发", date:"07-10", body:"转 ARC Prize:<b>GPT-5.6 Sol 在 ARC-AGI-3 上设定新 SOTA(7.8%),是首个成功击败 ARC-AGI-3 游戏的经验证前沿模型</b>。", url:"https://x.com/arcprize/status/2075270869992264003"}
@@ -185,6 +190,8 @@ const accounts = [
 ];
 
 const readList = [
+  {t:"Demis Hassabis:《A Framework for Frontier AI and the Dawning of a New Age》", d:"DeepMind CEO 一小时前发布的重磅长文——「这是人类历史的关键时刻」,系统阐述 AGI 定义、路径与治理安全框架,本周最重要的一手观点。", u:"https://x.com/demishassabis/status/2076957440109625718"},
+  {t:"ai_explorer25:《Everyone's Building Agents. Almost No One Can Ship a Reliable One.》", d:"Agent 演示满天飞,但可靠交付才是分水岭——从演示到生产的工程差距拆解。", u:"https://x.com/ai_explorer25/status/2076907289500672332"},
   {t:"Latent.Space:Codex 用量一天涨 100 万,或已反超 Claude Code", d:"600 万活跃用户 vs Claude Code 2 月的 200 万——编码代理市场格局变化的关键数据点,配合 swyx 的用量追踪一起读。", u:"https://x.com/latentspacepod/status/2076840521574842401"},
   {t:"LangChain 官方教程:《How to build a custom agent harness》", d:"「为特定任务构建高度定制化测试框架」正成为打造最佳代理的主流打法——模型 × 训练框架 × 任务契合度是下一个关键词。", u:"https://x.com/sydneyrunkle/status/2076785571091910731"},
   {t:"ARC Prize:GPT-5.6 Sol 在 ARC-AGI-3 设定新 SOTA(7.8%)", d:"首个成功击败 ARC-AGI-3 游戏的经验证前沿模型——衡量「在从未遇到的情况中定位」能力的重要基准,Chollet 转发。", u:"https://x.com/arcprize/status/2075270869992264003"},
