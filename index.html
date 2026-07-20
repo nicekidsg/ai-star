@@ -107,96 +107,94 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-17 18:38 (北京时间)";
+const GEN_TIME = "2026-07-20 18:13 (北京时间)";
 
 const core = [
-  {h:"Altman 罕见反思:「过去 12 个月不是最好的,主要是我的错」;语音交互跨过临界点", p:"Sam Altman 昨夜连发两帖:一是坦承 <b>「我们过去 12 个月不是史上最好的,这主要是我的错,但接下来 12 个月将是迄今最好的」</b>;二是透露<b>「我现在对 ChatGPT 说话比打字更多——新语音模型真正跨过了一个门槛」</b>,语音正成为其主力交互方式。"},
-  {h:"Kimi-K3 登顶 Frontend Code Arena,超越 Claude Fable 5", p:"Arena.ai 宣布(Jeremy Howard 转发):<b>月之暗面 Kimi-K3 以 1679 分登顶前端代码竞技场第 1,超越 Claude Fable 5,较 Kimi-K2.6 跃升 17 位(#18→#1)</b>——中国开源模型在编码赛道再下一城;rasbt 分析其架构:比 GLM 5.2 大 250B 参数、稀疏度低于 Kimi K2.5(32B 激活)。"},
-  {h:"NVIDIA GEAR 发布机器人 TTT:8000 步上下文、5 分钟「肌肉记忆」、恒定推理成本", p:"Jim Fan 团队<b>把机器人模型原生扩展到 8,000 timesteps 上下文(约 5 分钟肌肉记忆),推理成本恒定</b>——机器人策略从「一次只活几帧」进化到长时程记忆;<b>Fei-Fei Li 转发点赞</b>这项 Stanford SVL × NVIDIA 的测试时训练(TTT)合作。"},
-  {h:"Perplexity 发布 SPACE 安全沙盒;Agent API 打入投资研究工作流", p:"Perplexity 推出<b>面向 agentic AI 的安全沙盒平台 SPACE,在 NVIDIA Vera CPU 上沙盒启动最快提速 1.9 倍</b>;Aravind 同时展示 <b>Agent API 配合 LangChain 约 90 秒起草带引用的 VC 投资备忘录</b>,Computer 的 Artifacts 也新增跨会话统一管理页。"},
-  {h:"Vesuvius Challenge 读出整卷古卷并启动新 $1M 大奖;LangChain 一年人数近三倍", p:"Nat Friedman 披露:<b>Vesuvius 挑战已读出一整卷赫库兰尼姆古卷,开发出全局螺旋先验的新展开算法,并再设 100 万美元大奖</b>;Harrison Chase 晒图感慨 <b>LangChain 一年从约 100 人扩张到 300+ 人</b>;Guillermo Rauch 宣布 <b>React 核心人物 Pete Hunt 等加盟 Vercel</b>(swyx:「React 复仇者集结」)。"}
+  {h:"LangChain 亮出全开源「软件工厂」:Dcode + OpenSWE + OpenWiki 打包放出", p:"Harrison Chase 宣布 <b>Dcode、OpenSWE、OpenSWE Review、OpenWiki 加起来构成一座「全开源软件工厂」</b>;Sydney Runkle 披露 LangChain 内部的终端编码、Slack/Linear、仓库文档、PR review 四类 SWE agents <b>全部开源且由同一开源 harness 驱动</b>;Brace:「整个工厂已经造好,别重复造轮子,直接 fork」。"},
+  {h:"Chollet 连发批评「AI 行业最根本的营销把戏」", p:"François Chollet:<b>「AI 能力一直是尖峰状的——部分窄域超人,其他领域几乎无用;行业的根本营销把戏,是让你相信窄域优势会泛化」</b>,并补充这一把戏奏效靠的是拟人化——人类某方面出色通常意味着综合能力强,<b>但 AI 的专长并不迁移</b>。"},
+  {h:"「美国还没做好中国 AI 就是很强的心理准备」——中国模型势头成周末热议", p:"Jeremy Howard 转 Ramez Naam:<b>「美国 AI 思想界在情感上还没准备好接受中国公司就是很擅长 AI」</b>;shadcn 感慨<b>「六周前 Fable 5 强到似乎需要政府介入下线,今天 $20/月就能用上可以说更好的模型」</b>;Aravind 转发「Intelligence will be free」。"},
+  {h:"Jim Fan 机器人 TTT 后续:公开技术细节与真机组装实拍", p:"Jim Fan 发布 8,000 timesteps 机器人上下文工作的 <b>「How it's done」技术细节</b>,并晒真机组装视频:<b>「模型不快,但每次抓取都测量、每个对齐都较真、把每个零件当传家宝」</b>——长时程「肌肉记忆」从论文走向演示。"},
+  {h:"rasbt 新长文:LLM 如何学会「多想或少想」;Mintlify 实测文档格式对 agent 的影响", p:"Sebastian Raschka 发布长文解析 <b>LLM 如何在 low/medium/high 推理力度之间切换、效果等级如何训练出来</b>;Mintlify 用 4 种格式服务同一文档,<b>统计 Claude Code / Codex 找到答案前踩了多少 404</b>——文档工程对 agent 效率的第一手实验数据。"}
 ];
 
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
-    {type:"原创", date:"07-17", fresh:true, body:"<b>「我现在对 ChatGPT 说话比打字更多——新语音模型真正跨过了一个门槛」</b>——暗示语音正成为 ChatGPT 的主力交互方式(64 万浏览)。", url:"https://x.com/sama/status/2077842579232895286"},
-    {type:"原创", date:"07-17", fresh:true, body:"罕见反思:<b>「我们过去 12 个月不是史上最好的,这主要是我的错;但接下来 12 个月将是迄今最好的」</b>——为团队即将发布的成果预热。", url:"https://x.com/sama/status/2077817060068057493"}
+    {type:"原创", date:"07-18", body:"「this is cool」——转介一段演示(72 万浏览),内容见原文链接。", url:"https://x.com/sama/status/2078244242993164716"},
+    {type:"原创", date:"07-17", body:"<b>「我现在对 ChatGPT 说话比打字更多——新语音模型真正跨过了一个门槛」</b>——语音正成为其主力交互方式(105 万浏览)。", url:"https://x.com/sama/status/2077842579232895286"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"转发", date:"07-17", fresh:true, body:"转 NVIDIA AI Infra:<b>Perplexity 发布 SPACE——面向 agentic AI 的安全沙盒平台</b>,在 NVIDIA Vera CPU 上早期测试沙盒启动最快提速 1.9 倍。", url:"https://x.com/NVIDIAAIInfra/status/2077890221212090687"},
-    {type:"引用", date:"07-17", fresh:true, body:"展示 <b>Perplexity Agent API 在 LangChain 中用于投资工作流:约 90 秒起草一份带引用的 VC 投资备忘录</b>。", url:"https://x.com/AravSrinivas/status/2077798528701911408"},
-    {type:"引用", date:"07-16", fresh:true, body:"Computer 更新:<b>Artifacts(网页应用、文档、幻灯片、表格等)现可在单一标签页跨会话统一管理</b>,新增「Created by you」页。", url:"https://x.com/AravSrinivas/status/2077772718435659947"}
+    {type:"转发", date:"07-19", body:"转 Bojan Tunguz:<b>「Intelligence will be free(智能终将免费)」</b>——呼应其一贯的 AI 成本通缩判断。", url:"https://x.com/tunguz/status/2078650019142619484"},
+    {type:"转发", date:"07-18", body:"转亲历 Sun 衰亡的老兵 Todd Dailey:<b>「Aravind 的推理 100% 正确」——Sun 靠百万美元级 web 服务器+昂贵服务,最终被商品化硬件颠覆</b>;隐含对 AI 算力成本走向的判断。", url:"https://x.com/twid/status/2078362328576540721"}
   ]},
-  {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
-    {type:"转发", date:"07-08", body:"转 Jarred Sumner:<b>「用 Rust 重写 Bun」</b>——Bun 创始人官宣从 Zig 转向 Rust 的重大重写决定,附长文解释动机(358 万浏览)。", url:"https://x.com/jarredsumner/status/2074973674332123157"}
-  ]},
+  {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[]},
   {handle:"darioamodei", name:"Dario Amodei", role:"Anthropic CEO", posts:[]},
   {handle:"demishassabis", name:"Demis Hassabis", role:"Google DeepMind CEO", posts:[
-    {type:"转发", date:"07-16", fresh:true, body:"转 Google DeepMind:<b>与 Isomorphic Labs 合作发布生物韧性(bioresilience)框架</b>——「生物安全格局正快速演变,要抢在未来疫情暴发之前」。", url:"https://x.com/GoogleDeepMind/status/2077721122116640969"},
-    {type:"原创", date:"07-14", body:"置顶重磅长文 <b>《A Framework for Frontier AI and the Dawning of a New Age》</b>:「这是人类历史的关键时刻」——系统阐述 AGI 的定义、路径与治理安全框架。", url:"https://x.com/demishassabis/status/2076957440109625718"},
-    {type:"转发", date:"07-08", body:"转 Google 高管:<b>世界杯阿根廷打进制胜球后,谷歌搜索迎来史上最高使用量</b>——「期待半决赛和决赛」。", url:"https://x.com/thefox/status/2074878171392909774"}
+    {type:"转发", date:"07-18", body:"转 Pelé 官方:<b>贝利自认一生最美的进球(1959 vs 尤文)从未被拍下,Google 用 AI 逐帧重建</b>——「这一次,全世界都能看到」。", url:"https://x.com/Pele/status/2078160968513704270"},
+    {type:"转发", date:"07-17", body:"转 Josh Woodward 回顾 <b>NotebookLM 的起源</b>:看 Steven Johnson 拆解自己如何写书的那个房间,是这个「小项目」的火花。", url:"https://x.com/joshwoodward/status/2077811657385079045"},
+    {type:"转发", date:"07-17", body:"转 Gemini Notebook:<b>NotebookLM 三周年</b>——从帮助学习的小实验,成长为音频、视频、交互式学习工具。", url:"https://x.com/Gemini_Notebook/status/2077803351392268314"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"转发", date:"07-17", fresh:true, body:"转 Sidra Miconi:<b>OpenWiki 0.2 正把文档从「一堆 Markdown」变成代理可以可靠导航的基础设施</b>——采用 OKF 规范为文档加结构。", url:"https://x.com/SidraMiconi/status/2077951852403212494"},
-    {type:"引用", date:"07-17", fresh:true, body:"「有趣的回忆之旅」——引用 Jacob Lee:<b>LangChain 今年人数扩张近三倍,从约 100 人到 300+ 人</b>。", url:"https://x.com/hwchase17/status/2077804217151176949"},
-    {type:"转发", date:"07-17", fresh:true, body:"转 Sydney Runkle:<b>「拥有智能不等于买得起最好的模型,而是拥有从模型无关 harness 到可观测性的整个代理开发生命周期」</b>。", url:"https://x.com/sydneyrunkle/status/2077803736110338157"}
+    {type:"引用", date:"07-19", body:"<b>「Dcode、OpenSWE、OpenSWE Review、OpenWiki……加起来就是一座全开源软件工厂」</b>——LangChain 把内部 agent 全家桶开源打包。", url:"https://x.com/hwchase17/status/2078576948922708200"},
+    {type:"转发", date:"07-19", body:"转 Sydney Runkle:LangChain 内部的<b>终端编码、Slack/Linear、仓库文档、PR review 四类 SWE agents 全部开源,由同一开源 harness 驱动</b>。", url:"https://x.com/sydneyrunkle/status/2078597258208055441"},
+    {type:"转发", date:"07-19", body:"转 Brace:<b>「拥有智能不只是用开源模型——完整工厂已经造好,别重复造轮子,直接 fork」</b>。", url:"https://x.com/BraceSproul/status/2078579164576440560"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI / Hark 创始人", posts:[
-    {type:"原创", date:"07-16", fresh:true, body:"发布 <b>「Figure 2026」</b>视频——Figure 新一年人形机器人路线预告(7.5 万浏览)。", url:"https://x.com/adcock_brett/status/2077773154299318577"},
-    {type:"原创", date:"07-11", body:"制造里程碑:<b>BotQ 产线为 F.03 人形机器人完成第 1,000 块 EVT 电池组</b>——「在加利福尼亚制造」。", url:"https://x.com/adcock_brett/status/2075961574398054484"},
-    {type:"原创", date:"07-09", body:"晒全员大会视频:<b>F.03 早期启动幕后</b>——「F.01、F.02、F.03 都在一年内完成设计并开始行走」。", url:"https://x.com/adcock_brett/status/2075234184164196580"}
+    {type:"原创", date:"07-16", body:"发布 <b>「Figure 2026」</b>视频——Figure 新一年人形机器人路线预告(9.5 万浏览)。", url:"https://x.com/adcock_brett/status/2077773154299318577"},
+    {type:"原创", date:"07-13", body:"<b>Hark 新办公室正式启用:San Jose 110,000 平方英尺大楼两层,47 个在招岗位</b>(设计、嵌入式软件、产品工程等)。", url:"https://x.com/adcock_brett/status/2076680485800186218"},
+    {type:"原创", date:"07-11", body:"制造里程碑:<b>BotQ 产线为 F.03 人形机器人完成第 1,000 块 EVT 电池组</b>——「在加利福尼亚制造」。", url:"https://x.com/adcock_brett/status/2075961574398054484"}
   ]},
   {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
-    {type:"引用", date:"07-09", body:"推荐 Adam Thierer 关于<b>「无许可创新」</b>的里程碑著作:「无需事先向政府请求许可就能发明创造时,我们能得到最好的想法——<b>保护开源 AI 现在是确保这一点的关键组成部分</b>」。", url:"https://x.com/AndrewYNg/status/2075271586400403567"}
+    {type:"原创", date:"07-17", body:"新课程:<b>与 Cerebras 合作,教你构建跑在高速推理硬件上的低延迟 LLM 应用</b>——快推理正成为应用体验的关键变量。", url:"https://x.com/AndrewYNg/status/2078144569594761591"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
-    {type:"转发", date:"07-16", fresh:true, body:"转 Arena.ai:<b>Kimi-K3 以 1679 分登顶 Frontend Code Arena 第 1,超越 Claude Fable 5,较 Kimi-K2.6 跃升 17 位(#18→#1)</b>。", url:"https://x.com/arena/status/2077824029126504525"},
-    {type:"转发", date:"07-12", body:"转 elvis 对 Anthropic 的批评:<b>虽宣布为付费计划延长 Fable 5 访问、Claude Code 周限额 +50%,但「先收回再延期」对用户破坏性很大</b>——「别玩把戏」。", url:"https://x.com/omarsar0/status/2076381743016276304"}
+    {type:"转发", date:"07-18", body:"转 Ramez Naam:<b>「美国 AI 思想界在情感上还没准备好接受:中国公司就是很擅长 AI」</b>。", url:"https://x.com/ramez/status/2078212811503948173"},
+    {type:"转发", date:"07-18", body:"转 Mintlify 实验:<b>同一文档用 4 种格式服务(raw HTML、纯 markdown、markdown+llms.txt 等),统计 Claude Code / Codex 找到答案前踩了多少 404</b>——文档格式对 agent 效率的实测。", url:"https://x.com/mintlify/status/2078147956163932269"},
+    {type:"转发", date:"07-17", body:"转 shadcn:<b>「六周前 Fable 5 强到似乎需要政府介入下线;今天 $20/月就能用上可以说更好的模型。前后才六周?」</b>", url:"https://x.com/shadcn/status/2077996062384480268"}
   ]},
   {handle:"DrJimFan", name:"Jim Fan", role:"NVIDIA GEAR Lab 负责人", posts:[
-    {type:"原创", date:"07-15", body:"重磅发布:<b>把机器人模型原生扩展到 8,000 timesteps 上下文——约 5 分钟「肌肉记忆」,推理成本恒定</b>;「机器人策略过去一次只活几帧」。", url:"https://x.com/DrJimFan/status/2077414142340988962"},
-    {type:"原创", date:"07-15", body:"附上 <b>NVIDIA GEAR Lab 的博客与论文(RoboTTT)</b>,推荐一作 Yunfan Jiang 的技术深潜。", url:"https://x.com/DrJimFan/status/2077414143901188195"},
+    {type:"引用", date:"07-18", body:"<b>「How it's done」</b>——公开 8,000 timesteps 机器人上下文(约 5 分钟「肌肉记忆」、恒定推理成本)工作的技术细节。", url:"https://x.com/DrJimFan/status/2078150496683213151"},
+    {type:"原创", date:"07-18", body:"「早晨仪式:咖啡,然后看我们的机器人组装东西——<b>模型不快,但每次抓取都测量、每个对齐都较真、把每个零件当传家宝</b>」。", url:"https://x.com/DrJimFan/status/2078150032575082616"},
     {type:"转发", date:"07-15", body:"转 <b>Fei-Fei Li:「我对这项用于机器人学习的测试时训练(TTT)工作感到非常兴奋」</b>——Stanford SVL × NVIDIA Robotics 合作。", url:"https://x.com/drfeifei/status/2077497317255737422"}
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[
-    {type:"原创", date:"07-16", fresh:true, body:"Vesuvius Challenge 重大进展:<b>已读出一整卷赫库兰尼姆古卷,开发出带全局螺旋先验的新展开算法,并再启动 100 万美元新大奖</b>。", url:"https://x.com/natfriedman/status/2077768084471808090"}
+    {type:"原创", date:"07-16", body:"Vesuvius Challenge 重大进展:<b>已读出一整卷赫库兰尼姆古卷,开发出带全局螺旋先验的新展开算法,并再启动 100 万美元新大奖</b>。", url:"https://x.com/natfriedman/status/2077768084471808090"}
   ]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"引用", date:"07-17", fresh:true, body:"「React 复仇者集结!」——引用 Guillermo Rauch:<b>React 核心人物 Pete Hunt 等两位开发者工具传奇加盟 Vercel</b>。", url:"https://x.com/swyx/status/2078004977294032991"},
-    {type:"原创", date:"07-17", fresh:true, body:"AIE 大会幕后:<b>每年确保头部 YC AI 公司亮相 AI Engineer,今年由 Garry Tan 压轴</b>。", url:"https://x.com/swyx/status/2077938877407633857"},
-    {type:"转发", date:"07-17", fresh:true, body:"转 Zhengyao Jiang:<b>「autoresearch 将极大改变 AI/ML 研究者的角色,但不会让它消失——归结为三种技能」</b>。", url:"https://x.com/zhengyaojiang/status/2077868497208791369"}
+    {type:"原创", date:"07-20", fresh:true, body:"「即使我绝不是定制键盘玩家,也得承认<b>这玩意确实很酷</b>」(1.6 万浏览,内容见原文)。", url:"https://x.com/swyx/status/2079061713048199625"},
+    {type:"引用", date:"07-19", fresh:true, body:"「here goes」——引用 <b>Clem Delangue(Hugging Face CEO)发布的活动邀请</b>,预告参与其线下活动。", url:"https://x.com/swyx/status/2078912371901481110"},
+    {type:"原创", date:"07-19", body:"「嘲讽欧洲的人没看到:<b>欧洲其实有一批世界顶级 AI 工程师,关键在于把对的人挑出来</b>」。", url:"https://x.com/swyx/status/2078628617987518855"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"07-17", fresh:true, body:"新置顶清单:<b>「AI 领域最值得关注的 20 个账号」</b>——@karpathy(LLM 之王)、@steipete(openclaw 作者)、@gregisenberg 等。", url:"https://x.com/ai_explorer25/status/2077944609251221853"},
-    {type:"原创", date:"07-16", fresh:true, body:"整理<b>免费学编程的最佳 YouTube 播放列表大合集</b>——覆盖 C/C++ 等主流语言,一帖收藏。", url:"https://x.com/ai_explorer25/status/2077759553895330061"},
-    {type:"原创", date:"07-16", body:"新长文:<b>《How To Give Any AI Access to Your Tools》</b>——「大多数人还在向聊天框复制粘贴,一小群人已经把 AI 直接接进了自己的工具」。", url:"https://x.com/ai_explorer25/status/2077639124748742767"}
+    {type:"原创", date:"07-20", fresh:true, body:"新置顶:<b>《2026 你唯一需要的 AI 名单》</b>——前沿实验室创始人、研究者与 builder 全景清单(@sama、@demishassabis 等)。", url:"https://x.com/ai_explorer25/status/2079077735264301321"},
+    {type:"原创", date:"07-20", fresh:true, body:"整理 <b>120+ AI 工具大全</b>——按创意、建站、写作等场景分类(Claude、Perplexity、Framer 等)。", url:"https://x.com/ai_explorer25/status/2079031038945136992"},
+    {type:"引用", date:"07-19", fresh:true, body:"引用 OpenBMB:<b>MiniCPM 进入物理世界赋能机器人</b>——「希望看到社区为不同机械臂、相机、机器狗贡献 adapter」。", url:"https://x.com/ai_explorer25/status/2078881425072488734"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"原创", date:"07-17", fresh:true, body:"玩梗模型限制:<b>「怎么在 Claude Code 里跑 K3?Fable 拦住了我大部分工作,现在 Opus 也是!」</b>——而他的「工作」是在 pieter.com 的 Windows XP 里装 2003 版雅虎通。", url:"https://x.com/levelsio/status/2077842905230614541"},
-    {type:"原创", date:"07-16", fresh:true, body:"分享<b>用 Claude Code 把自己散落各处的博客文章全部打通连接</b>的实践。", url:"https://x.com/levelsio/status/2077822947155161450"},
-    {type:"转发", date:"07-16", fresh:true, body:"转 DHH 长文观点:<b>「欧洲的衰落并非不可避免」</b>——反驳「欧洲注定成为露天博物馆」的美式调侃。", url:"https://x.com/dhh/status/2077840070191820888"}
+    {type:"引用", date:"07-19", fresh:true, body:"<b>「人人都拿没钱当不过理想生活的借口,可拿到钱之后,他们还是不过!」</b>", url:"https://x.com/levelsio/status/2078840653644017821"},
+    {type:"原创", date:"07-19", fresh:true, body:"对比 <b>bootstrapped(自力更生)创始人统计数据</b>——接续其关于金钱与理想生活的讨论。", url:"https://x.com/levelsio/status/2078837142097158513"},
+    {type:"原创", date:"07-19", fresh:true, body:"吐槽 Spotify 多设备体验:客厅 Alexa 放爵士、楼下想用 iPhone 听播客,<b>接续播放状态混乱</b>。", url:"https://x.com/levelsio/status/2078864442633109554"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"引用", date:"07-15", body:"呼应 Aaron Levie「代码对代理极其友好」:<b>「Code is OP(代码超模)。那如果……我们把一切都变成代码呢?」</b>——延续其「一切皆程序」的智能观。", url:"https://x.com/fchollet/status/2077202144265212108"},
-    {type:"原创", date:"07-16", fresh:true, body:"近日多条新帖转为<b>订阅解锁(Subscribe to unlock)</b>模式——含 VC 行业观察等,完整内容需订阅其 X 专栏查看。", url:"https://x.com/fchollet/status/2077888666849148928"}
+    {type:"原创", date:"07-20", fresh:true, body:"<b>「AI 能力一直是尖峰状的:窄域超人、其他领域几乎无用。行业最根本的营销把戏,就是让你相信窄域优势会泛化」</b>。", url:"https://x.com/fchollet/status/2079056619120595063"},
+    {type:"原创", date:"07-20", fresh:true, body:"补充:这个把戏奏效靠的是<b>拟人化</b>——人类某方面出色通常意味着综合能力强,<b>但 AI 的专长并不这样迁移</b>。", url:"https://x.com/fchollet/status/2079057411902710053"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
-    {type:"原创", date:"07-16", fresh:true, body:"分析 Kimi-K3 架构:<b>比 GLM 5.2 大 250B 参数;稀疏度低于 Kimi K2.5 1T(3.2% 稀疏、32B 激活 vs 4.2%、41B 激活)</b>。", url:"https://x.com/rasbt/status/2077750586095628749"},
-    {type:"原创", date:"07-16", body:"点评 Thinky 突袭发布的 <b>Inkling 模型:基准表现相当扎实,架构藏小惊喜——多处嵌入小型卷积层</b>。", url:"https://x.com/rasbt/status/2077540575255880126"},
-    {type:"原创", date:"07-12", body:"更新模型对比图,纳入 <b>Grok 4.5 与 Meta Muse Spark 1.1:「Grok 4.5 处于帕累托前沿,性价比很高」</b>(Artificial Analysis Coding Agent Index,附 harness 信息)。", url:"https://x.com/rasbt/status/2075982283509571666"}
+    {type:"原创", date:"07-18", body:"新长文:<b>LLM 如何在 low/medium/high 推理力度之间切换?「多想或少想」是如何训练出来的?</b>——推理效果等级机制详解。", url:"https://x.com/rasbt/status/2078471977237450829"},
+    {type:"原创", date:"07-16", body:"分析 Kimi-K3 架构:<b>比 GLM 5.2 大 250B 参数;稀疏度低于 Kimi K2.5 1T(3.2% 稀疏、32B 激活 vs 4.2%、41B 激活)</b>。", url:"https://x.com/rasbt/status/2077750586095628749"},
+    {type:"原创", date:"07-16", body:"点评 Thinky 突袭发布的 <b>Inkling 模型:基准表现相当扎实,架构藏小惊喜——多处嵌入小型卷积层</b>。", url:"https://x.com/rasbt/status/2077540575255880126"}
   ]}
 ];
 
 const readList = [
-  {t:"NVIDIA GEAR:RoboTTT——机器人测试时训练(博客+论文)", d:"机器人模型原生 8,000 timesteps 上下文、5 分钟「肌肉记忆」、恒定推理成本——Fei-Fei Li 点赞的 Stanford SVL × NVIDIA 合作,本周最重要的机器人学习进展。", u:"https://x.com/DrJimFan/status/2077414143901188195"},
-  {t:"Arena.ai:Kimi-K3 登顶 Frontend Code Arena(1679 分)", d:"超越 Claude Fable 5、较 K2.6 跃升 17 位——配合 rasbt 的架构分析(比 GLM 5.2 大 250B、32B 激活)一起读,理解中国开源模型的编码攻势。", u:"https://x.com/arena/status/2077824029126504525"},
+  {t:"LangChain 全开源「软件工厂」:Dcode + OpenSWE + OpenSWE Review + OpenWiki", d:"终端编码、Slack/Linear、仓库文档、PR review 四类 SWE agents 全部开源、同一 harness 驱动——想自建 agent 开发流水线的团队可以直接 fork。", u:"https://x.com/hwchase17/status/2078576948922708200"},
+  {t:"rasbt:LLM 推理力度等级(low/medium/high)是如何炼成的", d:"解析模型如何学会「多想或少想」——理解 GPT/Claude 类模型 effort 参数背后机制的第一手长文。", u:"https://x.com/rasbt/status/2078471977237450829"},
+  {t:"Mintlify 实验:哪种文档格式对 coding agent 最友好", d:"同一内容用 raw HTML、纯 markdown、markdown+llms.txt 等 4 种方式服务,统计 Claude Code / Codex 踩 404 的次数——文档工程的实证数据。", u:"https://x.com/mintlify/status/2078147956163932269"},
+  {t:"NVIDIA GEAR:RoboTTT——机器人测试时训练(技术细节公开)", d:"8,000 timesteps 上下文、5 分钟「肌肉记忆」、恒定推理成本;本周 Jim Fan 追加「How it's done」细节帖与真机组装实拍。", u:"https://x.com/DrJimFan/status/2078150496683213151"},
+  {t:"Chollet:AI 能力的「尖峰性」与行业营销的拟人化把戏", d:"连发两帖:窄域超人≠通用能力,AI 的专长不像人类那样迁移——评估模型宣传时值得常备的思维框架。", u:"https://x.com/fchollet/status/2079056619120595063"},
+  {t:"OpenBMB MiniCPM 进入物理世界:开源模型上机器人", d:"MiniCPM 赋能机械臂/机器狗,社区呼吁贡献不同硬件的 adapter——小模型+开放硬件生态的新支线。", u:"https://x.com/ai_explorer25/status/2078881425072488734"},
   {t:"Vesuvius Challenge:整卷古卷读出 + 新 $1M 大奖", d:"全局螺旋先验的新展开算法读出整卷赫库兰尼姆古卷——Nat Friedman 主导的「AI 考古」项目进入新阶段。", u:"https://x.com/natfriedman/status/2077768084471808090"},
-  {t:"Perplexity SPACE:面向 agentic AI 的安全沙盒平台", d:"NVIDIA Vera CPU 上沙盒启动最快提速 1.9 倍——代理执行环境正成为基础设施竞争新战场。", u:"https://x.com/NVIDIAAIInfra/status/2077890221212090687"},
-  {t:"Demis Hassabis:《A Framework for Frontier AI and the Dawning of a New Age》", d:"DeepMind CEO 置顶长文——「这是人类历史的关键时刻」,系统阐述 AGI 定义、路径与治理安全框架;本周新增:与 Isomorphic Labs 的生物韧性框架。", u:"https://x.com/demishassabis/status/2076957440109625718"},
-  {t:"OpenWiki 0.2 与 OKF 规范:让文档成为代理可导航的基础设施", d:"「把文档从一堆 Markdown 变成 agents 能可靠导航的基础设施」——Harrison Chase 转发,文档工程或是 agent 可靠性的下一块拼图。", u:"https://x.com/SidraMiconi/status/2077951852403212494"},
-  {t:"Thinky Inkling 模型:架构里的小惊喜", d:"rasbt 点评:基准表现扎实,多处嵌入小型卷积层——非 Transformer 组件回潮的又一例证。", u:"https://x.com/rasbt/status/2077540575255880126"},
-  {t:"ai_explorer25:《How To Give Any AI Access to Your Tools》", d:"「大多数人还在复制粘贴,一小群人已把 AI 直接接进自己的工具」——面向普通用户的工具接入(MCP 式)科普长文。", u:"https://x.com/ai_explorer25/status/2077639124748742767"},
-  {t:"Bun 官宣用 Rust 重写(从 Zig 迁移)", d:"《Rewriting Bun in Rust》长文解释动机与方案——JS 运行时基础设施的重大技术决策,Karpathy 转发,358 万浏览。", u:"https://x.com/jarredsumner/status/2074973674332123157"}
+  {t:"Andrew Ng 新课程:基于高速推理硬件的低延迟 LLM 应用", d:"与 Cerebras 合作的短课——当模型差距缩小,推理速度正成为产品体验的下一个竞争点。", u:"https://x.com/AndrewYNg/status/2078144569594761591"},
+  {t:"Google × Pelé:AI 逐帧重建 1959 年「史上最美进球」", d:"贝利自认一生最美的进球从未被拍下,Google 用 AI 逐帧重建——生成式 AI 在体育文化遗产上的标志性应用,Demis 转发。", u:"https://x.com/Pele/status/2078160968513704270"}
 ];
 
 const typeClass = {"原创":"t-org","回复":"t-re","转发":"t-rt","引用":"t-quote"};
