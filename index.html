@@ -107,26 +107,26 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-29 00:15 (北京时间)";
+const GEN_TIME = "2026-07-29 06:13 (北京时间)";
 
 const core = [
-  {h:"Perplexity 发布「Personal Computer」:Windows 变身本地 agent 主机", p:"Perplexity 官宣 <b>Personal Computer 登陆 Windows 版应用:本地 agent harness,在你的电脑上编排多个 agent 完成工作</b>,The Verge 以「把 Windows PC 变成 AI agent」报道;Aravind Srinivas 连续转发造势,还附和 tinygrad「拥有自己 AI 所在的那台铁盒子,胜过拥有房产」——本轮最大产品增量。"},
-  {h:"Kimi K3 热度不减:Raschka 出架构深度解读,scaling law 较 K2 约 2.5x", p:"Sebastian Raschka 发布 <b>Kimi K3 架构图与逐层观察:「看起来复杂,但本质是规模化的渐进改良」</b>,并感叹「LLM 架构确实在变复杂」;技术报告的 scaling law 被评「一件艺术品,配方效率较 K2 约 2.5 倍」;swyx 直接发帖「i love you @Kimi_Moonshot」——开源前沿权重持续发酵。"},
-  {h:"Sam Altman 密集释放信号:「GPT-5.6 就够了」——「wrong」;「我想要一种新型计算机」", p:"对「gpt-5.6 sol 就是我的全部所需」的百万浏览热帖,sama 回复<b>「wrong」</b>;称 ChatGPT Voice 体验<b>「feels big,我想要一种新型计算机」</b>;并盛赞 <b>ChatGPT Work:一句话让它翻遍聊天历史、规划 8 人长周末旅行的三套方案</b>——模型迭代、新硬件、agent 化产品三线并进。"},
-  {h:"开放模型论战延续:Andrew Ng 力挺 Nvidia 公开信,Gemma 系列下载破 9 亿", p:"Andrew Ng:<b>「Jensen 这步走得好,公开信值得一读——OpenAI-Hugging Face 被黑事件说明防御侧需要开源模型与 harness」</b>;Demis 澄清 <b>Gemma 4 下载超 3 亿、Gemma 系列累计超 9 亿</b>并重申开放生态立场;Jeremy Howard 继续转帖施压 Anthropic 的游说立场;Jim Fan 评 Jensen 首帖「Absolute legend」。"},
-  {h:"Agent 落地加速:Figure 机器人拿到园区通行证;LangChain 进军伦敦", p:"Brett Adcock:<b>Figure 机器人获园区所有门禁权限,「很快会有数百台自由来去」</b>;LangChain 官宣 <b>10 月 13 日首届 Interrupt:London</b>,并转发「零售商不造卡车,但要拥有决定调度的系统」的企业 AI 采用框架;swyx 重申<b>「$/token 已死,成本度量该换成 $/task」</b>。"}
+  {h:"Perplexity 一夜双弹:Model Council 开放给 Pro 用户,开源 BrowseSafe 反注入基准", p:"Aravind Srinivas 宣布 <b>Model Council(多模型合议)向 Pro 用户开放,可用 Computer 额度调用</b>——「在法律、医疗、金融研究中最受欢迎,多元视角能压住幻觉」;同时<b>开源 BrowseSafe:保护浏览器 agent 免受网页 prompt injection 的公开基准</b>,并称将随 Nvidia 主导的开放安全生态继续开源更多工具。"},
+  {h:"AI 正在重塑技术招聘:swyx「AI-native IC 大牛市,『Heads of X』大熊市」", p:"swyx:<b>「AI 原生 IC / player-coach 处于巨大牛市,而『heads of X』类管理岗是巨大熊市——从没见过这么疯狂的行情」</b>;levelsio 同日转评「AI 对科技行业的剧烈改造这个月轮到了 hiring」——两位独立观察者同时指向同一结构性变化。"},
+  {h:"Kimi K3 技术解读继续发酵:Raschka 架构拆解成为最佳入口", p:"Sebastian Raschka 发布 <b>K3 架构图与逐层观察:「看起来复杂,本质是规模化的渐进改良」</b>,并感叹「LLM 架构确实在变复杂」(8.4 万浏览);技术报告 scaling law 被评「一件艺术品,配方效率较 K2 约 2.5 倍」——开源前沿权重的解读周期仍在展开。"},
+  {h:"Andrew Ng 回望 Coursera 15 年,抛出教育的下一篇章", p:"<b>「15 年前 Coursera 和在线课程改变了教育,效果好于几乎所有人的预期」</b>——Ng 在长帖中把在线教育的普及经验引向 AI 时代的学习方式;此前他刚力挺 Nvidia 开放模型公开信、发布交付型开源 agent OpenWorker,教育 + 开源两线发力。"},
+  {h:"LangChain 生态新星 OpenWiki:周下载 2.3 万、13.5k stars、接入 12 家模型商", p:"Harrison Chase 连续转发 <b>OpenWiki 增长数据:23.4k 周下载、13.5k GitHub stars、近 1k forks、50+ 贡献者</b>,已支持 <b>12 家 LLM 提供商(OpenAI API 与 ChatGPT 订阅登录、Anthropic、Gemini 等)</b>;Figure 机器人侧,Brett Adcock 晒出园区通行证后再谈硬件工程之难。"}
 ];
 
 const accounts = [
   {handle:"sama", name:"Sam Altman", role:"OpenAI CEO", posts:[
-    {type:"引用", date:"07-28", fresh:true, body:"对「gpt-5.6 sol 就是我的全部所需,OpenAI 明天停止发新模型我也完全没问题」的百万浏览热帖,直接回复:<b>「wrong」</b>。", url:"https://x.com/sama/status/2081832600591892712"},
+    {type:"引用", date:"07-28", body:"对「gpt-5.6 sol 就是我的全部所需,OpenAI 明天停止发新模型我也完全没问题」的百万浏览热帖,直接回复:<b>「wrong」</b>。", url:"https://x.com/sama/status/2081832600591892712"},
     {type:"引用", date:"07-27", body:"引用一条「徒步 4 小时全程用 ChatGPT Voice」的体验帖:<b>「同意,感觉很大——我想要一种新型计算机(a new kind of computer)」</b>。", url:"https://x.com/sama/status/2081513071135346814"},
     {type:"原创", date:"07-26", body:"<b>「ChatGPT Work 很了不起,『work』这个词还说轻了」</b>——在手机上发一句话,让它翻遍聊天历史、为 8 人长周末旅行规划出三套最佳方案。", url:"https://x.com/sama/status/2081396796174282900"}
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
-    {type:"转发", date:"07-28", fresh:true, body:"官宣:<b>Personal Computer 登陆 Windows 版 Perplexity 应用——本地 agent harness,在你的电脑上编排多个 agent 完成工作</b>。", url:"https://x.com/perplexity_ai/status/2082103880155046176"},
-    {type:"转发", date:"07-28", fresh:true, body:"转 The Verge 报道:<b>「Perplexity 的 Personal Computer 把 Windows PC 变成 AI agent」</b>。", url:"https://x.com/verge/status/2082085573846843741"},
-    {type:"引用", date:"07-29", fresh:true, body:"「True」——附和 tinygrad:<b>「没什么比得上知道你的 AI 住的那个铁盒子是你自己的。别提买房了,拥有数据中心才是……」</b>(呼应本地化 agent 叙事)。", url:"https://x.com/AravSrinivas/status/2082134234999976387"}
+    {type:"原创", date:"07-29", fresh:true, body:"<b>Model Council 向 Pro 用户开放,可用 Computer 额度调用</b>——「在法律、医疗、金融研究中最受用户喜爱,多元视角能压住幻觉」。", url:"https://x.com/AravSrinivas/status/2082204978081579268"},
+    {type:"原创", date:"07-29", fresh:true, body:"<b>开源 BrowseSafe:保护浏览器 agent 免受网页 prompt injection 的公开基准</b>;并表示「期待开源更多工具与基准,壮大前沿开放安全生态,很高兴 Nvidia 在前面带头」。", url:"https://x.com/AravSrinivas/status/2082144817803575778"},
+    {type:"转发", date:"07-28", fresh:true, body:"官宣:<b>Personal Computer 登陆 Windows 版 Perplexity 应用——本地 agent harness,在你的电脑上编排多个 agent 完成工作</b>;The Verge:「把 Windows PC 变成 AI agent」。", url:"https://x.com/perplexity_ai/status/2082103880155046176"}
   ]},
   {handle:"karpathy", name:"Andrej Karpathy", role:"AI 研究者 / 前 Tesla、OpenAI", posts:[
     {type:"原创", date:"07-22", body:"分享工作法:<b>与 LLM 的「长篇碎碎念会话」(ramble session)很有用</b>——有时模型需要更多 bits 才能理解你的目标,而你懒得打字。", url:"https://x.com/karpathy/status/2079610838143623371"}
@@ -138,15 +138,17 @@ const accounts = [
     {type:"引用", date:"07-24", body:"祝贺 Kanishka Narayan 出任<b>英国内阁 AI 部长</b>:「对英国 AI 生态是大好消息」。", url:"https://x.com/demishassabis/status/2080332282028507234"}
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"官宣:<b>LangChain 将于 10 月 13 日在伦敦 Outernet 举办首届 Interrupt:London 大会</b>——「会有发布、炉边谈话、客户分享」。", url:"https://x.com/hwchase17/status/2081938238839931223"},
-    {type:"转发", date:"07-28", fresh:true, body:"转 Jiwon 对其框架的解读:<b>「零售商不自己造卡车,但要拥有『决定什么被调度』的那套系统」</b>——企业 AI 采用走向的清晰框架。", url:"https://x.com/yeon_jiwon/status/2081835086429982774"}
+    {type:"转发", date:"07-29", fresh:true, body:"连续转发 <b>OpenWiki 增长数据:23.4k 周下载、13.5k GitHub stars、近 1k forks、50+ 贡献者;已支持 12 家 LLM 提供商</b>(OpenAI API 与 ChatGPT 订阅登录、Anthropic、Gemini 等)。", url:"https://x.com/BraceSproul/status/2082194053580615975"},
+    {type:"原创", date:"07-28", fresh:true, body:"官宣:<b>LangChain 将于 10 月 13 日在伦敦 Outernet 举办首届 Interrupt:London 大会</b>——「会有发布、炉边谈话、客户分享」。", url:"https://x.com/hwchase17/status/2081938238839931223"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI / Hark 创始人", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"<b>Figure 机器人拿到「访客证」,可通行园区所有门禁</b>——「很快会有数百台在园区里自由来去」(7.2 万浏览)。", url:"https://x.com/adcock_brett/status/2081776638455648498"},
+    {type:"原创", date:"07-29", fresh:true, body:"晒出「我最喜欢的硬件工程图」:<b>「硬件之难,除了高资本开销和长交付周期,还在于每个环节相互耦合」</b>。", url:"https://x.com/adcock_brett/status/2082207484891312176"},
+    {type:"原创", date:"07-28", body:"<b>Figure 机器人拿到「访客证」,可通行园区所有门禁</b>——「很快会有数百台在园区里自由来去」。", url:"https://x.com/adcock_brett/status/2081776638455648498"},
     {type:"原创", date:"07-23", body:"制造里程碑:<b>BotQ 产线下线第 1,000 台 F.03 人形机器人</b>(11 万浏览)。", url:"https://x.com/adcock_brett/status/2080319785402052619"}
   ]},
   {handle:"AndrewYNg", name:"Andrew Ng", role:"DeepLearning.AI / AI Fund", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"<b>「Jensen 这步走得好,Nvidia 公开信写得很好、值得一读」</b>——结合 OpenAI-Hugging Face 被黑事件,主张防御侧需要开源模型与 harness,「别再相信『开源危险论』」。", url:"https://x.com/AndrewYNg/status/2081787106062746002"},
+    {type:"原创", date:"07-29", fresh:true, body:"<b>「15 年前 Coursera 和在线课程改变了教育,效果好于几乎所有人的预期」</b>——长帖回望在线教育普及,并引向 AI 时代学习方式的下一篇章。", url:"https://x.com/AndrewYNg/status/2082199333920027009"},
+    {type:"原创", date:"07-28", body:"<b>「Jensen 这步走得好,Nvidia 公开信写得很好、值得一读」</b>——结合 OpenAI-Hugging Face 被黑事件,主张防御侧需要开源模型与 harness,「别再相信『开源危险论』」。", url:"https://x.com/AndrewYNg/status/2081787106062746002"},
     {type:"原创", date:"07-24", body:"发布 <b>OpenWorker:开源 agent,不止聊天、直接交付成品</b>——递给你成稿文档、发 Slack 消息、更新日历条目。", url:"https://x.com/AndrewYNg/status/2080333504446108104"}
   ]},
   {handle:"jeremyphoward", name:"Jeremy Howard", role:"Answer.AI / fast.ai", posts:[
@@ -160,39 +162,40 @@ const accounts = [
   ]},
   {handle:"natfriedman", name:"Nat Friedman", role:"Meta / 前 GitHub CEO", posts:[]},
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"自我辩驳:<b>「@bcherny 和 @trq212 都是『unhobble the model、删掉一切、让模型自我表达』派——这或许和你的做法其实一致」</b>(Claude Code 设计哲学讨论)。", url:"https://x.com/swyx/status/2082104987875004713"},
-    {type:"原创", date:"07-28", fresh:true, body:"发帖:<b>「i love you @Kimi_Moonshot」</b>——对 Kimi K3 开源权重发布的直白表态。", url:"https://x.com/swyx/status/2081979163117052311"},
+    {type:"原创", date:"07-29", fresh:true, body:"谈当下招聘:<b>「AI-native IC / player-coach 是巨大牛市,『heads of X』管理岗是巨大熊市——从没见过这么疯狂的行情」</b>。", url:"https://x.com/swyx/status/2082199414656127010"},
+    {type:"原创", date:"07-29", fresh:true, body:"AIE 的 <b>Forward Deployed Engineering(FDE)专场上线:FDE 101 由 Anthropic 的 Kevin Bai(前 Palantir、Rippling 创始 FDE)主讲</b>,「一个 track 综述整个 FDE 领域」。", url:"https://x.com/swyx/status/2082165519164317808"},
     {type:"原创", date:"07-28", fresh:true, body:"<b>「$/token 作为成本度量去年就已经死了——还没把 X 轴换成 $/task(按 Artificial Analysis 口径)的话,很难被认真对待」</b>。", url:"https://x.com/swyx/status/2081904230768816487"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"<b>「我原以为 AI 造不出真正的 PowerPoint,我错了:4 分钟 28 页,直接在 PowerPoint 打开、每个元素可编辑」</b>。", url:"https://x.com/ai_explorer25/status/2082092484021379159"},
+    {type:"原创", date:"07-29", fresh:true, body:"<b>「我原以为 AI 造不出真正的 PowerPoint,我错了:4 分钟 28 页,直接在 PowerPoint 打开、每个元素可编辑」</b>。", url:"https://x.com/ai_explorer25/status/2082092484021379159"},
     {type:"原创", date:"07-28", fresh:true, body:"发布 <b>Claude 一小时完整教程(Build & Automate Anything)</b>。", url:"https://x.com/ai_explorer25/status/2082065296509325690"},
     {type:"原创", date:"07-27", body:"整理 <b>40 个远程工作求职网站清单</b>(LinkedIn、FlexJobs、weworkremotely 等)。", url:"https://x.com/ai_explorer25/status/2081733847566455015"}
   ]},
   {handle:"levelsio", name:"Pieter Levels", role:"独立开发者 / 创业者", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"<b>《经济学人》今日也加入讨论,并引用 Stripe 博客「Solopreneur 时代已至」</b>——「indie hacker 们的感受,可能只是一场更大转型的开端」。", url:"https://x.com/levelsio/status/2082033695339229590"},
-    {type:"引用", date:"07-28", fresh:true, body:"7 月 23 日成为<b>史上商业航空最繁忙的一天</b>——「2000 万乘客,等于全球 0.25% 的人同时在天上」。", url:"https://x.com/levelsio/status/2081879728646979927"}
+    {type:"引用", date:"07-29", fresh:true, body:"<b>「AI 对行业的剧烈改造,这个月轮到了 tech hiring,非常有意思」</b>——引用关于招聘市场变化的观察帖。", url:"https://x.com/levelsio/status/2082212652370075707"},
+    {type:"引用", date:"07-28", fresh:true, body:"翻出自己 2015 年的博客与 Brain Bar 演讲<b>《两个极端的未来》:「当年讲的正在发生」</b>。", url:"https://x.com/levelsio/status/2082110066463846776"},
+    {type:"原创", date:"07-28", body:"<b>《经济学人》也加入讨论,并引用 Stripe 博客「Solopreneur 时代已至」</b>——「indie hacker 们的感受,可能只是一场更大转型的开端」。", url:"https://x.com/levelsio/status/2082033695339229590"}
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"<b>「科学要求你报告失败的实验,而不只是成功的。AI 也该如此。(但愿吧)」</b>(2.3 万浏览)。", url:"https://x.com/fchollet/status/2081836094044168339"},
     {type:"转发", date:"07-28", fresh:true, body:"转创业者故事:<b>「疫情高峰在爸妈阁楼、靠 300 美元免费 Colab 额度和 Keras 起步——没钱不是借口,动手就是了」</b>。", url:"https://x.com/its_thoth/status/2082014134434951453"},
-    {type:"原创", date:"07-27", body:"<b>「AI 中最少被探索的问题之一:如何构建丰富的开放式学习环境——benchmark 评估智能,环境塑造智能」</b>,并点评 iLands 项目。", url:"https://x.com/fchollet/status/2081771295734173931"}
+    {type:"转发", date:"07-28", fresh:true, body:"转 Keras 生态项目:<b>基于 Keras 3 / ONNX 的轻量 OCR 模型,快速提取车牌文字与地区</b>。", url:"https://x.com/tom_doerr/status/2081952625684054285"},
+    {type:"原创", date:"07-28", body:"<b>「科学要求你报告失败的实验,而不只是成功的。AI 也该如此。(但愿吧)」</b>(2.3 万浏览)。", url:"https://x.com/fchollet/status/2081836094044168339"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
-    {type:"原创", date:"07-28", fresh:true, body:"发布 <b>Kimi K3 架构图与逐层解读:「看起来相对复杂,但本质上是规模化的渐进改良」</b>——昨日重磅开源权重发布的最佳技术拆解。", url:"https://x.com/rasbt/status/2082098201247600765"},
-    {type:"原创", date:"07-28", fresh:true, body:"<b>「是的,LLM 架构正在变得更复杂一点」</b>(3.7 万浏览)。", url:"https://x.com/rasbt/status/2082101241908249014"},
+    {type:"原创", date:"07-28", fresh:true, body:"发布 <b>Kimi K3 架构图与逐层解读:「看起来相对复杂,但本质上是规模化的渐进改良」</b>——本周开源权重发布的最佳技术拆解。", url:"https://x.com/rasbt/status/2082098201247600765"},
+    {type:"原创", date:"07-28", fresh:true, body:"<b>「是的,LLM 架构正在变得更复杂一点」</b>(8.4 万浏览)。", url:"https://x.com/rasbt/status/2082101241908249014"},
     {type:"转发", date:"07-27", body:"转 elie 评 <b>Kimi K3 技术报告:「这条 scaling law 是件艺术品——K3 配方较 K2 提升约 2.5x」</b>;Moonshot 已放出模型权重。", url:"https://x.com/eliebakouch/status/2081762200180453657"}
   ]}
 ];
 
 const readList = [
-  {t:"Perplexity Personal Computer(Windows 本地 agent harness)", d:"在你的 PC 上编排多个 agent 完成工作,The Verge:「把 Windows PC 变成 AI agent」——本地化 agent 主机是本轮最值得试用的新品。", u:"https://x.com/perplexity_ai/status/2082103880155046176"},
-  {t:"Raschka:Kimi K3 架构深度解读", d:"架构图 + 逐层观察:「看起来复杂,本质是规模化的渐进改良」——理解昨日开源权重发布的最佳入口。", u:"https://x.com/rasbt/status/2082098201247600765"},
-  {t:"Kimi K3 技术报告 + 开源权重", d:"scaling law 较 K2 配方提升约 2.5x,被评「一件艺术品」;swyx 直接示爱——开源前沿权重的又一里程碑。", u:"https://x.com/eliebakouch/status/2081762200180453657"},
-  {t:"Jensen Huang / Nvidia 开放模型公开信(其 X 首帖系列)", d:"「攻击者已有前沿 AI,防御者需要前沿 AI 生态」——Andrew Ng、sama、Jim Fan 等集体表态,开放模型论战的核心文本。", u:"https://x.com/JensenHuang/status/2081698060330250294"},
-  {t:"Andrew Ng:OpenWorker 开源交付型 agent", d:"不止聊天、直接交付成品(文档 / Slack 消息 / 日历条目)的开源 agent——「交付完成的工作」正成为 agent 产品的新标准形态。", u:"https://x.com/AndrewYNg/status/2080333504446108104"},
+  {t:"BrowseSafe:浏览器 agent 反 prompt injection 开源基准(Perplexity)", d:"针对「agent 浏览网页时被页面内容注入指令」的公开评测基准——做 agent 安全 / 浏览器自动化的人应第一时间跟进。", u:"https://x.com/AravSrinivas/status/2082144817803575778"},
+  {t:"Perplexity Model Council(已开放给 Pro 用户)", d:"多模型合议输出,法律 / 医疗 / 金融研究场景最受欢迎;可用 Computer 额度调用——多视角压幻觉的产品化样本。", u:"https://x.com/AravSrinivas/status/2082204978081579268"},
+  {t:"Raschka:Kimi K3 架构深度解读", d:"架构图 + 逐层观察:「看起来复杂,本质是规模化的渐进改良」;技术报告 scaling law 较 K2 约 2.5x——理解本周开源权重发布的最佳入口。", u:"https://x.com/rasbt/status/2082098201247600765"},
+  {t:"OpenWiki(LangChain 生态,Brace Sproul)", d:"23.4k 周下载、13.5k stars、50+ 贡献者,支持 12 家 LLM 提供商(含 ChatGPT / Claude 订阅登录)——增长最快的开源 wiki-agent 项目。", u:"https://x.com/BraceSproul/status/2082194053580615975"},
+  {t:"swyx:AI 招聘市场观察 + FDE 101(Anthropic Kevin Bai)", d:"「AI-native IC 大牛市、管理岗大熊市」;配套 AIE 的 Forward Deployed Engineering 专场视频,综述 FDE 全领域。", u:"https://x.com/swyx/status/2082165519164317808"},
+  {t:"Jensen Huang / Nvidia 开放模型公开信(其 X 首帖系列)", d:"「攻击者已有前沿 AI,防御者需要前沿 AI 生态」——Andrew Ng、Jim Fan 等集体表态,开放模型论战的核心文本。", u:"https://x.com/JensenHuang/status/2081698060330250294"},
   {t:"karpathy:与 LLM 的「ramble session」工作法", d:"长篇碎碎念让模型拿到更多 bits 来理解你的意图——低成本高回报的提示工程实践,值得直接套用。", u:"https://x.com/karpathy/status/2079610838143623371"},
-  {t:"swyx:用 $/task 替代 $/token 的成本度量", d:"配合 Artificial Analysis 口径——评估模型经济性时的新坐标系,对做 AI 产品成本测算的人尤其实用。", u:"https://x.com/swyx/status/2081904230768816487"},
   {t:"Interrupt:London(10 月 13 日,LangChain 首届伦敦大会)", d:"LangChain 官宣,地点 Outernet London,「会有发布、炉边谈话、客户分享」——企业级 agent 生态的下一个节点。", u:"https://x.com/hwchase17/status/2081938238839931223"}
 ];
 
