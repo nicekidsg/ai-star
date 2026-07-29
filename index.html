@@ -107,12 +107,12 @@
 </div>
 
 <script>
-const GEN_TIME = "2026-07-29 06:13 (北京时间)";
+const GEN_TIME = "2026-07-29 12:35 (北京时间)";
 
 const core = [
   {h:"Perplexity 一夜双弹:Model Council 开放给 Pro 用户,开源 BrowseSafe 反注入基准", p:"Aravind Srinivas 宣布 <b>Model Council(多模型合议)向 Pro 用户开放,可用 Computer 额度调用</b>——「在法律、医疗、金融研究中最受欢迎,多元视角能压住幻觉」;同时<b>开源 BrowseSafe:保护浏览器 agent 免受网页 prompt injection 的公开基准</b>,并称将随 Nvidia 主导的开放安全生态继续开源更多工具。"},
   {h:"AI 正在重塑技术招聘:swyx「AI-native IC 大牛市,『Heads of X』大熊市」", p:"swyx:<b>「AI 原生 IC / player-coach 处于巨大牛市,而『heads of X』类管理岗是巨大熊市——从没见过这么疯狂的行情」</b>;levelsio 同日转评「AI 对科技行业的剧烈改造这个月轮到了 hiring」——两位独立观察者同时指向同一结构性变化。"},
-  {h:"Kimi K3 技术解读继续发酵:Raschka 架构拆解成为最佳入口", p:"Sebastian Raschka 发布 <b>K3 架构图与逐层观察:「看起来复杂,本质是规模化的渐进改良」</b>,并感叹「LLM 架构确实在变复杂」(8.4 万浏览);技术报告 scaling law 被评「一件艺术品,配方效率较 K2 约 2.5 倍」——开源前沿权重的解读周期仍在展开。"},
+  {h:"Kimi K3 技术解读继续发酵:Raschka 架构拆解成为最佳入口", p:"Sebastian Raschka 发布 <b>K3 架构图与逐层观察:「看起来复杂,本质是规模化的渐进改良」</b>,并感叹「LLM 架构确实在变复杂」(8.4 万浏览);技术报告 scaling law 被评「一件艺术品,配方效率较 K2 约 2.5 倍」;<b>美国托管的 K3 已上架 Perplexity(Pro/Max,Search 与 Computer 模式)</b>——开源前沿权重从解读走向分发。"},
   {h:"Andrew Ng 回望 Coursera 15 年,抛出教育的下一篇章", p:"<b>「15 年前 Coursera 和在线课程改变了教育,效果好于几乎所有人的预期」</b>——Ng 在长帖中把在线教育的普及经验引向 AI 时代的学习方式;此前他刚力挺 Nvidia 开放模型公开信、发布交付型开源 agent OpenWorker,教育 + 开源两线发力。"},
   {h:"LangChain 生态新星 OpenWiki:周下载 2.3 万、13.5k stars、接入 12 家模型商", p:"Harrison Chase 连续转发 <b>OpenWiki 增长数据:23.4k 周下载、13.5k GitHub stars、近 1k forks、50+ 贡献者</b>,已支持 <b>12 家 LLM 提供商(OpenAI API 与 ChatGPT 订阅登录、Anthropic、Gemini 等)</b>;Figure 机器人侧,Brett Adcock 晒出园区通行证后再谈硬件工程之难。"}
 ];
@@ -125,6 +125,7 @@ const accounts = [
   ]},
   {handle:"AravSrinivas", name:"Aravind Srinivas", role:"Perplexity CEO", posts:[
     {type:"原创", date:"07-29", fresh:true, body:"<b>Model Council 向 Pro 用户开放,可用 Computer 额度调用</b>——「在法律、医疗、金融研究中最受用户喜爱,多元视角能压住幻觉」。", url:"https://x.com/AravSrinivas/status/2082204978081579268"},
+    {type:"原创", date:"07-29", fresh:true, body:"<b>美国托管的 Kimi K3 上架 Perplexity(Pro / Max,Search 与 Computer 模式均可用)</b>:「这是一个很棒的前沿模型,enjoy!」。", url:"https://x.com/AravSrinivas/status/2082189982786277652"},
     {type:"原创", date:"07-29", fresh:true, body:"<b>开源 BrowseSafe:保护浏览器 agent 免受网页 prompt injection 的公开基准</b>;并表示「期待开源更多工具与基准,壮大前沿开放安全生态,很高兴 Nvidia 在前面带头」。", url:"https://x.com/AravSrinivas/status/2082144817803575778"},
     {type:"转发", date:"07-28", fresh:true, body:"官宣:<b>Personal Computer 登陆 Windows 版 Perplexity 应用——本地 agent harness,在你的电脑上编排多个 agent 完成工作</b>;The Verge:「把 Windows PC 变成 AI agent」。", url:"https://x.com/perplexity_ai/status/2082103880155046176"}
   ]},
@@ -139,7 +140,7 @@ const accounts = [
   ]},
   {handle:"hwchase17", name:"Harrison Chase", role:"LangChain CEO", posts:[
     {type:"转发", date:"07-29", fresh:true, body:"连续转发 <b>OpenWiki 增长数据:23.4k 周下载、13.5k GitHub stars、近 1k forks、50+ 贡献者;已支持 12 家 LLM 提供商</b>(OpenAI API 与 ChatGPT 订阅登录、Anthropic、Gemini 等)。", url:"https://x.com/BraceSproul/status/2082194053580615975"},
-    {type:"原创", date:"07-28", fresh:true, body:"官宣:<b>LangChain 将于 10 月 13 日在伦敦 Outernet 举办首届 Interrupt:London 大会</b>——「会有发布、炉边谈话、客户分享」。", url:"https://x.com/hwchase17/status/2081938238839931223"}
+    {type:"原创", date:"07-28", body:"官宣:<b>LangChain 将于 10 月 13 日在伦敦 Outernet 举办首届 Interrupt:London 大会</b>——「会有发布、炉边谈话、客户分享」。", url:"https://x.com/hwchase17/status/2081938238839931223"}
   ]},
   {handle:"adcock_brett", name:"Brett Adcock", role:"Figure AI / Hark 创始人", posts:[
     {type:"原创", date:"07-29", fresh:true, body:"晒出「我最喜欢的硬件工程图」:<b>「硬件之难,除了高资本开销和长交付周期,还在于每个环节相互耦合」</b>。", url:"https://x.com/adcock_brett/status/2082207484891312176"},
@@ -164,7 +165,7 @@ const accounts = [
   {handle:"swyx", name:"swyx", role:"Latent.Space / AI Engineer", posts:[
     {type:"原创", date:"07-29", fresh:true, body:"谈当下招聘:<b>「AI-native IC / player-coach 是巨大牛市,『heads of X』管理岗是巨大熊市——从没见过这么疯狂的行情」</b>。", url:"https://x.com/swyx/status/2082199414656127010"},
     {type:"原创", date:"07-29", fresh:true, body:"AIE 的 <b>Forward Deployed Engineering(FDE)专场上线:FDE 101 由 Anthropic 的 Kevin Bai(前 Palantir、Rippling 创始 FDE)主讲</b>,「一个 track 综述整个 FDE 领域」。", url:"https://x.com/swyx/status/2082165519164317808"},
-    {type:"原创", date:"07-28", fresh:true, body:"<b>「$/token 作为成本度量去年就已经死了——还没把 X 轴换成 $/task(按 Artificial Analysis 口径)的话,很难被认真对待」</b>。", url:"https://x.com/swyx/status/2081904230768816487"}
+    {type:"原创", date:"07-28", body:"<b>「$/token 作为成本度量去年就已经死了——还没把 X 轴换成 $/task(按 Artificial Analysis 口径)的话,很难被认真对待」</b>。", url:"https://x.com/swyx/status/2081904230768816487"}
   ]},
   {handle:"ai_explorer25", name:"AI_Explorer", role:"AI 内容创作者", posts:[
     {type:"原创", date:"07-29", fresh:true, body:"<b>「我原以为 AI 造不出真正的 PowerPoint,我错了:4 分钟 28 页,直接在 PowerPoint 打开、每个元素可编辑」</b>。", url:"https://x.com/ai_explorer25/status/2082092484021379159"},
@@ -178,7 +179,7 @@ const accounts = [
   ]},
   {handle:"fchollet", name:"François Chollet", role:"Keras 作者 / Ndea", posts:[
     {type:"转发", date:"07-28", fresh:true, body:"转创业者故事:<b>「疫情高峰在爸妈阁楼、靠 300 美元免费 Colab 额度和 Keras 起步——没钱不是借口,动手就是了」</b>。", url:"https://x.com/its_thoth/status/2082014134434951453"},
-    {type:"转发", date:"07-28", fresh:true, body:"转 Keras 生态项目:<b>基于 Keras 3 / ONNX 的轻量 OCR 模型,快速提取车牌文字与地区</b>。", url:"https://x.com/tom_doerr/status/2081952625684054285"},
+    {type:"转发", date:"07-28", body:"转 Keras 生态项目:<b>基于 Keras 3 / ONNX 的轻量 OCR 模型,快速提取车牌文字与地区</b>。", url:"https://x.com/tom_doerr/status/2081952625684054285"},
     {type:"原创", date:"07-28", body:"<b>「科学要求你报告失败的实验,而不只是成功的。AI 也该如此。(但愿吧)」</b>(2.3 万浏览)。", url:"https://x.com/fchollet/status/2081836094044168339"}
   ]},
   {handle:"rasbt", name:"Sebastian Raschka", role:"《Build a LLM》作者", posts:[
